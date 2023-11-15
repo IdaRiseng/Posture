@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/launcher_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/launcher_icon_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Posture"
+        tools:targetApi="31">
+        <activity
+            android:name=".activities.mainView.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Posture">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.movementTimeCountdown.MovementTimeCountdownActivity"/>
+        <activity android:name=".activities.customExerciseDesc.CustomExerciseDescActivity"/>
+        <activity android:name=".activities.nextMovement.NextMovementActivity"/>
+        <activity android:name=".activities.settings.SettingsActivity"/>
+        <activity android:name=".activities.customExercise.CustomExerciseActivity"/>
+        <activity android:name=".activities.setMovementCount.SetMovementCountActivity"/>
+        <activity android:name=".activities.movementRepCountdown.MovementRepCountdownActivity"/>
+    </application>
+
+</manifest>

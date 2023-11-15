@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name">Posture</string>
+    <string name="streak">Streak</string>
+    <string name="total">Total</string>
+    <plurals name="day">
+        <item quantity="one">Day</item>
+        <item quantity="other">Days</item>
+    </plurals>
+    <string name="create">Create</string>
+    <string name="_continue">Continue</string>
+
+
+    <!-- Exercises -->
+    <string name="exercises">Exercises</string>
+    <!-- Build and stretch -->
+    <string name="build_and_stretch">Build and stretch</string>
+    
+
+    <!-- Info cards -->
+    <string name="info">Info</string>
+    <!-- Thank you -->
+    <string name="info_thank_you_title">Thank you!</string>
+    <string name="info_thank_you_desc">Thank you for downloading this app, please do give me feedback</string>
+
+    <!-- custom exercise -->
+    <string name="info_custom_exercise_title">Create a custom exercise</string>
+    <string name="info_custom_exercise_desc">Description with some stuff and stuff and</string>
+
+    
+    <!-- Exercise flow -->
+    <string name="start_exercise">Start exercise</string>
+    <string name="how_long_exercise">How long do you want to exercise?</string>
+    <string name="how_many_movements">How many movements you want to take?</string>
+    <string name="repetitions_left">Repetitions left</string>
+    <string name="continuous_exercise">Continuous exercise</string>
+    <array name="positive_words">
+        <item>Well done!</item>
+        <item>Amazing</item>
+        <item>Superb</item>
+        <item>Awesome!</item>
+    </array>
+    <string name="done">Done</string>
+
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+    <string name="options">Options</string>
+    <string name="save">Save</string>
+    <string name="time_based">Time based</string>
+    <string name="how_long_movement">How long should each movement take?</string>
+    <string name="set_rep_based">Set / Rep based</string>
+    <string name="now_many_repetitions">How many repetitions do you want to take for each movement?</string>
+
+    <string name="general">General</string>
+    <string name="darkmode">Darkmode</string>
+    <string name="language">Language</string>
+
+    <string name="got_ideas">Got some good ideas?</string>
+    <string name="trouble_with_app">Trouble with the app?</string>
+    <string name="send">Send</string>
+
+    <array name="weekdays">
+        <item>Mo</item>
+        <item>Tu</item>
+        <item>We</item>
+        <item>Th</item>
+        <item>Fr</item>
+        <item>Sa</item>
+        <item>Su</item>
+    </array>
+
+    <array name="simple_affirmations">
+        <item>You are good enough</item>
+    </array>
+
+    <string name="custom_exercise">Custom exercise</string>
+    <string name="add_movements">Add at least one movement to create an exercise</string>
+
+
+    <!-- Movements -->
+    <string name="chest_opener">Chest opener</string>
+    <string name="wall_slide">Wall slide</string>
+    <string name="table_top_lift">Table top lift</string>
+    <string name="glute_bridge">Glute bridge</string>
+    <string name="all_four_twist">All four twist</string>
+    <string name="wall_stretch">Wall stretch</string>
+    <string name="squat">Squat</string>
+
+
+</resources>
