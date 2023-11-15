@@ -16,15 +16,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import no.sporty.posture.R
 import no.sporty.posture.activities.mainView.elements.MainTopBar
 import no.sporty.posture.extensions.overScrollColor
+import no.sporty.posture.model.CustomExercise
 import no.sporty.posture.model.Exercise
 import no.sporty.posture.model.TopBarInfo
+import no.sporty.posture.sharedPreferences.CustomExercisePrefs
 import no.sporty.posture.ui.theme.PostureTheme
 import no.sporty.posture.ui.theme.cards.ButtonInfo
+import no.sporty.posture.ui.theme.cards.CustomExerciseCard
 import no.sporty.posture.ui.theme.cards.ExerciseCard
 import no.sporty.posture.ui.theme.cards.InfoCard
 import no.sporty.posture.ui.theme.text.HeadlineBlackText
@@ -33,9 +37,11 @@ import no.sporty.posture.ui.theme.text.HeadlineBlackText
 fun MainView(
     topBarInfo: TopBarInfo,
     exercises: List<Exercise>,
+    customExercises: List<CustomExercise>,
     onSettingsClicked: () -> Unit,
     onExerciseClicked: (Exercise) -> Unit,
-    onCustomExerciseClicked: () -> Unit,
+    onCreateCustomExerciseClicked: () -> Unit,
+    onCustomExerciseClicked: (CustomExercise) -> Unit
 ) {
     val scrollState = rememberScrollState()
     PostureTheme {
@@ -48,7 +54,8 @@ fun MainView(
         ) {
             MainTopBar(topBarInfo, onSettingsClicked)
             Column(Modifier.padding(16.dp)) {
-                Info(onCustomExerciseClicked)
+                Info(onCreateCustomExerciseClicked)
+                CustomExercises(customExercises, onCustomExerciseClicked)
                 Exercises(exercises, onExerciseClicked)
 
                 Column(
@@ -86,5 +93,15 @@ private fun Exercises(exercises: List<Exercise>, onExerciseClicked: (Exercise) -
     HeadlineBlackText(textRes = R.string.exercises, padding = PaddingValues(vertical = 16.dp))
     exercises.forEach {
         ExerciseCard(it, onExerciseClicked)
+    }
+}
+
+@Composable
+private fun CustomExercises(customExercises: List<CustomExercise>,onCustomExerciseClicked: (CustomExercise) -> Unit) {
+    if (customExercises.isNotEmpty()) {
+        HeadlineBlackText(textRes = R.string.custom_exercise, padding = PaddingValues(vertical = 16.dp))
+        customExercises.forEach {
+            CustomExerciseCard(it, onCustomExerciseClicked)
+        }
     }
 }

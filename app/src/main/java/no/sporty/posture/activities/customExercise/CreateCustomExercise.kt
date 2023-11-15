@@ -18,7 +18,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
@@ -42,7 +41,7 @@ import no.sporty.posture.ui.theme.text.BodyBlackText
 import no.sporty.posture.ui.theme.text.HeadlineBlackText
 
 @Composable
-fun CustomExercise(
+fun CreateCustomExercise(
     onBackPressed: () -> Unit,
     onContinueClicked: (List<Movement>) -> Unit
 ) {

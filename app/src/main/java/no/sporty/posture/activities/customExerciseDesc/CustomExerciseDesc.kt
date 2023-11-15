@@ -1,5 +1,6 @@
 package no.sporty.posture.activities.customExerciseDesc
 
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -22,6 +23,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -39,6 +41,7 @@ fun CustomExerciseDesc(
     movements: List<Movement>,
     onSaveClicked: (CustomExercise) -> Unit
 ) {
+    val context = LocalContext.current
     var title by remember { mutableStateOf("") }
     var desc by remember { mutableStateOf("") }
     var chosenImage by remember { mutableStateOf<Int?>(null) }
@@ -99,14 +102,22 @@ fun CustomExerciseDesc(
 
                 Spacer(modifier = Modifier.height(16.dp))
                 PrimaryButton(onClick = {
-                    chosenImage?.let {
-                        val customExercise = CustomExercise(
-                            title = title,
-                            desc = desc,
-                            illustration = it,
-                            movements = movements
-                        )
-                        onSaveClicked(customExercise)
+                    when{
+                        chosenImage == null -> {
+                            Toast.makeText(context, "Please select an image", Toast.LENGTH_LONG).show()
+                        }
+                        title.isBlank() -> {
+                            Toast.makeText(context, "Please write a title", Toast.LENGTH_LONG).show()
+                        }
+                        else -> {
+                            val customExercise = CustomExercise(
+                                title = title,
+                                desc = desc,
+                                illustration = chosenImage!!,
+                                movements = movements
+                            )
+                            onSaveClicked(customExercise)
+                        }
                     }
 
                 }, textRes = R.string.save)

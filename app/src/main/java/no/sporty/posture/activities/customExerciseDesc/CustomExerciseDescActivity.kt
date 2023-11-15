@@ -8,6 +8,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import no.sporty.posture.model.Movement
 import no.sporty.posture.model.SelectedMovements
+import no.sporty.posture.sharedPreferences.CustomExercisePrefs
 import java.lang.IllegalStateException
 
 class CustomExerciseDescActivity : ComponentActivity() {
@@ -28,8 +29,8 @@ class CustomExerciseDescActivity : ComponentActivity() {
             CustomExerciseDesc(
                 onBackPressed = { onBackPressedDispatcher.onBackPressed() },
                 movements = movements.movements,
-                onSaveClicked = {
-
+                onSaveClicked = { customExercise ->
+                    CustomExercisePrefs.saveCustomExerciseList(this, customExercise)
                     Toast.makeText(this, "Custom exercises added", Toast.LENGTH_LONG).show()
                     setResult(RESULT_OK)
                     finish()
