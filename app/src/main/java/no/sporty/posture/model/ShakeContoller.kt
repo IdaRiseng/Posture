@@ -21,7 +21,7 @@ class ShakeController {
 }
 
 data class ShakeConfig(
-    val iterations: Int,
+    val isShaking: Boolean,
     val intensity: Float = 10_000f,
     val rotate: Float = 0.3f,
     val rotateX: Float = 0f,

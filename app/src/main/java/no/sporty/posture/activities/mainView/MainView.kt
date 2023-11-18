@@ -1,7 +1,9 @@
 package no.sporty.posture.activities.mainView
 
 import SmallDisabledBlackText
+import android.widget.Toast
 import androidx.compose.foundation.background
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -13,9 +15,13 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -24,7 +30,10 @@ import no.sporty.posture.activities.mainView.elements.MainTopBar
 import no.sporty.posture.extensions.overScrollColor
 import no.sporty.posture.model.CustomExercise
 import no.sporty.posture.model.Exercise
+import no.sporty.posture.model.ShakeConfig
+import no.sporty.posture.model.ShakeController
 import no.sporty.posture.model.TopBarInfo
+import no.sporty.posture.model.rememberShakeController
 import no.sporty.posture.sharedPreferences.CustomExercisePrefs
 import no.sporty.posture.ui.theme.PostureTheme
 import no.sporty.posture.ui.theme.cards.ButtonInfo
@@ -44,6 +53,8 @@ fun MainView(
     onCustomExerciseClicked: (CustomExercise) -> Unit
 ) {
     val scrollState = rememberScrollState()
+    val shakeController = rememberShakeController()
+
     PostureTheme {
         Column(
             Modifier
@@ -51,11 +62,16 @@ fun MainView(
                 .background(MaterialTheme.colorScheme.background)
                 .fillMaxSize()
                 .verticalScroll(scrollState)
+                .pointerInput(Unit) {
+                    detectTapGestures(onTap = {
+                        shakeController.shake(ShakeConfig(isShaking = false))
+                    })
+                }
         ) {
             MainTopBar(topBarInfo, onSettingsClicked)
             Column(Modifier.padding(16.dp)) {
                 Info(onCreateCustomExerciseClicked)
-                CustomExercises(customExercises, onCustomExerciseClicked)
+                CustomExercises(customExercises, onCustomExerciseClicked, shakeController)
                 Exercises(exercises, onExerciseClicked)
 
                 Column(
@@ -78,13 +94,15 @@ private fun Info(onButtonClicked: () -> Unit) {
     InfoCard(
         title = R.string.info_thank_you_title,
         desc = R.string.info_thank_you_desc,
-        icon = R.drawable.launcher_icon_round
+        icon = R.drawable.launcher_icon_round,
+        onDismiss = {/* TODO */ }
     )
     InfoCard(
         title = R.string.info_custom_exercise_title,
         desc = R.string.info_custom_exercise_desc,
         buttonInfo = ButtonInfo(onButtonClicked, R.string.create),
-        image = R.drawable.launcher_icon
+        image = R.drawable.launcher_icon,
+        onDismiss = {/* TODO */ }
     )
 }
 
@@ -97,11 +115,11 @@ private fun Exercises(exercises: List<Exercise>, onExerciseClicked: (Exercise) -
 }
 
 @Composable
-private fun CustomExercises(customExercises: List<CustomExercise>,onCustomExerciseClicked: (CustomExercise) -> Unit) {
+private fun CustomExercises(customExercises: List<CustomExercise>, onCustomExerciseClicked: (CustomExercise) -> Unit, shakeController: ShakeController) {
     if (customExercises.isNotEmpty()) {
         HeadlineBlackText(textRes = R.string.custom_exercise, padding = PaddingValues(vertical = 16.dp))
         customExercises.forEach {
-            CustomExerciseCard(it, onCustomExerciseClicked)
+            CustomExerciseCard(it, onCustomExerciseClicked, shakeController)
         }
     }
 }

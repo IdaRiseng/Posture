@@ -40,7 +40,7 @@ fun SettingsGeneral(
         Spacer(modifier = Modifier.height(16.dp))
         SmallDisabledBlackText(textRes = R.string.general)
         ExpandableTextButton(textRes = R.string.darkmode, iconId = android.R.drawable.ic_delete, onClick = onDarkModeClicked)
-        ExpandableTextButton(textRes = R.string.language, iconId = android.R.drawable.ic_delete, onClick = onLanguageClicked)
+        ExpandableTextButton(textRes = R.string.custom_exercise, iconId = android.R.drawable.ic_delete, onClick = onLanguageClicked)
 
 
         Spacer(modifier = Modifier.height(32.dp))

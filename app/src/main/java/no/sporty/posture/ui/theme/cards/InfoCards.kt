@@ -80,11 +80,12 @@ fun InfoCard(
     buttonInfo: ButtonInfo? = null,
     @DrawableRes image: Int? = null,
     @DrawableRes icon: Int? = null,
+    onDismiss: (() -> Unit)? = null
 ) {
     val localDensity = LocalDensity.current
     var columnHeightDp by remember { mutableStateOf(0.dp) }
 
-    GreyCard {
+    GreyCard(onDismiss = onDismiss) {
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier

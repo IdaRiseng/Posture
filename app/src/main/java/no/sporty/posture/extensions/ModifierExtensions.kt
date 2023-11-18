@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 import no.sporty.posture.model.ShakeController
 import kotlin.math.roundToInt
 
-fun Modifier.conditional(condition : Boolean, modifier : Modifier.() -> Modifier) : Modifier {
+fun Modifier.conditional(condition: Boolean, modifier: Modifier.() -> Modifier): Modifier {
     return if (condition) {
         then(modifier(Modifier))
     } else {
@@ -51,11 +51,13 @@ fun Modifier.shake(shakeController: ShakeController) = composed {
     shakeController.shakeConfig?.let { shakeConfig ->
         val shake = remember { Animatable(0f) }
         LaunchedEffect(shakeController.shakeConfig) {
-            for (i in 0..shakeConfig.iterations) {
+            var i = 0
+            while (shakeConfig.isShaking) {
                 when (i % 2) {
                     0 -> shake.animateTo(1f, spring(stiffness = shakeConfig.intensity))
                     else -> shake.animateTo(-1f, spring(stiffness = shakeConfig.intensity))
                 }
+                i++
             }
             shake.animateTo(0f)
         }
