@@ -4,6 +4,7 @@ import GreyCard
 import android.widget.Toast
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.gestures.detectTapGestures
@@ -14,22 +15,33 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.FilledTonalButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.Dialog
+import no.sporty.posture.R
 import no.sporty.posture.extensions.shake
 import no.sporty.posture.model.CustomExercise
 import no.sporty.posture.model.Exercise
 import no.sporty.posture.model.ShakeConfig
 import no.sporty.posture.model.ShakeController
 import no.sporty.posture.model.rememberShakeController
+import no.sporty.posture.sharedPreferences.CustomExercisePrefs
 import no.sporty.posture.ui.theme.text.BodyBlackText
 import no.sporty.posture.ui.theme.text.HeadlineBlackText
+import no.sporty.posture.ui.theme.text.TitleBlackText
 
 @Composable
 fun ExerciseCard(exercise: Exercise, onClick: (Exercise) -> Unit) {
@@ -60,6 +72,7 @@ fun CustomExerciseCard(
     shakeController: ShakeController? = null,
     showDismissButton: Boolean = false,
 ) {
+    var showDismissDialog by remember { mutableStateOf(false) }
     Column(
         modifier = Modifier
             .padding(bottom = 8.dp)
@@ -77,7 +90,7 @@ fun CustomExerciseCard(
         GreyCard(
             padding = PaddingValues(),
             onDismiss = if (showDismissButton || shakeController?.shakeConfig?.isShaking == true) {
-                { /* TODO */ }
+                { showDismissDialog = true }
             } else {
                 null
             }
@@ -96,6 +109,34 @@ fun CustomExerciseCard(
                     Spacer(modifier = Modifier.height(8.dp))
                     if (customExercise.desc.isNotBlank()) BodyBlackText(text = customExercise.desc)
                 }
+            }
+        }
+    }
+    if (showDismissDialog) {
+        DeleteCustomExerciseDialog(customExercise) {
+            showDismissDialog = false
+        }
+    }
+}
+
+@Composable
+fun DeleteCustomExerciseDialog(customExercise: CustomExercise, onDismiss: () -> Unit) {
+    val context = LocalContext.current
+    Dialog(onDismissRequest = onDismiss) {
+        Column(
+            Modifier
+                .clip(RoundedCornerShape(16.dp))
+                .background(MaterialTheme.colorScheme.background)
+                .padding(16.dp)
+        ) {
+            TitleBlackText(textRes = R.string.add)
+            BodyBlackText(text = "Do you really want to delete this")
+            FilledTonalButton(
+                onClick = {
+                    CustomExercisePrefs.removeCustomExercise(context, customExercise)
+                    onDismiss()
+                }) {
+                BodyBlackText(text = stringResource(id = R.string.save))
             }
         }
     }

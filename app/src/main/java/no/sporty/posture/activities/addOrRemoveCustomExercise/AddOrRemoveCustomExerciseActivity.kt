@@ -5,6 +5,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
+import no.sporty.posture.activities.customExercise.CreateCustomExerciseActivity
+import no.sporty.posture.model.CustomExercise
 import no.sporty.posture.sharedPreferences.CustomExercisePrefs
 
 class AddOrRemoveCustomExerciseActivity : ComponentActivity() {
@@ -12,15 +16,21 @@ class AddOrRemoveCustomExerciseActivity : ComponentActivity() {
         fun newIntent(context: Context) = Intent(context, AddOrRemoveCustomExerciseActivity::class.java)
     }
 
+    private val customExercises: MutableState<List<CustomExercise>> = mutableStateOf(emptyList())
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val customExercises = CustomExercisePrefs.getCustomExerciseList(this)
 
         setContent {
             AddOrRemoveCustomExercise(
+                addCustomExerciseClicked = { startActivity(CreateCustomExerciseActivity.newIntent(this)) },
                 onBackPressed = { onBackPressedDispatcher.onBackPressed() },
-                customExercises = customExercises
+                customExercises = customExercises.value
             )
         }
+    }
+    override fun onResume() {
+        super.onResume()
+        customExercises.value = CustomExercisePrefs.getCustomExerciseList(this)
     }
 }
