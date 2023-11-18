@@ -50,6 +50,11 @@
     <string name="set_rep_based">Set / Rep based</string>
     <string name="now_many_repetitions">How many repetitions do you want to take for each movement?</string>
 
+    <string name="dark_theme_title">Dark mode</string>
+    <string name="device_theme">Same as device theme</string>
+    <string name="light_theme">Always in light mode</string>
+    <string name="dark_theme">Always in dark mode</string>
+
     <string name="general">General</string>
     <string name="darkmode">Darkmode</string>
 
@@ -83,6 +88,7 @@
     <string name="all_four_twist">All four twist</string>
     <string name="wall_stretch">Wall stretch</string>
     <string name="squat">Squat</string>
+
 
 
 </resources>
