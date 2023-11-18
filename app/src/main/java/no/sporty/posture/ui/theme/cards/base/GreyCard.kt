@@ -1,5 +1,6 @@
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -13,11 +14,11 @@ import androidx.compose.ui.unit.dp
 import no.sporty.posture.extensions.conditional
 
 @Composable
-fun GreyCard(onClick: (() -> Unit)? = null, content: @Composable ColumnScope.() -> Unit) =
+fun GreyCard(onClick: (() -> Unit)? = null, padding: PaddingValues = PaddingValues(bottom = 8.dp), content: @Composable ColumnScope.() -> Unit) =
     Card(
         modifier = Modifier
             .clip(RoundedCornerShape(16.dp))
-            .padding(bottom = 8.dp)
+            .padding(padding)
             .conditional(onClick != null) { clickable { onClick?.let { it() } } }
             .fillMaxWidth(),
         content = content,
