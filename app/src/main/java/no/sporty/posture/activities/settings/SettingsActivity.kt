@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import no.sporty.posture.activities.addOrRemoveCustomExercise.AddOrRemoveCustomExerciseActivity
 
 class SettingsActivity : ComponentActivity() {
 
@@ -17,7 +18,8 @@ class SettingsActivity : ComponentActivity() {
 
         setContent {
             Settings(
-                onBackPressed = { onBackPressed() }
+                onBackPressed = { onBackPressedDispatcher.onBackPressed() },
+                onCustomExerciseClicked = { startActivity(AddOrRemoveCustomExerciseActivity.newIntent(this)) }
             )
         }
     }

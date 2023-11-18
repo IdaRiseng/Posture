@@ -6,11 +6,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -26,7 +21,7 @@ import no.sporty.posture.ui.theme.inputField.InputField
 @Composable
 fun SettingsGeneral(
     onDarkModeClicked: () -> Unit,
-    onLanguageClicked: () -> Unit,
+    onCustomExerciseClicked: () -> Unit,
     onIdeasSent: () -> Unit,
     onTroubleSent: () -> Unit
 ) {
@@ -40,7 +35,7 @@ fun SettingsGeneral(
         Spacer(modifier = Modifier.height(16.dp))
         SmallDisabledBlackText(textRes = R.string.general)
         ExpandableTextButton(textRes = R.string.darkmode, iconId = android.R.drawable.ic_delete, onClick = onDarkModeClicked)
-        ExpandableTextButton(textRes = R.string.custom_exercise, iconId = android.R.drawable.ic_delete, onClick = onLanguageClicked)
+        ExpandableTextButton(textRes = R.string.custom_exercise, iconId = android.R.drawable.ic_delete, onClick = onCustomExerciseClicked)
 
 
         Spacer(modifier = Modifier.height(32.dp))

@@ -29,6 +29,7 @@
         <activity android:name=".activities.settings.SettingsActivity"/>
         <activity android:name=".activities.customExercise.CreateCustomExerciseActivity"/>
         <activity android:name=".activities.setMovementCount.SetMovementCountActivity"/>
+        <activity android:name=".activities.addOrRemoveCustomExercise.AddOrRemoveCustomExerciseActivity"/>
         <activity android:name=".activities.movementRepCountdown.MovementRepCountdownActivity"/>
     </application>
 

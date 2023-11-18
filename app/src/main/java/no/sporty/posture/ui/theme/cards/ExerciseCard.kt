@@ -13,8 +13,10 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
@@ -52,23 +54,29 @@ fun ExerciseCard(exercise: Exercise, onClick: (Exercise) -> Unit) {
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun CustomExerciseCard(customExercise: CustomExercise, onClick: (CustomExercise) -> Unit, shakeController: ShakeController) {
+fun CustomExerciseCard(
+    customExercise: CustomExercise,
+    onClick: (CustomExercise) -> Unit,
+    shakeController: ShakeController? = null,
+    showDismissButton: Boolean = false,
+) {
     Column(
         modifier = Modifier
             .padding(bottom = 8.dp)
+            .clip(RoundedCornerShape(16.dp))
             .combinedClickable(
                 onClick = {
                     onClick(customExercise)
                 },
                 onLongClick = {
-                    shakeController.shake(ShakeConfig(true, translateX = 5f))
+                    shakeController?.shake(ShakeConfig(true, translateX = 5f))
                 },
             )
             .shake(shakeController)
     ) {
         GreyCard(
             padding = PaddingValues(),
-            onDismiss = if (shakeController.shakeConfig?.isShaking == true) {
+            onDismiss = if (showDismissButton || shakeController?.shakeConfig?.isShaking == true) {
                 { /* TODO */ }
             } else {
                 null

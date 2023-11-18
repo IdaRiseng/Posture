@@ -4,7 +4,6 @@ import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.layout.offset
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -32,12 +31,11 @@ fun Modifier.conditional(condition: Boolean, modifier: Modifier.() -> Modifier):
 /**
  * Set the color of the overscroll area on top.
  */
-@Composable
 fun Modifier.overScrollColor(
     scrollState: ScrollState,
     color: Color
-): Modifier {
-    return drawWithContent {
+): Modifier =
+    drawWithContent {
         drawContent()
         val height = if (scrollState.canScrollBackward) 0.dp else 4.dp
         drawRoundRect(
@@ -45,9 +43,10 @@ fun Modifier.overScrollColor(
             size = Size(this.size.width, height.toPx()),
         )
     }
-}
 
-fun Modifier.shake(shakeController: ShakeController) = composed {
+
+fun Modifier.shake(sc: ShakeController?) = composed {
+    val shakeController = sc ?: return@composed this
     shakeController.shakeConfig?.let { shakeConfig ->
         val shake = remember { Animatable(0f) }
         LaunchedEffect(shakeController.shakeConfig) {
