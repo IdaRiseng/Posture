@@ -24,11 +24,17 @@ class AddOrRemoveCustomExerciseActivity : ComponentActivity() {
         setContent {
             AddOrRemoveCustomExercise(
                 addCustomExerciseClicked = { startActivity(CreateCustomExerciseActivity.newIntent(this)) },
+                editCustomExerciseClicked = { startActivity(CreateCustomExerciseActivity.newIntent(this, it)) },
                 onBackPressed = { onBackPressedDispatcher.onBackPressed() },
+                onCustomDeleteClicked = {
+                    CustomExercisePrefs.removeCustomExercise(this, it)
+                    customExercises.value = CustomExercisePrefs.getCustomExerciseList(this)
+                },
                 customExercises = customExercises.value
             )
         }
     }
+
     override fun onResume() {
         super.onResume()
         customExercises.value = CustomExercisePrefs.getCustomExerciseList(this)

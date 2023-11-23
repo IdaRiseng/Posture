@@ -28,8 +28,10 @@ import no.sporty.posture.ui.theme.scaffold.PostureTopBarScaffold
 @Composable
 fun AddOrRemoveCustomExercise(
     addCustomExerciseClicked: () -> Unit,
+    editCustomExerciseClicked: (CustomExercise) -> Unit,
     onBackPressed: () -> Unit,
-    customExercises: List<CustomExercise>
+    customExercises: List<CustomExercise>,
+    onCustomDeleteClicked: (CustomExercise) -> Unit
 ) {
     PostureTopBarScaffold(onBackPressed, title = stringResource(id = R.string.custom_exercise)) {
         Column(
@@ -49,12 +51,12 @@ fun AddOrRemoveCustomExercise(
             ) {
                 Icon(imageVector = Icons.Default.Add, contentDescription = stringResource(id = R.string.add))
             }
-
             customExercises.forEach {
                 CustomExerciseCard(
                     customExercise = it,
-                    onClick = {},
-                    showDismissButton = true
+                    onClick = { editCustomExerciseClicked(it) },
+                    showDismissButton = true,
+                    onCustomExerciseDeleteClicked = onCustomDeleteClicked,
                 )
             }
         }

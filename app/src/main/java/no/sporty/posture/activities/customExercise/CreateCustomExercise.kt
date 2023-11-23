@@ -32,6 +32,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import no.sporty.posture.R
+import no.sporty.posture.model.CustomExercise
 import no.sporty.posture.model.Movement
 import no.sporty.posture.ui.theme.button.PrimaryButton
 import no.sporty.posture.ui.theme.cards.ButtonInfo
@@ -43,9 +44,11 @@ import no.sporty.posture.ui.theme.text.HeadlineBlackText
 @Composable
 fun CreateCustomExercise(
     onBackPressed: () -> Unit,
+    customExercise: CustomExercise?,
     onContinueClicked: (List<Movement>) -> Unit
 ) {
-    val addedMovements = remember { mutableStateListOf<Movement>() }
+    val addedMovements = remember { mutableStateListOf<Movement>().also { it.addAll(customExercise?.movements ?: emptyList()) } }
+
     PostureTopBarScaffold(onBackPressed, title = stringResource(id = R.string.custom_exercise)) {
         Column(
             Modifier

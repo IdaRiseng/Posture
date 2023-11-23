@@ -31,6 +31,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringArrayResource
+import androidx.compose.ui.text.capitalize
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import no.sporty.posture.R
@@ -96,7 +97,7 @@ fun CalendarGrid(
     val weekdays = stringArrayResource(id = R.array.weekdays)
 
     Column(modifier) {
-        HeadlineAlwaysWhiteText(text = dateString)
+        HeadlineAlwaysWhiteText(text = dateString.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() })
         LazyVerticalGrid(
             columns = GridCells.Fixed(7),
             modifier = Modifier.padding(top = 8.dp),

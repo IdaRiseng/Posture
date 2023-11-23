@@ -10,4 +10,8 @@ data class CustomExercise(
     val desc: String,
     val movements: List<Movement>,
     @DrawableRes val illustration: Int,
-): Parcelable
+): Parcelable {
+    companion object{
+        val TAG = CustomExercise::class.java.simpleName
+    }
+}

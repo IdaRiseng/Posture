@@ -29,7 +29,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.unit.dp
@@ -37,6 +39,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import no.sporty.posture.R
 import no.sporty.posture.model.Movement
+import no.sporty.posture.sharedPreferences.WorkoutSettingPrefs
 import no.sporty.posture.ui.theme.PostureTheme
 import no.sporty.posture.ui.theme.sharedElements.AlertDialog
 import no.sporty.posture.ui.theme.sharedElements.PostureWave
@@ -85,6 +88,7 @@ private fun CountDownView(
     movement: Movement,
     onFinish: () -> Unit
 ) {
+    val context = LocalContext.current
     Column(
         modifier = Modifier
             .background(MaterialTheme.colorScheme.background)
@@ -102,7 +106,7 @@ private fun CountDownView(
         }
         Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
             HeadlineBlackText(textRes = movement.title, padding = PaddingValues(16.dp))
-            CountDown(movement.durability) {
+            CountDown(WorkoutSettingPrefs.getTimeBasedWorkout(context) * 60L) {
                 onFinish()
             }
         }
@@ -120,6 +124,7 @@ private fun CountDown(
             modifier = Modifier
                 .padding(16.dp)
                 .fillMaxSize(),
+            strokeCap  = StrokeCap.Round,
             progress = timeLeftMs.toFloat() / durability.toFloat()
         )
         Column(

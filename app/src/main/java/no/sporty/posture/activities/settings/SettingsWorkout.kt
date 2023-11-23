@@ -16,6 +16,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.unit.dp
 import no.sporty.posture.R
 import no.sporty.posture.model.WorkoutSetting
@@ -53,7 +54,9 @@ fun SettingsWorkout() {
                 SettingsWorkoutExpanded(
                     textRes = R.string.how_long_movement,
                     startNumber = timeBasedLength,
+                    endText = R.plurals.minute,
                     onClick = {
+                        Toast.makeText(context, "Workout saved", Toast.LENGTH_LONG).show()
                         WorkoutSettingPrefs.saveTimeBasedWorkout(context, it)
                     }
                 )
@@ -72,7 +75,9 @@ fun SettingsWorkout() {
                 SettingsWorkoutExpanded(
                     textRes = R.string.now_many_repetitions,
                     startNumber = repBasedLength,
+                    endText = R.plurals.rep,
                     onClick = {
+                        Toast.makeText(context, "Workout saved", Toast.LENGTH_LONG).show()
                         WorkoutSettingPrefs.saveRepBasedWorkout(context, it)
                     }
                 )
@@ -82,13 +87,13 @@ fun SettingsWorkout() {
 }
 
 @Composable
-private fun SettingsWorkoutExpanded(@StringRes textRes: Int, startNumber: Int, onClick: (Int) -> Unit) {
+private fun SettingsWorkoutExpanded(@StringRes textRes: Int, startNumber: Int, endText: Int, onClick: (Int) -> Unit) {
     val number = remember { mutableIntStateOf(startNumber) }
 
     Column {
         BodyBlackText(textRes = textRes)
         Spacer(modifier = Modifier.height(16.dp))
-        NumberPicker(number = number)
+        NumberPicker(number = number, text = "${number.intValue} ${pluralStringResource(id = endText, count = number.intValue)}")
         Spacer(modifier = Modifier.height(8.dp))
         PrimaryButton(onClick = { onClick(number.intValue) }, textRes = R.string.save)
     }

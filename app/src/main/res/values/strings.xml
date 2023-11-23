@@ -61,6 +61,14 @@
     <string name="got_ideas">Got some good ideas?</string>
     <string name="trouble_with_app">Trouble with the app?</string>
     <string name="send">Send</string>
+    <plurals name="minute">
+        <item quantity="one">minute</item>
+        <item quantity="other">minutes</item>
+    </plurals>
+    <plurals name="rep">
+        <item quantity="one">rep</item>
+        <item quantity="other">reps</item>
+    </plurals>
 
     <array name="weekdays">
         <item>Mo</item>
@@ -72,8 +80,10 @@
         <item>Su</item>
     </array>
 
+    <!-- https://www.affirmations.dev -->
     <array name="simple_affirmations">
         <item>You are good enough</item>
+        <item>You are valuable</item>
     </array>
 
     <string name="custom_exercise">Custom exercise</string>

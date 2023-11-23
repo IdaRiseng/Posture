@@ -38,13 +38,14 @@ import no.sporty.posture.ui.theme.text.BodyBlackText
 @Composable
 fun CustomExerciseDesc(
     onBackPressed: () -> Unit,
+    customExercise: CustomExercise?,
     movements: List<Movement>,
     onSaveClicked: (CustomExercise) -> Unit
 ) {
     val context = LocalContext.current
-    var title by remember { mutableStateOf("") }
-    var desc by remember { mutableStateOf("") }
-    var chosenImage by remember { mutableStateOf<Int?>(null) }
+    var title by remember { mutableStateOf(customExercise?.title ?: "") }
+    var desc by remember { mutableStateOf(customExercise?.desc ?: "") }
+    var chosenImage by remember { mutableStateOf(customExercise?.illustration) }
 
     PostureTopBarScaffold(onBackPressed, title = stringResource(id = R.string.custom_exercise)) {
         Column(
@@ -102,13 +103,15 @@ fun CustomExerciseDesc(
 
                 Spacer(modifier = Modifier.height(16.dp))
                 PrimaryButton(onClick = {
-                    when{
+                    when {
                         chosenImage == null -> {
                             Toast.makeText(context, "Please select an image", Toast.LENGTH_LONG).show()
                         }
+
                         title.isBlank() -> {
                             Toast.makeText(context, "Please write a title", Toast.LENGTH_LONG).show()
                         }
+
                         else -> {
                             val customExercise = CustomExercise(
                                 title = title,

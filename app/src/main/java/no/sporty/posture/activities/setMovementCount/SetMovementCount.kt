@@ -17,6 +17,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import no.sporty.posture.R
 import no.sporty.posture.model.Exercise
@@ -24,6 +25,7 @@ import no.sporty.posture.model.ExerciseRepetitionsLength
 import no.sporty.posture.model.ExerciseTimeLength
 import no.sporty.posture.model.WorkoutSetting
 import no.sporty.posture.model.WorkoutSettingOption
+import no.sporty.posture.sharedPreferences.WorkoutSettingPrefs
 import no.sporty.posture.ui.theme.PostureTheme
 import no.sporty.posture.ui.theme.button.OnPrimaryOutlineButton
 import no.sporty.posture.ui.theme.checkbox.CheckboxText
@@ -57,14 +59,17 @@ fun SetMovementCount(
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun SelectTimeLength(exercise: Exercise, onContinueTimeClicked: (ExerciseTimeLength) -> Unit) {
+    val context = LocalContext.current
     var length by remember { mutableStateOf(ExerciseTimeLength.TWO_MINUTES) }
+    val settingsLength = WorkoutSettingPrefs.getTimeBasedWorkout(context)
+
     TitleAlwaysWhiteText(textRes = R.string.how_long_exercise)
     FlowRow {
         ExerciseTimeLength.values().forEach {
             CheckboxText(
                 text = "${it.length} minutes",
                 checked = length == it,
-                enabled = it.length - 1 <= exercise.movements.size,
+                enabled = it.length - 1 <= exercise.movements.size * settingsLength,
                 padding = PaddingValues(horizontal = 4.dp, vertical = 16.dp),
                 onCheckedChange = { length = it }
             )

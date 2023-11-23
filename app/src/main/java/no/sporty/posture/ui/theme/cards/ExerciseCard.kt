@@ -68,7 +68,8 @@ fun ExerciseCard(exercise: Exercise, onClick: (Exercise) -> Unit) {
 @Composable
 fun CustomExerciseCard(
     customExercise: CustomExercise,
-    onClick: (CustomExercise) -> Unit,
+    onCustomExerciseDeleteClicked: (CustomExercise) -> Unit,
+    onClick: () -> Unit,
     shakeController: ShakeController? = null,
     showDismissButton: Boolean = false,
 ) {
@@ -79,7 +80,7 @@ fun CustomExerciseCard(
             .clip(RoundedCornerShape(16.dp))
             .combinedClickable(
                 onClick = {
-                    onClick(customExercise)
+                    onClick()
                 },
                 onLongClick = {
                     shakeController?.shake(ShakeConfig(true, translateX = 5f))
@@ -113,15 +114,20 @@ fun CustomExerciseCard(
         }
     }
     if (showDismissDialog) {
-        DeleteCustomExerciseDialog(customExercise) {
-            showDismissDialog = false
-        }
+        DeleteCustomExerciseDialog(
+            customExercise = customExercise,
+            onCustomExerciseDeleteClicked = onCustomExerciseDeleteClicked,
+            onDismiss = { showDismissDialog = false }
+        )
     }
 }
 
 @Composable
-fun DeleteCustomExerciseDialog(customExercise: CustomExercise, onDismiss: () -> Unit) {
-    val context = LocalContext.current
+fun DeleteCustomExerciseDialog(
+    customExercise: CustomExercise,
+    onCustomExerciseDeleteClicked: (CustomExercise) -> Unit,
+    onDismiss: () -> Unit
+) {
     Dialog(onDismissRequest = onDismiss) {
         Column(
             Modifier
@@ -133,7 +139,7 @@ fun DeleteCustomExerciseDialog(customExercise: CustomExercise, onDismiss: () -> 
             BodyBlackText(text = "Do you really want to delete this")
             FilledTonalButton(
                 onClick = {
-                    CustomExercisePrefs.removeCustomExercise(context, customExercise)
+                    onCustomExerciseDeleteClicked(customExercise)
                     onDismiss()
                 }) {
                 BodyBlackText(text = stringResource(id = R.string.save))

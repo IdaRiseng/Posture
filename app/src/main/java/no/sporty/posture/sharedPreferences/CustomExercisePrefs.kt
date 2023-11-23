@@ -15,6 +15,14 @@ object CustomExercisePrefs {
         getSharedPreferences(context).edit().putString(CUSTOM_EXERCISE_LIST, GSON.toJson(newDatesDistinct)).apply()
     }
 
+    fun editCustomExercise(context: Context, oldExercise: CustomExercise, newExercise: CustomExercise) {
+        val oldList = getCustomExerciseList(context)
+        val newDates = oldList.toMutableList().apply { set(oldList.indexOf(oldExercise), newExercise) }
+        val newDatesDistinct = newDates.distinct()
+
+        getSharedPreferences(context).edit().putString(CUSTOM_EXERCISE_LIST, GSON.toJson(newDatesDistinct)).apply()
+    }
+
     fun getCustomExerciseList(context: Context): List<CustomExercise> {
         val json = getSharedPreferences(context).getString(CUSTOM_EXERCISE_LIST, null)
         return GSON.fromJson(json, object : TypeToken<List<CustomExercise>?>() {}.type) ?: emptyList()

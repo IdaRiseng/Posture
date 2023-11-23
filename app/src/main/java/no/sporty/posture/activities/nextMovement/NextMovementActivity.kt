@@ -17,9 +17,8 @@ import no.sporty.posture.sharedPreferences.WorkoutSettingPrefs
 class NextMovementActivity : ComponentActivity() {
 
     companion object {
-        const val CUSTOM_EXERCISE_TAG = "custom_exercise_tag"
         fun newIntent(context: Context, exercise: CustomExercise) = Intent(context, NextMovementActivity::class.java).apply {
-            putExtra(CUSTOM_EXERCISE_TAG, exercise)
+            putExtra(CustomExercise.TAG, exercise)
         }
     }
 
@@ -31,7 +30,7 @@ class NextMovementActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        exercise = intent.getParcelableExtra(CUSTOM_EXERCISE_TAG) ?: throw IllegalStateException("Should contain CustomExercise")
+        exercise = intent.getParcelableExtra(CustomExercise.TAG) ?: throw IllegalStateException("Should contain CustomExercise")
 
         setContent {
             NextMovement(

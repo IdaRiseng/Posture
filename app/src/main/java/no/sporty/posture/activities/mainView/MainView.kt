@@ -2,6 +2,10 @@ package no.sporty.posture.activities.mainView
 
 import SmallDisabledBlackText
 import android.widget.Toast
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Box
@@ -16,8 +20,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -35,6 +41,7 @@ import no.sporty.posture.model.ShakeController
 import no.sporty.posture.model.TopBarInfo
 import no.sporty.posture.model.rememberShakeController
 import no.sporty.posture.sharedPreferences.CustomExercisePrefs
+import no.sporty.posture.sharedPreferences.InfoCardPrefs
 import no.sporty.posture.ui.theme.PostureTheme
 import no.sporty.posture.ui.theme.cards.ButtonInfo
 import no.sporty.posture.ui.theme.cards.CustomExerciseCard
@@ -47,6 +54,7 @@ fun MainView(
     topBarInfo: TopBarInfo,
     exercises: List<Exercise>,
     customExercises: List<CustomExercise>,
+    onCustomExerciseDeleteClicked: (CustomExercise) -> Unit,
     onSettingsClicked: () -> Unit,
     onExerciseClicked: (Exercise) -> Unit,
     onCreateCustomExerciseClicked: () -> Unit,
@@ -71,7 +79,12 @@ fun MainView(
             MainTopBar(topBarInfo, onSettingsClicked)
             Column(Modifier.padding(16.dp)) {
                 Info(onCreateCustomExerciseClicked)
-                CustomExercises(customExercises, onCustomExerciseClicked, shakeController)
+                CustomExercises(
+                    customExercises = customExercises,
+                    onCustomExerciseClicked = onCustomExerciseClicked,
+                    onCustomExerciseDeleteClicked = onCustomExerciseDeleteClicked,
+                    shakeController = shakeController
+                )
                 Exercises(exercises, onExerciseClicked)
 
                 Column(
@@ -90,20 +103,37 @@ fun MainView(
 
 @Composable
 private fun Info(onButtonClicked: () -> Unit) {
-    HeadlineBlackText(textRes = R.string.info, padding = PaddingValues(vertical = 16.dp))
-    InfoCard(
-        title = R.string.info_thank_you_title,
-        desc = R.string.info_thank_you_desc,
-        icon = R.drawable.launcher_icon_round,
-        onDismiss = {/* TODO */ }
-    )
-    InfoCard(
-        title = R.string.info_custom_exercise_title,
-        desc = R.string.info_custom_exercise_desc,
-        buttonInfo = ButtonInfo(onButtonClicked, R.string.create),
-        image = R.drawable.launcher_icon,
-        onDismiss = {/* TODO */ }
-    )
+    val context = LocalContext.current
+    var thankYouCardVisible by remember { mutableStateOf(!InfoCardPrefs.isThankYouCardDismissed(context)) }
+    var customExerciseCardVisible by remember { mutableStateOf(!InfoCardPrefs.isCustomExerciseCarDismissed(context)) }
+
+    AnimatedVisibility(visible = thankYouCardVisible || customExerciseCardVisible) {
+        HeadlineBlackText(textRes = R.string.info, padding = PaddingValues(vertical = 16.dp))
+    }
+
+    AnimatedVisibility(visible = thankYouCardVisible, exit = fadeOut() + slideOutVertically()) {
+        InfoCard(
+            title = R.string.info_thank_you_title,
+            desc = R.string.info_thank_you_desc,
+            icon = R.drawable.launcher_icon_round,
+            onDismiss = {
+                InfoCardPrefs.thankYouCardDismissed(context)
+                thankYouCardVisible = false
+            }
+        )
+    }
+    AnimatedVisibility(visible = customExerciseCardVisible, exit = fadeOut() + slideOutVertically()) {
+        InfoCard(
+            title = R.string.info_custom_exercise_title,
+            desc = R.string.info_custom_exercise_desc,
+            buttonInfo = ButtonInfo(onButtonClicked, R.string.create),
+            image = R.drawable.launcher_icon,
+            onDismiss = {
+                InfoCardPrefs.customExerciseCardDismissed(context)
+                customExerciseCardVisible = false
+            }
+        )
+    }
 }
 
 @Composable
@@ -115,11 +145,21 @@ private fun Exercises(exercises: List<Exercise>, onExerciseClicked: (Exercise) -
 }
 
 @Composable
-private fun CustomExercises(customExercises: List<CustomExercise>, onCustomExerciseClicked: (CustomExercise) -> Unit, shakeController: ShakeController) {
+private fun CustomExercises(
+    customExercises: List<CustomExercise>,
+    onCustomExerciseClicked: (CustomExercise) -> Unit,
+    onCustomExerciseDeleteClicked: (CustomExercise) -> Unit,
+    shakeController: ShakeController
+) {
     if (customExercises.isNotEmpty()) {
         HeadlineBlackText(textRes = R.string.custom_exercise, padding = PaddingValues(vertical = 16.dp))
         customExercises.forEach {
-            CustomExerciseCard(it, onCustomExerciseClicked, shakeController)
+            CustomExerciseCard(
+                customExercise = it,
+                onClick = { onCustomExerciseClicked(it) },
+                onCustomExerciseDeleteClicked = onCustomExerciseDeleteClicked,
+                shakeController = shakeController
+            )
         }
     }
 }

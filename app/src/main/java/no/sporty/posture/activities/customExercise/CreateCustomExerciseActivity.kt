@@ -8,23 +8,29 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import no.sporty.posture.activities.customExerciseDesc.CustomExerciseDescActivity
+import no.sporty.posture.model.CustomExercise
 import no.sporty.posture.model.SelectedMovements
 
 class CreateCustomExerciseActivity : ComponentActivity() {
 
     companion object {
-        fun newIntent(context: Context) = Intent(context, CreateCustomExerciseActivity::class.java)
+        fun newIntent(context: Context, customExercise: CustomExercise? = null) = Intent(context, CreateCustomExerciseActivity::class.java).apply {
+            putExtra(CustomExercise.TAG, customExercise)
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val customExercise: CustomExercise? = intent.getParcelableExtra(CustomExercise.TAG)
+
 
         setContent {
             CreateCustomExercise(
                 onBackPressed = { onBackPressed() },
+                customExercise = customExercise,
                 onContinueClicked = { movements ->
                     val selectedMovements = SelectedMovements(movements)
-                    startCustomExerciseResult.launch(CustomExerciseDescActivity.newIntent(this, selectedMovements))
+                    startCustomExerciseResult.launch(CustomExerciseDescActivity.newIntent(this, selectedMovements, customExercise))
                 }
             )
         }

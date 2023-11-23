@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.dp
 import no.sporty.posture.ui.theme.text.BodyBlackText
 
 @Composable
-fun NumberPicker(number: MutableState<Int>) {
+fun NumberPicker(number: MutableState<Int>, text: String = "${number.value}", onNumberChanged: (Int) -> Unit = {}) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -37,21 +37,25 @@ fun NumberPicker(number: MutableState<Int>) {
         IconButton(
             modifier = Modifier.weight(1f),
             onClick = {
-                if (number.value > 1)
+                if (number.value > 1) {
                     number.value -= 1
+                    onNumberChanged(number.value)
+                }
             }) {
             Icon(Icons.Default.KeyboardArrowLeft, contentDescription = "less")
         }
 
         Box(Modifier.weight(2f), contentAlignment = Alignment.Center) {
-            BodyBlackText(text = "${number.value}")
+            BodyBlackText(text = text)
         }
 
         IconButton(
             modifier = Modifier.weight(1f),
             onClick = {
-                if (number.value < 60)
+                if (number.value < 60) {
                     number.value += 1
+                    onNumberChanged(number.value)
+                }
             }) {
             Icon(Icons.Default.KeyboardArrowRight, contentDescription = "more")
         }

@@ -38,6 +38,10 @@ class MainActivity : ComponentActivity() {
                 onCreateCustomExerciseClicked = { createCustomExerciseResult.launch(CreateCustomExerciseActivity.newIntent(this)) },
                 onSettingsClicked = { startActivity(SettingsActivity.newIntent(this)) },
                 onExerciseClicked = { startExerciseResult.launch(SetMovementCountActivity.newIntent(this, it)) },
+                onCustomExerciseDeleteClicked = {
+                    CustomExercisePrefs.removeCustomExercise(this, it)
+                    customExercises.value = CustomExercisePrefs.getCustomExerciseList(this)
+                },
                 onCustomExerciseClicked = { startExerciseResult.launch(NextMovementActivity.newIntent(this, it)) }
             )
         }
