@@ -1,13 +1,10 @@
 package no.sporty.posture.ui.theme.cards
 
 import GreyCard
-import android.widget.Toast
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.combinedClickable
-import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
@@ -24,9 +21,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -37,11 +32,10 @@ import no.sporty.posture.model.CustomExercise
 import no.sporty.posture.model.Exercise
 import no.sporty.posture.model.ShakeConfig
 import no.sporty.posture.model.ShakeController
-import no.sporty.posture.model.rememberShakeController
-import no.sporty.posture.sharedPreferences.CustomExercisePrefs
 import no.sporty.posture.ui.theme.text.BodyBlackText
 import no.sporty.posture.ui.theme.text.HeadlineBlackText
 import no.sporty.posture.ui.theme.text.TitleBlackText
+import kotlin.random.Random
 
 @Composable
 fun ExerciseCard(exercise: Exercise, onClick: (Exercise) -> Unit) {
@@ -83,7 +77,7 @@ fun CustomExerciseCard(
                     onClick()
                 },
                 onLongClick = {
-                    shakeController?.shake(ShakeConfig(true, translateX = 5f))
+                    shakeController?.shake(ShakeConfig(true))
                 },
             )
             .shake(shakeController)

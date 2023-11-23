@@ -5,6 +5,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import kotlin.random.Random
 
 @Composable
 fun rememberShakeController(): ShakeController {
@@ -23,12 +24,12 @@ class ShakeController {
 data class ShakeConfig(
     val isShaking: Boolean,
     val intensity: Float = 10_000f,
-    val rotate: Float = 0.3f,
-    val rotateX: Float = 0f,
+    val rotate: Float = 0.7f,
+    val rotateX: Float = 0.3f,
     val rotateY: Float = 0f,
     val scaleX: Float = 0f,
     val scaleY: Float = 0f,
-    val translateX: Float = 0f,
+    val translateX: Float = 0.3f,
     val translateY: Float = 0f,
     val trigger: Long = System.currentTimeMillis(),
 )
