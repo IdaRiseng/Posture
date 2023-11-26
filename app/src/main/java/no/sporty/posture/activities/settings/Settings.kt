@@ -28,7 +28,6 @@ fun Settings(
     onThemeSelected: (Int) -> Unit
 ) {
     var isDarkmodeDialogVisible by remember { mutableStateOf(false) }
-    val context = LocalContext.current
 
     PostureTopBarScaffold(onBackPressed, title = stringResource(id = R.string.settings)) {
         Column(horizontalAlignment = CenterHorizontally) {
