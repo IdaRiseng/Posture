@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.core.app.ActivityCompat.recreate
 import no.sporty.posture.R
 import no.sporty.posture.sharedPreferences.ThemePrefs
 import no.sporty.posture.ui.theme.dialogs.RadioGroupDialog
@@ -23,7 +24,8 @@ import no.sporty.posture.ui.theme.scaffold.PostureTopBarScaffold
 @Composable
 fun Settings(
     onBackPressed: () -> Unit,
-    onCustomExerciseClicked: () -> Unit
+    onCustomExerciseClicked: () -> Unit,
+    onThemeSelected: (Int) -> Unit
 ) {
     var isDarkmodeDialogVisible by remember { mutableStateOf(false) }
     val context = LocalContext.current
@@ -51,10 +53,7 @@ fun Settings(
 
         if (isDarkmodeDialogVisible)
             DarkmodeDialog(
-                onThemeSelected = {
-                    ThemePrefs.writeSelectedTheme(context, it)
-                    AppCompatDelegate.setDefaultNightMode(it)
-                },
+                onThemeSelected = onThemeSelected,
                 onDismissDialog = { isDarkmodeDialogVisible = false }
             )
     }

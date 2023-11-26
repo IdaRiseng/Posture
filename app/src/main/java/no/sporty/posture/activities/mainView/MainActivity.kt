@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import no.sporty.posture.activities.customExercise.CreateCustomExerciseActivity
@@ -15,6 +16,7 @@ import no.sporty.posture.model.Exercise
 import no.sporty.posture.model.TopBarInfo
 import no.sporty.posture.sharedPreferences.CustomExercisePrefs
 import no.sporty.posture.sharedPreferences.StreakPrefs
+import no.sporty.posture.sharedPreferences.ThemePrefs
 import java.time.LocalDate
 
 class MainActivity : ComponentActivity() {
@@ -24,11 +26,13 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        ThemePrefs.readSelectedTheme(this)?.let { AppCompatDelegate.setDefaultNightMode(it) }
 
         val exercises = Exercise.values().asList() // hardcoded exercises
         customExercises.value = CustomExercisePrefs.getCustomExerciseList(this)
 
         StreakPrefs.checkStreakLogin(this)
+
 
         setContent {
             MainView(
@@ -36,7 +40,7 @@ class MainActivity : ComponentActivity() {
                 exercises = exercises,
                 customExercises = customExercises.value,
                 onCreateCustomExerciseClicked = { createCustomExerciseResult.launch(CreateCustomExerciseActivity.newIntent(this)) },
-                onSettingsClicked = { startActivity(SettingsActivity.newIntent(this)) },
+                onSettingsClicked = { settingsResult.launch(SettingsActivity.newIntent(this)) },
                 onExerciseClicked = { startExerciseResult.launch(SetMovementCountActivity.newIntent(this, it)) },
                 onCustomExerciseDeleteClicked = {
                     CustomExercisePrefs.removeCustomExercise(this, it)
@@ -44,6 +48,12 @@ class MainActivity : ComponentActivity() {
                 },
                 onCustomExerciseClicked = { startExerciseResult.launch(NextMovementActivity.newIntent(this, it)) }
             )
+        }
+    }
+
+    private var settingsResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+        if (it.resultCode == RESULT_OK) {
+            recreate()
         }
     }
 
