@@ -40,7 +40,7 @@ fun ExpandableTextButton(
             .clip(RoundedCornerShape(26.dp))
             .clickable { onClick() }
             .fillMaxWidth()
-            .background(MaterialTheme.colorScheme.primaryContainer)
+            .background(MaterialTheme.colorScheme.tertiary)
             .padding(16.dp)
     ) {
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {

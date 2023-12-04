@@ -8,6 +8,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CardElevation
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -26,6 +27,7 @@ fun GreyCard(
     content: @Composable () -> Unit
 ) =
     Card(
+        elevation = CardDefaults.cardElevation(0.dp),
         modifier = Modifier
             .clip(RoundedCornerShape(16.dp))
             .padding(padding)
@@ -40,7 +42,7 @@ fun GreyCard(
             }
         },
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.primaryContainer
+            containerColor = MaterialTheme.colorScheme.tertiary
         )
     )
 

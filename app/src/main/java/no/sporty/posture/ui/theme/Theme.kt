@@ -1,21 +1,19 @@
 package no.sporty.posture.ui.theme
 
 import android.app.Activity
-import android.os.Build
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material.ripple.LocalRippleTheme
+import androidx.compose.material.ripple.RippleAlpha
+import androidx.compose.material.ripple.RippleTheme
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
-import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.SideEffect
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
-import no.sporty.posture.sharedPreferences.ThemePrefs
 
 
 @Composable
@@ -45,6 +43,21 @@ fun PostureTheme(nightMode: Int = AppCompatDelegate.getDefaultNightMode(), conte
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
-        content = content
+        content = {
+            CompositionLocalProvider(
+                LocalRippleTheme provides PostureRippleTheme,
+                content = content
+            )
+        })
+}
+
+private object PostureRippleTheme : RippleTheme {
+    @Composable
+    override fun defaultColor(): Color = MaterialTheme.colorScheme.secondary
+
+    @Composable
+    override fun rippleAlpha(): RippleAlpha = RippleTheme.defaultRippleAlpha(
+        Color.Black,
+        lightTheme = !isSystemInDarkTheme()
     )
 }
