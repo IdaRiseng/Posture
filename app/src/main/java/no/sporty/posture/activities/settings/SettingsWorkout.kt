@@ -43,7 +43,7 @@ fun SettingsWorkout() {
         SmallDisabledBlackText(textRes = R.string.options)
         ExpandableTextButton(
             textRes = R.string.time_based,
-            iconId = android.R.drawable.ic_delete,
+            iconId = R.drawable.ic_timer,
             isSelected = workoutSetting.workoutSettingOption == WorkoutSettingOption.TIME_BASED,
             showCheckBox = true,
             onClick = {
@@ -64,7 +64,7 @@ fun SettingsWorkout() {
         )
         ExpandableTextButton(
             textRes = R.string.set_rep_based,
-            iconId = android.R.drawable.ic_delete,
+            iconId = R.drawable.ic_repeat,
             isSelected = workoutSetting.workoutSettingOption == WorkoutSettingOption.SET_REP_BASED,
             showCheckBox = true,
             onClick = {

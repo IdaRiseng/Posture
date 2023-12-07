@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -44,7 +45,7 @@ fun ExpandableTextButton(
             .padding(16.dp)
     ) {
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-            Icon(painter = painterResource(id = iconId), modifier = Modifier.padding(end = 16.dp), contentDescription = stringResource(id = textRes ), tint = Color.Black)
+            Icon(painter = painterResource(id = iconId), modifier = Modifier.size(38.dp).padding(end = 16.dp), contentDescription = stringResource(id = textRes ), tint = Color.Black)
             TitleBlackText(textRes = textRes)
             if (showCheckBox) {
                 Box(Modifier.weight(1f), contentAlignment = Alignment.CenterEnd) {

@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.ContentAlpha
 import androidx.compose.material.IconButton
 import androidx.compose.material3.Icon
@@ -71,7 +72,8 @@ fun MainTopBar(topBarInfo: TopBarInfo, onSettingsClicked: () -> Unit) {
                 .padding(16.dp), onClick = onSettingsClicked
         ) {
             Icon(
-                painter = painterResource(id = android.R.drawable.ic_menu_preferences),
+                painter = painterResource(id = R.drawable.ic_profile_settings),
+                modifier = Modifier.size(32.dp),
                 contentDescription = null,
                 tint = Color.White
             )

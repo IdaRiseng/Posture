@@ -34,15 +34,15 @@ fun SettingsGeneral(
 
         Spacer(modifier = Modifier.height(16.dp))
         SmallDisabledBlackText(textRes = R.string.general)
-        ExpandableTextButton(textRes = R.string.darkmode, iconId = android.R.drawable.ic_delete, onClick = onDarkModeClicked)
-        ExpandableTextButton(textRes = R.string.custom_exercise, iconId = android.R.drawable.ic_delete, onClick = onCustomExerciseClicked)
+        ExpandableTextButton(textRes = R.string.darkmode, iconId = R.drawable.ic_darkmode, onClick = onDarkModeClicked)
+        ExpandableTextButton(textRes = R.string.custom_exercise, iconId = R.drawable.ic_customize, onClick = onCustomExerciseClicked)
 
 
         Spacer(modifier = Modifier.height(32.dp))
         SmallDisabledBlackText(text = "Feedback")
         ExpandableTextButton(
             textRes = R.string.got_ideas,
-            iconId = android.R.drawable.ic_delete,
+            iconId = R.drawable.ic_lightbulb,
             isSelected = expandedButton == R.string.got_ideas,
             onClick = {
                 expandedButton = if (expandedButton == R.string.got_ideas) null else R.string.got_ideas
@@ -52,7 +52,7 @@ fun SettingsGeneral(
         }
         ExpandableTextButton(
             textRes = R.string.trouble_with_app,
-            iconId = android.R.drawable.ic_delete,
+            iconId = R.drawable.ic_warning_triangle,
             isSelected = expandedButton == R.string.trouble_with_app,
             onClick = {
                 expandedButton = if (expandedButton == R.string.trouble_with_app) null else R.string.trouble_with_app
