@@ -2,6 +2,7 @@ package no.sporty.posture.activities.mainView.elements
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -176,7 +177,11 @@ fun CalendarDay(
         Text(
             text = DateTimeFormatter.ofPattern("d", Locale.getDefault()).format(day),
             textAlign = TextAlign.Center,
-            color = if (isSelected) MaterialTheme.colorScheme.primary else Color.White
+            color = when{
+                isSelected -> MaterialTheme.colorScheme.primary
+                isSystemInDarkTheme() && hasDoneExercise -> Color.Black
+                else -> Color.White
+            }
         )
     }
 }
