@@ -43,6 +43,7 @@ import no.sporty.posture.sharedPreferences.WorkoutSettingPrefs
 import no.sporty.posture.ui.theme.PostureTheme
 import no.sporty.posture.ui.theme.sharedElements.AlertDialog
 import no.sporty.posture.ui.theme.sharedElements.PostureWave
+import no.sporty.posture.ui.theme.sharedElements.VideoPlayer
 import no.sporty.posture.ui.theme.text.HeadlineAlwaysWhiteText
 import no.sporty.posture.ui.theme.text.HeadlineBlackText
 
@@ -96,17 +97,12 @@ private fun CountDownView(
             .verticalScroll(rememberScrollState())
     ) {
         Box {
-            Image(
-                painter = painterResource(id = movement.video),
-                contentDescription = null,
-                modifier = Modifier.fillMaxWidth(),
-                contentScale = ContentScale.FillWidth
-            )
+            VideoPlayer(res = movement.video)
             PostureWave(Modifier.align(Alignment.BottomCenter))
         }
         Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
             HeadlineBlackText(textRes = movement.title, padding = PaddingValues(16.dp))
-            CountDown(WorkoutSettingPrefs.getTimeBasedWorkout(context) * 60L) {
+            CountDown(60L) {
                 onFinish()
             }
         }
