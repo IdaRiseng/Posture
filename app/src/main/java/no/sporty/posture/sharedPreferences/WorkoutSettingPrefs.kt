@@ -18,17 +18,17 @@ object WorkoutSettingPrefs {
         return GSON.fromJson(json, object : TypeToken<WorkoutSetting?>() {}.type) ?: WorkoutSetting()
     }
 
-    fun saveTimeBasedWorkout(context: Context, time: Int) {
-        getSharedPreferences(context).edit().putInt(TIME_BASED_WORKOUT, time).apply()
+    fun saveTimeBasedWorkout(context: Context, time: Float) {
+        getSharedPreferences(context).edit().putFloat(TIME_BASED_WORKOUT, time).apply()
     }
 
-    fun getTimeBasedWorkout(context: Context) = getSharedPreferences(context).getInt(TIME_BASED_WORKOUT, 1)
+    fun getTimeBasedWorkout(context: Context) = getSharedPreferences(context).getFloat(TIME_BASED_WORKOUT, 1f)
 
 
-    fun saveRepBasedWorkout(context: Context, rep: Int) {
-        getSharedPreferences(context).edit().putInt(REP_BASED_WORKOUT, rep).apply()
+    fun saveRepBasedWorkout(context: Context, rep: Float) {
+        getSharedPreferences(context).edit().putFloat(REP_BASED_WORKOUT, rep).apply()
     }
 
-    fun getRepBasedWorkout(context: Context) = getSharedPreferences(context).getInt(REP_BASED_WORKOUT, 4)
+    fun getRepBasedWorkout(context: Context) = getSharedPreferences(context).getFloat(REP_BASED_WORKOUT, 4f)
 
 }

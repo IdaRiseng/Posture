@@ -23,6 +23,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -38,6 +39,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.delay
 import no.sporty.posture.R
+import no.sporty.posture.extensions.formatZeros
 import no.sporty.posture.model.Movement
 import no.sporty.posture.sharedPreferences.WorkoutSettingPrefs
 import no.sporty.posture.ui.theme.PostureTheme
@@ -92,7 +94,7 @@ private fun CountDownView(
     onFinish: () -> Unit
 ) {
     val context = LocalContext.current
-    var countDown by rememberSaveable { mutableIntStateOf(WorkoutSettingPrefs.getRepBasedWorkout(context)) }
+    var countDown by rememberSaveable { mutableFloatStateOf(WorkoutSettingPrefs.getRepBasedWorkout(context)) }
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -111,8 +113,8 @@ private fun CountDownView(
             BodyBlackText(textRes = R.string.repetitions_left)
             Spacer(modifier = Modifier.height(32.dp))
 
-            if (countDown != 0) BigHeadlineBlackText(text = countDown.toString())
-            AnimatedVisibility(visible = countDown == 0, enter = scaleIn()) {
+            if (countDown != 0f) BigHeadlineBlackText(text = countDown.formatZeros())
+            AnimatedVisibility(visible = countDown == 0f, enter = scaleIn()) {
                 BigHeadlineBlackText(stringArrayResource(id = R.array.positive_words).random())
                 onFinish()
             }

@@ -24,6 +24,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -38,6 +39,7 @@ import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import no.sporty.posture.R
+import no.sporty.posture.extensions.formatZeros
 import no.sporty.posture.model.Movement
 import no.sporty.posture.sharedPreferences.WorkoutSettingPrefs
 import no.sporty.posture.ui.theme.PostureTheme
@@ -102,7 +104,7 @@ private fun CountDownView(
         }
         Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
             HeadlineBlackText(textRes = movement.title, padding = PaddingValues(16.dp))
-            CountDown(WorkoutSettingPrefs.getTimeBasedWorkout(context) * 60L) {
+            CountDown(WorkoutSettingPrefs.getTimeBasedWorkout(context) * 60f) {
                 onFinish()
             }
         }
@@ -111,7 +113,7 @@ private fun CountDownView(
 
 @Composable
 private fun CountDown(
-    durability: Long,
+    durability: Float,
     onFinish: () -> Unit
 ) {
     val timeLeftMs by rememberCountDownTimerState(durability)
@@ -121,7 +123,7 @@ private fun CountDown(
                 .padding(16.dp)
                 .fillMaxSize(),
             strokeCap  = StrokeCap.Round,
-            progress = timeLeftMs.toFloat() / durability.toFloat()
+            progress = timeLeftMs / durability
         )
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -129,7 +131,7 @@ private fun CountDown(
             verticalArrangement = Arrangement.Center
         ) {
             if (timeLeftMs > 0) {
-                BigHeadlineBlackText(timeLeftMs.toString())
+                BigHeadlineBlackText(timeLeftMs.formatZeros())
             }
             AnimatedVisibility(visible = timeLeftMs <= 0, enter = scaleIn()) {
                 HeadlineBlackText(stringArrayResource(id = R.array.positive_words).random())
@@ -140,13 +142,13 @@ private fun CountDown(
 }
 
 @Composable
-private fun rememberCountDownTimerState(initialMillis: Long): MutableState<Long> {
-    val step: Long = 1 //countdown seconds
-    val timeLeft = remember { mutableLongStateOf(initialMillis) }
+private fun rememberCountDownTimerState(initialMillis: Float): MutableState<Float> {
+    val step = 1f //countdown seconds
+    val timeLeft = remember { mutableFloatStateOf(initialMillis) }
     LaunchedEffect(initialMillis, step) {
-        while (isActive && timeLeft.longValue > 0) {
-            timeLeft.longValue = (timeLeft.longValue - step).coerceAtLeast(0)
-            delay(step * 1000)
+        while (isActive && timeLeft.floatValue > 0) {
+            timeLeft.floatValue = (timeLeft.floatValue - step).coerceAtLeast(0f)
+            delay(step.toLong() * 1000)
         }
     }
     return timeLeft

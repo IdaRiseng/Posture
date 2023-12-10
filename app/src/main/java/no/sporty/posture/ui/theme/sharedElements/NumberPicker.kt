@@ -28,7 +28,12 @@ import androidx.compose.ui.unit.dp
 import no.sporty.posture.ui.theme.text.BodyBlackText
 
 @Composable
-fun NumberPicker(number: MutableState<Int>, text: String = "${number.value}", onNumberChanged: (Int) -> Unit = {}) {
+fun NumberPicker(
+    number: MutableState<Float>,
+    isTimeBased: Boolean,
+    text: String = "${number.value}",
+    onNumberChanged: (Float) -> Unit = {}
+) {
     val iconColor = if (isSystemInDarkTheme()) Color.White else Color.Black
     Row(
         modifier = Modifier
@@ -40,9 +45,16 @@ fun NumberPicker(number: MutableState<Int>, text: String = "${number.value}", on
         IconButton(
             modifier = Modifier.weight(1f),
             onClick = {
-                if (number.value > 1) {
-                    number.value -= 1
-                    onNumberChanged(number.value)
+                when {
+                    number.value == 1f && isTimeBased -> {
+                        number.value -= 0.5f
+                        onNumberChanged(number.value)
+                    }
+
+                    number.value > 1f -> {
+                        number.value -= 1.0f
+                        onNumberChanged(number.value)
+                    }
                 }
             }) {
             Icon(Icons.Default.KeyboardArrowLeft, contentDescription = "less", tint = iconColor)
@@ -55,9 +67,16 @@ fun NumberPicker(number: MutableState<Int>, text: String = "${number.value}", on
         IconButton(
             modifier = Modifier.weight(1f),
             onClick = {
-                if (number.value < 60) {
-                    number.value += 1
-                    onNumberChanged(number.value)
+                when {
+                    number.value == 0.5f && isTimeBased -> {
+                        number.value += 0.5f
+                        onNumberChanged(number.value)
+                    }
+
+                    number.value < 60f -> {
+                        number.value += 1f
+                        onNumberChanged(number.value)
+                    }
                 }
             }) {
             Icon(Icons.Default.KeyboardArrowRight, contentDescription = "more", tint = iconColor)
