@@ -18,6 +18,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -45,7 +46,7 @@ fun CustomExerciseDesc(
     val context = LocalContext.current
     var title by remember { mutableStateOf(customExercise?.title ?: "") }
     var desc by remember { mutableStateOf(customExercise?.desc ?: "") }
-    var chosenImage by remember { mutableStateOf(customExercise?.illustration) }
+    var chosenImage by remember { mutableIntStateOf(customExercise?.illustration ?: movements.first().illustration) }
 
     PostureTopBarScaffold(onBackPressed, title = stringResource(id = R.string.custom_exercise)) {
         Column(
@@ -60,18 +61,13 @@ fun CustomExerciseDesc(
                     .background(MaterialTheme.colorScheme.tertiary),
                 contentAlignment = Alignment.Center
             ) {
-                if (chosenImage == null) {
-                    Image(painter = painterResource(id = android.R.drawable.ic_menu_camera), contentDescription = "take a picture")
-                } else {
-                    chosenImage?.let {
-                        Image(
-                            modifier = Modifier.fillMaxWidth(),
-                            painter = painterResource(id = it),
-                            contentDescription = "picture"
-                        )
-                    }
-                }
+                Image(
+                    modifier = Modifier.fillMaxWidth(),
+                    painter = painterResource(id = chosenImage),
+                    contentDescription = "picture"
+                )
             }
+
 
             Column(Modifier.padding(16.dp)) {
                 Row(
