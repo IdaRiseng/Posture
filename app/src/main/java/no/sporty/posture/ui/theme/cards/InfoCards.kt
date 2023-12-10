@@ -4,6 +4,7 @@ import GreyCard
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -23,6 +24,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
@@ -98,6 +100,7 @@ fun InfoCard(
                 Icon(
                     painter = painterResource(id = it),
                     contentDescription = null,
+                    tint = if (isSystemInDarkTheme()) Color.White else Color.Black,
                     modifier = Modifier
                         .padding(start = 16.dp, top = 16.dp)
                         .size(36.dp)
