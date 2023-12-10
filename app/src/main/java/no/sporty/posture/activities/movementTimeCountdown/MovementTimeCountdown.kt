@@ -102,7 +102,7 @@ private fun CountDownView(
         }
         Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
             HeadlineBlackText(textRes = movement.title, padding = PaddingValues(16.dp))
-            CountDown(60L) {
+            CountDown(WorkoutSettingPrefs.getTimeBasedWorkout(context) * 60L) {
                 onFinish()
             }
         }

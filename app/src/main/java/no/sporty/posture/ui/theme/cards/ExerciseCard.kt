@@ -129,14 +129,15 @@ fun DeleteCustomExerciseDialog(
                 .background(MaterialTheme.colorScheme.background)
                 .padding(16.dp)
         ) {
-            TitleBlackText(textRes = R.string.add)
-            BodyBlackText(text = "Do you really want to delete this")
+            TitleBlackText(textRes = R.string.delete)
+            BodyBlackText(textRes = R.string.do_you_want_to_delete)
+            Spacer(modifier = Modifier.height(16.dp))
             FilledTonalButton(
                 onClick = {
                     onCustomExerciseDeleteClicked(customExercise)
                     onDismiss()
                 }) {
-                BodyBlackText(text = stringResource(id = R.string.save))
+                BodyBlackText(text = stringResource(id = R.string.delete))
             }
         }
     }

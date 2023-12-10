@@ -1,7 +1,6 @@
 package no.sporty.posture.activities.settings
 
 import androidx.appcompat.app.AppCompatDelegate
-import no.sporty.posture.ui.theme.tabs.Tab
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
@@ -15,17 +14,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.core.app.ActivityCompat.recreate
 import no.sporty.posture.R
 import no.sporty.posture.sharedPreferences.ThemePrefs
 import no.sporty.posture.ui.theme.dialogs.RadioGroupDialog
 import no.sporty.posture.ui.theme.scaffold.PostureTopBarScaffold
+import no.sporty.posture.ui.theme.tabs.Tab
+
 
 @Composable
 fun Settings(
     onBackPressed: () -> Unit,
     onCustomExerciseClicked: () -> Unit,
-    onThemeSelected: (Int) -> Unit
+    onThemeSelected: (Int) -> Unit,
+    onSendEmail: (Boolean) -> Unit,
 ) {
     var isDarkmodeDialogVisible by remember { mutableStateOf(false) }
 
@@ -41,12 +42,13 @@ fun Settings(
             if (selectedItem == 0) {
                 SettingsGeneral(
                     onDarkModeClicked = { isDarkmodeDialogVisible = true },
-                    onCustomExerciseClicked = onCustomExerciseClicked,
-                    onIdeasSent = {},
-                    onTroubleSent = {}
+                    onIdeasClicked = { onSendEmail(false) },
+                    onTroubleClicked = { onSendEmail(true) }
                 )
             } else {
-                SettingsWorkout()
+                SettingsWorkout(
+                    onCustomExerciseClicked = onCustomExerciseClicked,
+                )
             }
         }
 

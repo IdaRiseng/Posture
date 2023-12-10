@@ -44,6 +44,7 @@ import no.sporty.posture.ui.theme.PostureTheme
 import no.sporty.posture.ui.theme.button.PrimaryButton
 import no.sporty.posture.ui.theme.sharedElements.AlertDialog
 import no.sporty.posture.ui.theme.sharedElements.PostureWave
+import no.sporty.posture.ui.theme.sharedElements.VideoPlayer
 import no.sporty.posture.ui.theme.text.BodyBlackText
 import no.sporty.posture.ui.theme.text.HeadlineAlwaysWhiteText
 import no.sporty.posture.ui.theme.text.HeadlineBlackText
@@ -98,12 +99,7 @@ private fun CountDownView(
             .background(MaterialTheme.colorScheme.background)
     ) {
         Box {
-            Image(
-                painter = painterResource(id = movement.video),
-                contentDescription = null,
-                modifier = Modifier.fillMaxWidth(),
-                contentScale = ContentScale.FillWidth
-            )
+            VideoPlayer(res = movement.video)
             PostureWave(Modifier.align(Alignment.BottomCenter))
         }
         Column(

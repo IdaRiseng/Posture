@@ -28,7 +28,9 @@ import no.sporty.posture.ui.theme.sharedElements.NumberPicker
 import no.sporty.posture.ui.theme.text.BodyBlackText
 
 @Composable
-fun SettingsWorkout() {
+fun SettingsWorkout(
+    onCustomExerciseClicked: () -> Unit,
+) {
     Column(
         Modifier
             .fillMaxWidth()
@@ -38,6 +40,10 @@ fun SettingsWorkout() {
         var workoutSetting by remember { mutableStateOf(WorkoutSettingPrefs.getWorkoutOption(context)) }
         val timeBasedLength by remember { mutableIntStateOf(WorkoutSettingPrefs.getTimeBasedWorkout(context)) }
         val repBasedLength by remember { mutableIntStateOf(WorkoutSettingPrefs.getRepBasedWorkout(context)) }
+
+        Spacer(modifier = Modifier.height(16.dp))
+        SmallDisabledBlackText(textRes = R.string.general)
+        ExpandableTextButton(textRes = R.string.custom_exercise, iconId = R.drawable.ic_customize, onClick = onCustomExerciseClicked)
 
         Spacer(modifier = Modifier.height(16.dp))
         SmallDisabledBlackText(textRes = R.string.options)

@@ -21,55 +21,29 @@ import no.sporty.posture.ui.theme.inputField.InputField
 @Composable
 fun SettingsGeneral(
     onDarkModeClicked: () -> Unit,
-    onCustomExerciseClicked: () -> Unit,
-    onIdeasSent: () -> Unit,
-    onTroubleSent: () -> Unit
+    onIdeasClicked: () -> Unit,
+    onTroubleClicked: () -> Unit
 ) {
     Column(
         Modifier
             .fillMaxWidth()
             .padding(16.dp)
     ) {
-        var expandedButton by remember { mutableStateOf<Int?>(null) }
-
         Spacer(modifier = Modifier.height(16.dp))
         SmallDisabledBlackText(textRes = R.string.general)
         ExpandableTextButton(textRes = R.string.darkmode, iconId = R.drawable.ic_darkmode, onClick = onDarkModeClicked)
-        ExpandableTextButton(textRes = R.string.custom_exercise, iconId = R.drawable.ic_customize, onClick = onCustomExerciseClicked)
-
 
         Spacer(modifier = Modifier.height(32.dp))
         SmallDisabledBlackText(text = "Feedback")
         ExpandableTextButton(
             textRes = R.string.got_ideas,
             iconId = R.drawable.ic_lightbulb,
-            isSelected = expandedButton == R.string.got_ideas,
-            onClick = {
-                expandedButton = if (expandedButton == R.string.got_ideas) null else R.string.got_ideas
-            }
-        ) {
-            FeedbackView(onIdeasSent)
-        }
+            onClick = onIdeasClicked
+        )
         ExpandableTextButton(
             textRes = R.string.trouble_with_app,
             iconId = R.drawable.ic_warning_triangle,
-            isSelected = expandedButton == R.string.trouble_with_app,
-            onClick = {
-                expandedButton = if (expandedButton == R.string.trouble_with_app) null else R.string.trouble_with_app
-            }
-        ) {
-            FeedbackView(onTroubleSent)
-        }
-    }
-}
-
-
-@Composable
-private fun FeedbackView(onFeedbackSend: () -> Unit) {
-    var value by remember { mutableStateOf("") }
-
-    Column {
-        InputField(value = value, onValueChange = { value = it })
-        PrimaryButton(onClick = onFeedbackSend, textRes = R.string.send)
+            onClick = onTroubleClicked
+        )
     }
 }

@@ -51,6 +51,13 @@ fun PostureTheme(nightMode: Int = AppCompatDelegate.getDefaultNightMode(), conte
         })
 }
 
+@Composable
+fun ForceLightMode(content: @Composable () -> Unit) {
+    PostureTheme(nightMode = AppCompatDelegate.MODE_NIGHT_NO) {
+        content()
+    }
+}
+
 private object PostureRippleTheme : RippleTheme {
     @Composable
     override fun defaultColor(): Color = MaterialTheme.colorScheme.secondary

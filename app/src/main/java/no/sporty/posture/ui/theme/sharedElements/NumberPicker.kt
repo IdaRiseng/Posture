@@ -1,6 +1,7 @@
 package no.sporty.posture.ui.theme.sharedElements
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -21,12 +22,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import no.sporty.posture.ui.theme.text.BodyBlackText
 
 @Composable
 fun NumberPicker(number: MutableState<Int>, text: String = "${number.value}", onNumberChanged: (Int) -> Unit = {}) {
+    val iconColor = if (isSystemInDarkTheme()) Color.White else Color.Black
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -42,7 +45,7 @@ fun NumberPicker(number: MutableState<Int>, text: String = "${number.value}", on
                     onNumberChanged(number.value)
                 }
             }) {
-            Icon(Icons.Default.KeyboardArrowLeft, contentDescription = "less")
+            Icon(Icons.Default.KeyboardArrowLeft, contentDescription = "less", tint = iconColor)
         }
 
         Box(Modifier.weight(2f), contentAlignment = Alignment.Center) {
@@ -57,7 +60,7 @@ fun NumberPicker(number: MutableState<Int>, text: String = "${number.value}", on
                     onNumberChanged(number.value)
                 }
             }) {
-            Icon(Icons.Default.KeyboardArrowRight, contentDescription = "more")
+            Icon(Icons.Default.KeyboardArrowRight, contentDescription = "more", tint = iconColor)
         }
     }
 }

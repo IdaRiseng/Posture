@@ -5,6 +5,7 @@ import androidx.annotation.StringRes
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -45,7 +46,11 @@ fun ExpandableTextButton(
             .padding(16.dp)
     ) {
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-            Icon(painter = painterResource(id = iconId), modifier = Modifier.size(38.dp).padding(end = 16.dp), contentDescription = stringResource(id = textRes ), tint = Color.Black)
+            Icon(
+                painter = painterResource(id = iconId), modifier = Modifier
+                    .size(38.dp)
+                    .padding(end = 16.dp), contentDescription = stringResource(id = textRes), tint = if (isSystemInDarkTheme()) Color.White else Color.Black
+            )
             TitleBlackText(textRes = textRes)
             if (showCheckBox) {
                 Box(Modifier.weight(1f), contentAlignment = Alignment.CenterEnd) {

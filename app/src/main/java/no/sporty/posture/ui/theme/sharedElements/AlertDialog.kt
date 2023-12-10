@@ -18,7 +18,7 @@ fun AlertDialog(showAlert: MutableState<Boolean>, onExit: () -> Unit) {
                 }
             },
             dismissButton = {
-                Button(onClick = { onExit() }) {
+                Button(onClick = { showAlert.value = false }) {
                     Text(text = "No")
                 }
             },
