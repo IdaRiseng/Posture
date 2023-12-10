@@ -115,7 +115,7 @@ private fun Info(onButtonClicked: () -> Unit) {
         InfoCard(
             title = R.string.info_thank_you_title,
             desc = R.string.info_thank_you_desc,
-            icon = R.drawable.launcher_icon_round,
+            icon = R.drawable.ic_hand_heart,
             onDismiss = {
                 InfoCardPrefs.thankYouCardDismissed(context)
                 thankYouCardVisible = false
