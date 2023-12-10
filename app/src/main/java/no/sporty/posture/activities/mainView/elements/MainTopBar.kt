@@ -19,9 +19,13 @@ import androidx.compose.material.IconButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringArrayResource
@@ -117,6 +121,9 @@ private fun PagerView(content: @Composable ColumnScope.() -> Unit) {
 
 @Composable
 private fun CountView(@StringRes title: Int, count: Int) {
+    val context = LocalContext.current
+    val affirmation by rememberSaveable { mutableStateOf(context.resources.getStringArray(R.array.simple_affirmations).random()) }
+
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Spacer(modifier = Modifier.height(50.dp))
         HeadlineAlwaysWhiteText(text = stringResource(id = title))
@@ -125,6 +132,6 @@ private fun CountView(@StringRes title: Int, count: Int) {
         Spacer(modifier = Modifier.height(16.dp))
         BodyAlwaysWhiteText(text = pluralStringResource(id = R.plurals.day, count))
         Spacer(modifier = Modifier.height(50.dp))
-        SmallDisabledWhiteText(text = stringArrayResource(id = R.array.simple_affirmations).random())
+        SmallDisabledWhiteText(affirmation)
     }
 }

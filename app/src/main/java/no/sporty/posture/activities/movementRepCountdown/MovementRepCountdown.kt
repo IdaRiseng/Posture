@@ -94,6 +94,7 @@ private fun CountDownView(
     onFinish: () -> Unit
 ) {
     val context = LocalContext.current
+    val positiveWord by rememberSaveable { mutableStateOf(context.resources.getStringArray(R.array.positive_words).random()) }
     var countDown by rememberSaveable { mutableFloatStateOf(WorkoutSettingPrefs.getRepBasedWorkout(context)) }
     Column(
         modifier = Modifier
@@ -115,7 +116,7 @@ private fun CountDownView(
 
             if (countDown != 0f) BigHeadlineBlackText(text = countDown.formatZeros())
             AnimatedVisibility(visible = countDown == 0f, enter = scaleIn()) {
-                BigHeadlineBlackText(stringArrayResource(id = R.array.positive_words).random())
+                BigHeadlineBlackText(positiveWord)
                 onFinish()
             }
 

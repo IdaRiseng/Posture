@@ -28,6 +28,7 @@ import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.StrokeCap
@@ -116,7 +117,10 @@ private fun CountDown(
     durability: Float,
     onFinish: () -> Unit
 ) {
+    val context = LocalContext.current
+    val positiveWord by rememberSaveable { mutableStateOf(context.resources.getStringArray(R.array.positive_words).random()) }
     val timeLeftMs by rememberCountDownTimerState(durability)
+
     Box(Modifier.size(180.dp)) {
         CircularProgressIndicator(
             modifier = Modifier
@@ -134,7 +138,7 @@ private fun CountDown(
                 BigHeadlineBlackText(timeLeftMs.formatZeros())
             }
             AnimatedVisibility(visible = timeLeftMs <= 0, enter = scaleIn()) {
-                HeadlineBlackText(stringArrayResource(id = R.array.positive_words).random())
+                HeadlineBlackText(positiveWord)
                 onFinish()
             }
         }
