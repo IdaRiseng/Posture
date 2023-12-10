@@ -38,6 +38,7 @@ fun VideoPlayer(@RawRes res: Int) {
             .also { exoPlayer ->
                 exoPlayer.setMediaItem(mediaItem)
                 exoPlayer.prepare()
+                exoPlayer.volume = 0f
                 exoPlayer.playWhenReady = true
                 exoPlayer.repeatMode = REPEAT_MODE_ALL
             }
