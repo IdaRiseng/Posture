@@ -66,7 +66,6 @@ fun SettingsWorkout(
                     endText = R.plurals.minute,
                     isTimeBased = true,
                     onClick = {
-                        Toast.makeText(context, "Workout saved", Toast.LENGTH_LONG).show()
                         WorkoutSettingPrefs.saveTimeBasedWorkout(context, it)
                     }
                 )
@@ -88,7 +87,6 @@ fun SettingsWorkout(
                     endText = R.plurals.rep,
                     isTimeBased = false,
                     onClick = {
-                        Toast.makeText(context, "Workout saved", Toast.LENGTH_LONG).show()
                         WorkoutSettingPrefs.saveRepBasedWorkout(context, it)
                     }
                 )
@@ -118,9 +116,10 @@ private fun SettingsWorkoutExpanded(
         NumberPicker(
             number = number,
             isTimeBased = isTimeBased,
-            text = text
+            text = text,
+            onNumberChanged = {
+                onClick(number.floatValue)
+            }
         )
-        Spacer(modifier = Modifier.height(8.dp))
-        PrimaryButton(onClick = { onClick(number.floatValue) }, textRes = R.string.save)
     }
 }
