@@ -25,6 +25,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import no.sporty.posture.ui.theme.sharedElements.isDarkmode
 import no.sporty.posture.ui.theme.text.TitleBlackText
 
 @Composable
@@ -49,7 +50,7 @@ fun ExpandableTextButton(
             Icon(
                 painter = painterResource(id = iconId), modifier = Modifier
                     .size(38.dp)
-                    .padding(end = 16.dp), contentDescription = stringResource(id = textRes), tint = if (isSystemInDarkTheme()) Color.White else Color.Black
+                    .padding(end = 16.dp), contentDescription = stringResource(id = textRes), tint = if (isDarkmode()) Color.White else Color.Black
             )
             TitleBlackText(textRes = textRes)
             if (showCheckBox) {

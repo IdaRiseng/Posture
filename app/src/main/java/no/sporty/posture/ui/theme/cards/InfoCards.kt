@@ -3,6 +3,7 @@ package no.sporty.posture.ui.theme.cards
 import GreyCard
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
@@ -31,6 +32,7 @@ import androidx.compose.ui.unit.dp
 import no.sporty.posture.R
 import no.sporty.posture.ui.theme.PostureTheme
 import no.sporty.posture.ui.theme.button.PrimaryButton
+import no.sporty.posture.ui.theme.sharedElements.isDarkmode
 import no.sporty.posture.ui.theme.text.BodyBlackText
 import no.sporty.posture.ui.theme.text.HeadlineBlackText
 
@@ -96,7 +98,7 @@ fun InfoCard(
                 Icon(
                     painter = painterResource(id = it),
                     contentDescription = null,
-                    tint = if (isSystemInDarkTheme()) Color.White else Color.Black,
+                    tint = if (isDarkmode()) Color.White else Color.Black,
                     modifier = Modifier
                         .padding(start = 16.dp, top = 16.dp)
                         .size(36.dp)

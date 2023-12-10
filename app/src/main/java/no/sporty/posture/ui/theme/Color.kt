@@ -33,7 +33,7 @@ object PostureColor {
         surfaceVariant = lighterSignature, //Dialog!!!
         outline = signature, //clicked radio button
         outlineVariant = darkSignature, //not clicked radio button
-        )
+    )
 
     fun getDarkTheme() = darkColorScheme(
         primary = signature,
@@ -44,6 +44,13 @@ object PostureColor {
         onTertiary = white,
         background = darkerGrey,
         onBackground = white,
-        surface = darkerGrey
+        surface = darkerGrey,
+
+
+        //For dialog
+        secondaryContainer = darkerSignature, // dialog flat button
+        surfaceVariant = darkerSignature, //Dialog!!!
+        outline = signature, //clicked radio button
+        outlineVariant = lightSignature, //not clicked radio button
     )
 }

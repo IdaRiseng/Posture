@@ -36,6 +36,7 @@ import androidx.compose.ui.text.capitalize
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import no.sporty.posture.R
+import no.sporty.posture.ui.theme.sharedElements.isDarkmode
 import no.sporty.posture.ui.theme.text.HeadlineAlwaysWhiteText
 import no.sporty.posture.ui.theme.text.TitleAlwaysWhiteText
 import java.time.LocalDate
@@ -179,7 +180,7 @@ fun CalendarDay(
             textAlign = TextAlign.Center,
             color = when{
                 isSelected -> MaterialTheme.colorScheme.primary
-                isSystemInDarkTheme() && hasDoneExercise -> Color.Black
+                isDarkmode() && hasDoneExercise -> Color.Black
                 else -> Color.White
             }
         )

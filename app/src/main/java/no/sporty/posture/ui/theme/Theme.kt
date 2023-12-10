@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
+import no.sporty.posture.ui.theme.sharedElements.isDarkmode
 
 
 @Composable
@@ -65,6 +66,6 @@ private object PostureRippleTheme : RippleTheme {
     @Composable
     override fun rippleAlpha(): RippleAlpha = RippleTheme.defaultRippleAlpha(
         Color.Black,
-        lightTheme = !isSystemInDarkTheme()
+        lightTheme = !isDarkmode()
     )
 }

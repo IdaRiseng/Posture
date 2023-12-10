@@ -34,7 +34,7 @@ fun NumberPicker(
     text: String = "${number.value}",
     onNumberChanged: (Float) -> Unit = {}
 ) {
-    val iconColor = if (isSystemInDarkTheme()) Color.White else Color.Black
+    val iconColor = if (isDarkmode()) Color.White else Color.Black
     Row(
         modifier = Modifier
             .fillMaxWidth()
