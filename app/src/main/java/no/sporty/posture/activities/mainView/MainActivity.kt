@@ -96,12 +96,10 @@ class MainActivity : ComponentActivity() {
         val adRequest = AdRequest.Builder().build()
         InterstitialAd.load(this, "ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
             override fun onAdFailedToLoad(adError: LoadAdError) {
-                Toast.makeText(this@MainActivity, "it failed", Toast.LENGTH_LONG).show()
                 mInterstitialAd = null
             }
 
             override fun onAdLoaded(interstitialAd: InterstitialAd) {
-                Toast.makeText(this@MainActivity, "it worked!", Toast.LENGTH_LONG).show()
                 mInterstitialAd = interstitialAd
             }
         })
