@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Posture" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowAnimationStyle">@style/CustomAnimationActivity</item>
+        <item name="android:windowSplashScreenBackground">#B8614E</item>
+        <item name="android:windowSplashScreenBrandingImage">@drawable/launcher_icon</item>
+
+    </style>
+</resources>
