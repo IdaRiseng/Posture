@@ -2,7 +2,6 @@ package no.sporty.posture.activities.movementTimeCountdown
 
 import BigHeadlineBlackText
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.scaleIn
@@ -103,8 +102,8 @@ private fun CountDownView(
             VideoPlayer(res = movement.video)
             PostureWave(Modifier.align(Alignment.BottomCenter))
         }
-        Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
-            HeadlineBlackText(textRes = movement.title, padding = PaddingValues(16.dp))
+        Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center, modifier = Modifier.fillMaxWidth().weight(1f)) {
+            HeadlineBlackText(textRes = movement.title, padding = PaddingValues(bottom = 16.dp))
             CountDown(WorkoutSettingPrefs.getTimeBasedWorkout(context) * 60f) {
                 onFinish()
             }

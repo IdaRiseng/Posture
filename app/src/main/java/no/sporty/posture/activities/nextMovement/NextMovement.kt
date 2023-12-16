@@ -2,9 +2,11 @@ package no.sporty.posture.activities.nextMovement
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -35,10 +37,7 @@ import no.sporty.posture.ui.theme.text.HeadlineBlackText
 
 @Composable
 fun NextMovement(
-    continousMovement: MutableState<Boolean>,
-    step: MutableState<Int>,
-    exercise: CustomExercise,
-    onStartNextMovementClick: () -> Unit
+    continousMovement: MutableState<Boolean>, step: MutableState<Int>, exercise: CustomExercise, onStartNextMovementClick: () -> Unit
 ) {
     val movement = exercise.movements[step.value]
     val context = LocalContext.current
@@ -59,23 +58,30 @@ fun NextMovement(
                 )
                 PostureWave(Modifier.align(Alignment.BottomCenter))
             }
-            Column(Modifier.padding(16.dp)) {
-                BodyBlackText(text = exercise.title)
-                HeadlineBlackText(textRes = movement.title)
-                PrimaryButton(onClick = onStartNextMovementClick, textRes = R.string.start_exercise, Modifier.padding(vertical = 16.dp))
-
-                if (workoutSetting.workoutSettingOption == WorkoutSettingOption.TIME_BASED) {
-                    Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                        Checkbox(
-                            colors = CheckboxDefaults.colors(checkmarkColor = Color.White),
-                            modifier = Modifier.padding(0.dp),
-                            checked = continousMovement.value,
-                            onCheckedChange = { continousMovement.value = it }
-                        )
-                        BodyBlackText(textRes = R.string.continuous_exercise)
+            Column(Modifier.padding(16.dp).weight(1f), verticalArrangement = Arrangement.SpaceBetween) {
+                Column(Modifier.fillMaxWidth().weight(1f), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
+                    BodyBlackText(text = exercise.title)
+                    HeadlineBlackText(textRes = movement.title)
+                }
+                Column {
+                    if (workoutSetting.workoutSettingOption == WorkoutSettingOption.TIME_BASED) {
+                        ContinousExerciseCheckbox(continousMovement)
                     }
+                    PrimaryButton(onClick = onStartNextMovementClick, textRes = R.string.start_exercise, Modifier.padding(bottom = 16.dp))
                 }
             }
         }
+    }
+}
+
+
+@Composable
+private fun ContinousExerciseCheckbox(continousMovement: MutableState<Boolean>) {
+    Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+        Checkbox(colors = CheckboxDefaults.colors(checkmarkColor = Color.White),
+            modifier = Modifier.padding(0.dp),
+            checked = continousMovement.value,
+            onCheckedChange = { continousMovement.value = it })
+        BodyBlackText(textRes = R.string.continuous_exercise)
     }
 }
