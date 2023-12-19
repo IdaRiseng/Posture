@@ -7,6 +7,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.ui.res.stringResource
 import no.sporty.posture.activities.nextMovement.NextMovementActivity
 import no.sporty.posture.model.CustomExercise
 import no.sporty.posture.model.Exercise
@@ -36,8 +37,8 @@ class SetMovementCountActivity : ComponentActivity() {
                 workoutSetting = workoutSetting,
                 onContinueRepClicked = { exerciseLength ->
                     val customExercise = CustomExercise(
-                        title = exercise.title,
-                        desc = exercise.shortDesc,
+                        title = getString(exercise.title),
+                        desc = getString(exercise.shortDesc),
                         movements = exercise.movements.subList(0, exerciseLength.length),
                         illustration = exercise.illustration
                     )
@@ -46,8 +47,8 @@ class SetMovementCountActivity : ComponentActivity() {
                 },
                 onContinueTimeClicked = { exerciseLength ->
                     val customExercise = CustomExercise(
-                        title = exercise.title,
-                        desc = exercise.shortDesc,
+                        title = getString(exercise.title),
+                        desc = getString(exercise.shortDesc),
                         movements = exercise.movements.subList(0, exerciseLength.length),
                         illustration = exercise.illustration
                     )

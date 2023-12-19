@@ -1,17 +1,18 @@
 package no.sporty.posture.model
 
 import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 import no.sporty.posture.R
 
 enum class Exercise(
-    val title: String,
-    val shortDesc: String,
+    @StringRes val title: Int,
+    @StringRes val shortDesc: Int,
     @DrawableRes val illustration: Int,
     val movements: List<Movement>
 ) {
     BUILD_AND_STRETCH(
-        title = "Build and stretch",
-        shortDesc = "Strengthen your back muscles, stretch your front muscles",
+        title = R.string.build_and_stretch,
+        shortDesc = R.string.build_and_stretch_desc,
         illustration = R.drawable.launcher_icon,
         movements = listOf(
             Movement.YWTS,
@@ -24,8 +25,8 @@ enum class Exercise(
         )
     ),
     SIMPLE_OFFICE_EXERCISE(
-        title = "Simple office exercise",
-        shortDesc = "Exercises while sitting on a chair",
+        title = R.string.simple_office_exercise,
+        shortDesc = R.string.simple_office_exercise_desc,
         illustration = R.drawable.launcher_icon,
         movements = listOf(
             Movement.CHEST_OPENER,
@@ -39,8 +40,8 @@ enum class Exercise(
         )
     ),
     MINDFUL_STRETCHING(
-        title = "Mindful stretching",
-        shortDesc = "Slow down and relax any tension, remember your breathing",
+        title = R.string.mindful_stretching,
+        shortDesc = R.string.mindful_stretching_desc,
         illustration = R.drawable.launcher_icon,
         movements = listOf(
             Movement.ANGEL_WINGS,
@@ -56,8 +57,8 @@ enum class Exercise(
         )
     ),
     BED_EXERCISE(
-        title = "Bed exercises",
-        shortDesc = "Do exercises while laying in bed",
+        title = R.string.bed_exercise,
+        shortDesc = R.string.bed_exercise_desc,
         illustration = R.drawable.launcher_icon,
         movements = listOf(
             Movement.YWTS,
@@ -69,8 +70,8 @@ enum class Exercise(
         )
     ),
     AT_THE_GYM(
-        title = "At the gym",
-        shortDesc = "Use the tools at your gym for a better workout",
+        title = R.string.at_the_gym,
+        shortDesc = R.string.at_the_gym_desc,
         illustration = R.drawable.launcher_icon,
         movements = listOf(
             Movement.IDK,

@@ -14,7 +14,17 @@
     <string name="exercises">Exercises</string>
     <!-- Build and stretch -->
     <string name="build_and_stretch">Build and stretch</string>
-    
+    <string name="build_and_stretch_desc">Strengthen your back muscles, stretch your front muscles</string>
+    <string name="simple_office_exercise">Simple office exercise</string>
+    <string name="simple_office_exercise_desc">Exercises while sitting on a chair</string>
+    <string name="mindful_stretching">Mindful stretching</string>
+    <string name="mindful_stretching_desc">Slow down and relax any tension, remember your breathing</string>
+    <string name="bed_exercise">Bed exercises</string>
+    <string name="bed_exercise_desc">Do exercises while laying in bed</string>
+    <string name="at_the_gym">At the gym</string>
+    <string name="at_the_gym_desc">Use the tools at your gym for a better workout</string>
+
+
 
     <!-- Info cards -->
     <string name="info">Info</string>

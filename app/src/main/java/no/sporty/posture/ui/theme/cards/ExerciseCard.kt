@@ -50,9 +50,9 @@ fun ExerciseCard(exercise: Exercise, onClick: (Exercise) -> Unit) {
                 contentScale = ContentScale.FillWidth
             )
             Column(Modifier.padding(16.dp)) {
-                HeadlineBlackText(text = exercise.title)
+                HeadlineBlackText(textRes = exercise.title)
                 Spacer(modifier = Modifier.height(8.dp))
-                BodyBlackText(text = exercise.shortDesc)
+                BodyBlackText(textRes = exercise.shortDesc)
             }
         }
     }
