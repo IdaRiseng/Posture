@@ -53,7 +53,7 @@ class MainActivity : ComponentActivity() {
                     CustomExercisePrefs.removeCustomExercise(this, it)
                     customExercises.value = CustomExercisePrefs.getCustomExerciseList(this)
                 },
-                onCustomExerciseClicked = { startExerciseResult.launch(NextMovementActivity.newIntent(this, it)) }
+                onCustomExerciseClicked = { startExerciseResult.launch(NextMovementActivity.newIntent(this, it, it.movements.size - 1)) }
             )
         }
     }

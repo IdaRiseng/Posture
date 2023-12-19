@@ -39,20 +39,20 @@ class SetMovementCountActivity : ComponentActivity() {
                     val customExercise = CustomExercise(
                         title = getString(exercise.title),
                         desc = getString(exercise.shortDesc),
-                        movements = exercise.movements.subList(0, exerciseLength.length),
+                        movements = exercise.movements,
                         illustration = exercise.illustration
                     )
-                    startMovementResult.launch(NextMovementActivity.newIntent(this, customExercise))
+                    startMovementResult.launch(NextMovementActivity.newIntent(this, customExercise, exerciseLength.length))
 
                 },
                 onContinueTimeClicked = { exerciseLength ->
                     val customExercise = CustomExercise(
                         title = getString(exercise.title),
                         desc = getString(exercise.shortDesc),
-                        movements = exercise.movements.subList(0, exerciseLength.length),
+                        movements = exercise.movements,
                         illustration = exercise.illustration
                     )
-                    startMovementResult.launch(NextMovementActivity.newIntent(this, customExercise))
+                    startMovementResult.launch(NextMovementActivity.newIntent(this, customExercise, exerciseLength.length))
                 }
             )
         }
