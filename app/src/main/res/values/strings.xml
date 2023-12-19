@@ -90,20 +90,52 @@
 
     <string name="custom_exercise">Custom exercise</string>
     <string name="add_movements">Add at least one movement to create an exercise</string>
-
-
-    <!-- Movements -->
-    <string name="chest_opener">Chest opener</string>
-    <string name="wall_slide">Wall slide</string>
-    <string name="table_top_lift">Table top lift</string>
-    <string name="glute_bridge">Glute bridge</string>
-    <string name="all_four_twist">All four twist</string>
-    <string name="wall_stretch">Wall stretch</string>
-    <string name="squat">Squat</string>
-
     <string name="add">Add</string>
 
     <string name="app_trouble">I have trouble with Posture app</string>
     <string name="app_idea">I have an idea for the Posture app</string>
+
+
+    <!-- Movements -->
+    <!-- wall -->
+    <string name="wall_slide">Wall slide</string>
+    <string name="wall_touch">Wall touch</string>
+    <string name="door_frame_stretch">Door frame stretch</string>
+
+    <!-- Sitting -->
+    <string name="chest_opener">Chest opener</string>
+    <string name="neck_stretch">Neck stretch</string>
+    <string name="heart_opener">Heart opener</string>
+    <string name="lower_back_stretch">Lower back stretch</string>
+    <string name="back_stretch">Back stretch</string>
+    <string name="turtle_neck">Turtle neck</string>
+    <string name="angel_wings">Angel wings</string>
+    <string name="shoulder_circles">Shoulder circles</string>
+
+    <!-- Laying -->
+    <string name="table_top_lift">Table top lift</string>
+    <string name="glute_bridge">Glute bridge</string>
+    <string name="ab_stretch">Ab stretch</string>
+    <string name="down_dog_twist">Down dog twist</string>
+    <string name="back_squeeze_pulse">Back squeeze pulse</string>
+    <string name="back_swim">Back swim</string>
+    <string name="cat_cow">Cat cow</string>
+    <string name="thoracic_rotation">Thoracic rotation</string>
+    <string name="extended_puppy_pose">Extended puppy pose</string>
+    <string name="lotus_pose">Lotus pose</string>
+    <string name="shoulder_stretch">Shoulder stretch</string>
+    <string name="dynamic_camel">Dynamic camel</string>
+    <string name="y_w_t_s">YWTs</string>
+
+    <!-- Gym -->
+    <string name="idk">Idk</string>
+    <string name="idk_two">idk two</string>
+    <string name="idk_three">idk three</string>
+    <string name="shoulder_dislocation_foam_roller">Shoulder dislocation (Foam roller)</string>
+    <string name="quadruped_reach">Quadruped reach</string>
+    <string name="pull_aparts">Pull aparts</string>
+    <string name="prayer_stretch">Prayer stretch</string>
+    <string name="scarecrow">Scarecrow</string>
+    <string name="shoulder_dislocations">Shoulder dislocations</string>
 
 </resources>
