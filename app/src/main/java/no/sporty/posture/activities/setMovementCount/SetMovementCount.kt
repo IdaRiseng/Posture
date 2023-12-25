@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -44,8 +45,6 @@ fun SetMovementCount(
                 .fillMaxSize()
                 .background(MaterialTheme.colorScheme.primary)
                 .padding(16.dp),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             if (workoutSetting.workoutSettingOption == WorkoutSettingOption.TIME_BASED) {
                 SelectTimeLength(exercise, onContinueTimeClicked)
@@ -63,37 +62,54 @@ private fun SelectTimeLength(exercise: Exercise, onContinueTimeClicked: (Exercis
     var length by remember { mutableStateOf(ExerciseTimeLength.TWO_MINUTES) }
     val settingsLength = WorkoutSettingPrefs.getTimeBasedWorkout(context)
 
-    TitleAlwaysWhiteText(textRes = R.string.how_long_exercise)
-    FlowRow {
-        ExerciseTimeLength.values().forEach {
-            CheckboxText(
-                text = "${it.length} minutes",
-                checked = length == it,
-                enabled = it.length - 1 <= exercise.movements.size * settingsLength,
-                padding = PaddingValues(horizontal = 4.dp, vertical = 16.dp),
-                onCheckedChange = { length = it }
-            )
+    Column(verticalArrangement = Arrangement.SpaceBetween, modifier = Modifier.fillMaxSize()) {
+        Column(
+            Modifier
+                .weight(1f)
+                .fillMaxWidth(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+            TitleAlwaysWhiteText(textRes = R.string.how_long_exercise)
+            FlowRow {
+                ExerciseTimeLength.values().forEach {
+                    CheckboxText(
+                        text = "${it.length} minutes",
+                        checked = length == it,
+                        enabled = it.length - 1 <= exercise.movements.size * settingsLength,
+                        padding = PaddingValues(horizontal = 4.dp, vertical = 16.dp),
+                        onCheckedChange = { length = it }
+                    )
+                }
+            }
+        }
+        Column(Modifier.padding()) {
+            OnPrimaryOutlineButton(onClick = { onContinueTimeClicked(length) }, textRes = R.string._continue)
         }
     }
-    OnPrimaryOutlineButton(onClick = { onContinueTimeClicked(length) }, textRes = R.string._continue)
-
 }
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun SelectRepLength(exercise: Exercise, onContinueRepClicked: (ExerciseRepetitionsLength) -> Unit) {
     var length by remember { mutableStateOf(ExerciseRepetitionsLength.TWO_REPS) }
-    TitleAlwaysWhiteText(textRes = R.string.how_many_movements)
-    FlowRow {
-        ExerciseRepetitionsLength.values().forEach {
-            CheckboxText(
-                text = "${it.length} moves",
-                checked = length == it,
-                enabled = it.length - 1 <= exercise.movements.size,
-                padding = PaddingValues(horizontal = 4.dp, vertical = 16.dp),
-                onCheckedChange = { length = it }
-            )
+
+
+    Column(verticalArrangement = Arrangement.SpaceBetween, modifier = Modifier.fillMaxSize()) {
+        Column(
+            Modifier
+                .weight(1f)
+                .fillMaxWidth(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+            TitleAlwaysWhiteText(textRes = R.string.how_many_movements)
+            FlowRow {
+                ExerciseRepetitionsLength.values().forEach {
+                    CheckboxText(
+                        text = "${it.length} moves",
+                        checked = length == it,
+                        enabled = it.length - 1 <= exercise.movements.size,
+                        padding = PaddingValues(horizontal = 4.dp, vertical = 16.dp),
+                        onCheckedChange = { length = it }
+                    )
+                }
+            }
         }
+        OnPrimaryOutlineButton(onClick = { onContinueRepClicked(length) }, textRes = R.string._continue)
     }
-    OnPrimaryOutlineButton(onClick = { onContinueRepClicked(length) }, textRes = R.string._continue)
 }

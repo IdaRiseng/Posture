@@ -1,8 +1,11 @@
 package no.sporty.posture.activities.settings
 
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -31,7 +34,7 @@ fun Settings(
     var isDarkmodeDialogVisible by remember { mutableStateOf(false) }
 
     PostureTopBarScaffold(onBackPressed, title = stringResource(id = R.string.settings)) {
-        Column(horizontalAlignment = CenterHorizontally) {
+        Column(horizontalAlignment = CenterHorizontally, modifier = Modifier.verticalScroll(rememberScrollState())) {
             var selectedItem by remember { mutableIntStateOf(0) }
             Tab(
                 modifier = Modifier.padding(top = 16.dp),
