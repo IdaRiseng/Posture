@@ -13,6 +13,7 @@ import no.sporty.posture.model.CustomExercise
 import no.sporty.posture.model.Exercise
 import no.sporty.posture.model.WorkoutSettingOption
 import no.sporty.posture.sharedPreferences.WorkoutSettingPrefs
+import no.sporty.posture.sharedPreferences.WorkoutSettingPrefs.getTimeBasedWorkout
 
 class SetMovementCountActivity : ComponentActivity() {
 
@@ -43,16 +44,16 @@ class SetMovementCountActivity : ComponentActivity() {
                         illustration = exercise.illustration
                     )
                     startMovementResult.launch(NextMovementActivity.newIntent(this, customExercise, exerciseLength.length))
-
                 },
                 onContinueTimeClicked = { exerciseLength ->
+                    val standardExerciseLength = exerciseLength.length / getTimeBasedWorkout(this)
                     val customExercise = CustomExercise(
                         title = getString(exercise.title),
                         desc = getString(exercise.shortDesc),
                         movements = exercise.movements,
                         illustration = exercise.illustration
                     )
-                    startMovementResult.launch(NextMovementActivity.newIntent(this, customExercise, exerciseLength.length))
+                    startMovementResult.launch(NextMovementActivity.newIntent(this, customExercise, standardExerciseLength.toInt()))
                 }
             )
         }
