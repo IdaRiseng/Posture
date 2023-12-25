@@ -12,7 +12,6 @@
 
     <!-- Exercises -->
     <string name="exercises">Exercises</string>
-    <!-- Build and stretch -->
     <string name="build_and_stretch">Build and stretch</string>
     <string name="build_and_stretch_desc">Strengthen your back muscles, stretch your front muscles</string>
     <string name="simple_office_exercise">Simple office exercise</string>
@@ -23,8 +22,6 @@
     <string name="bed_exercise_desc">Do exercises while laying in bed</string>
     <string name="at_the_gym">At the gym</string>
     <string name="at_the_gym_desc">Use the tools at your gym for a better workout</string>
-
-
 
     <!-- Info cards -->
     <string name="info">Info</string>
@@ -109,6 +106,7 @@
     <!-- Movements -->
     <!-- wall -->
     <string name="wall_slide">Wall slide</string>
+    <string name="wall_slide_desc">Make sure to keep all parts of your back against the wall. \nSlide your arms up and down and always make sure they are touching the wall.</string>
     <string name="wall_touch">Wall touch</string>
     <string name="door_frame_stretch">Door frame stretch</string>
 

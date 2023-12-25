@@ -1,9 +1,9 @@
 package no.sporty.posture.model
 
 import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 
 data class MovementInfo(
     @DrawableRes val illustration: Int,
-    val whatToDo: String,
-    val whatNotToDo: String
+    @StringRes val desc: Int,
 )

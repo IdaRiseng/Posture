@@ -6,10 +6,10 @@ import androidx.annotation.StringRes
 import no.sporty.posture.R
 
 
-enum class Movement(@StringRes val title: Int, @DrawableRes val illustration: Int, @RawRes val video: Int, info: MovementInfo?) {
+enum class Movement(@StringRes val title: Int, @DrawableRes val illustration: Int, @RawRes val video: Int, val info: MovementInfo?) {
 
     //Wall
-    WALL_SLIDE(R.string.wall_slide, R.drawable.launcher_icon, R.raw.test, null),
+    WALL_SLIDE(R.string.wall_slide, R.drawable.launcher_icon, R.raw.test, MovementInfo(R.drawable.launcher_icon, R.string.wall_slide_desc)),
     WALL_TOUCH(R.string.wall_touch, R.drawable.launcher_icon, R.raw.test, null),
     DOOR_FRAME_STRETCH(R.string.door_frame_stretch, R.drawable.launcher_icon, R.raw.test, null),
 
@@ -36,7 +36,7 @@ enum class Movement(@StringRes val title: Int, @DrawableRes val illustration: In
     LOTUS_POSE(R.string.lotus_pose, R.drawable.launcher_icon, R.raw.test, null),
     SHOULDER_STRETCH(R.string.shoulder_stretch, R.drawable.launcher_icon, R.raw.test, null),
     DYNAMIC_CAMEL(R.string.dynamic_camel, R.drawable.launcher_icon, R.raw.test, null),
-    YWTS(R.string.y_w_t_s, R.drawable.launcher_icon, R.raw.test, null),
+    YWTS(R.string.y_w_t_s, R.drawable.launcher_icon, R.raw.test,  MovementInfo(R.drawable.launcher_icon, R.string.wall_slide_desc)),
 
 
     //Gym
