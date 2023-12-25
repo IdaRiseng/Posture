@@ -19,6 +19,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import no.sporty.posture.R
 import no.sporty.posture.model.Exercise
@@ -66,12 +67,13 @@ private fun SelectTimeLength(exercise: Exercise, onContinueTimeClicked: (Exercis
         Column(
             Modifier
                 .weight(1f)
-                .fillMaxWidth(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+                .fillMaxWidth(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally
+        ) {
             TitleAlwaysWhiteText(textRes = R.string.how_long_exercise)
             FlowRow {
                 ExerciseTimeLength.values().forEach {
                     CheckboxText(
-                        text = "${it.length} minutes",
+                        text = stringResource(id = R.string._minutes, it.length),
                         checked = length == it,
                         enabled = it.length - 1 <= exercise.movements.size * settingsLength,
                         padding = PaddingValues(horizontal = 4.dp, vertical = 16.dp),
@@ -96,7 +98,8 @@ private fun SelectRepLength(exercise: Exercise, onContinueRepClicked: (ExerciseR
         Column(
             Modifier
                 .weight(1f)
-                .fillMaxWidth(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+                .fillMaxWidth(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally
+        ) {
             TitleAlwaysWhiteText(textRes = R.string.how_many_movements)
             FlowRow {
                 ExerciseRepetitionsLength.values().forEach {

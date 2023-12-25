@@ -39,7 +39,7 @@ fun Settings(
             Tab(
                 modifier = Modifier.padding(top = 16.dp),
                 selectedItemIndex = selectedItem,
-                items = listOf("General", "Workout"),
+                items = listOf(stringResource(id = R.string.general), stringResource(id = R.string.workout)),
                 onClick = { selectedItem = it }
             )
             if (selectedItem == 0) {

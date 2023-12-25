@@ -52,6 +52,7 @@
     <string name="done">Done</string>
 
     <!-- Settings -->
+
     <string name="settings">Settings</string>
     <string name="options">Options</string>
     <string name="save">Save</string>
@@ -65,8 +66,10 @@
     <string name="light_theme">Always in light mode</string>
     <string name="dark_theme">Always in dark mode</string>
 
+    <string name="workout">Workout</string>
     <string name="general">General</string>
     <string name="darkmode">Darkmode</string>
+    <string name="_minutes">%s minutes</string>
 
     <string name="got_ideas">Got some good ideas?</string>
     <string name="trouble_with_app">Trouble with the app?</string>
