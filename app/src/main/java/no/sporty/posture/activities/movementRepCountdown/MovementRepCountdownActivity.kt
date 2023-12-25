@@ -9,6 +9,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import no.sporty.posture.model.Movement
+import no.sporty.posture.model.PostureVibrator
 
 class MovementRepCountdownActivity : ComponentActivity() {
 
@@ -35,6 +36,7 @@ class MovementRepCountdownActivity : ComponentActivity() {
                     finish()
                 },
                 onFinish = {
+                    PostureVibrator.vibrate(this)
                     Handler().postDelayed({
                         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
                         setResult(RESULT_CONTINUE)

@@ -1,6 +1,7 @@
 package no.sporty.posture.activities.movementTimeCountdown
 
 import android.R
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +11,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import no.sporty.posture.model.Movement
+import no.sporty.posture.model.PostureVibrator
 
 class MovementTimeCountdownActivity : ComponentActivity() {
 
@@ -36,6 +38,7 @@ class MovementTimeCountdownActivity : ComponentActivity() {
                     finish()
                 },
                 onFinish = {
+                    PostureVibrator.vibrate(this)
                     Handler().postDelayed({
                         overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
                         setResult(RESULT_CONTINUE)
@@ -46,6 +49,7 @@ class MovementTimeCountdownActivity : ComponentActivity() {
         }
     }
 
+    @SuppressLint("MissingSuperCall")
     override fun onBackPressed() {
         showAlertDialog.value = true
     }
