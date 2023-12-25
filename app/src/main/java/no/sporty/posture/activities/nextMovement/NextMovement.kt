@@ -19,6 +19,7 @@ import androidx.compose.material.BottomSheetState
 import androidx.compose.material.BottomSheetValue
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.ModalBottomSheetState
+import androidx.compose.material.OutlinedButton
 import androidx.compose.material.rememberBottomSheetState
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.CheckboxDefaults
@@ -52,6 +53,7 @@ import no.sporty.posture.model.WorkoutSettingOption
 import no.sporty.posture.sharedPreferences.WorkoutSettingPrefs
 import no.sporty.posture.ui.theme.PostureTheme
 import no.sporty.posture.ui.theme.button.PrimaryButton
+import no.sporty.posture.ui.theme.button.SecondaryButton
 import no.sporty.posture.ui.theme.sharedElements.PostureWave
 import no.sporty.posture.ui.theme.text.BodyBlackText
 import no.sporty.posture.ui.theme.text.HeadlineBlackText
@@ -61,9 +63,12 @@ import no.sporty.posture.ui.theme.text.TitleBlackText
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NextMovement(
-    continousMovement: MutableState<Boolean>, step: MutableState<Int>, exercise: CustomExercise, onStartNextMovementClick: () -> Unit
+    continousMovement: MutableState<Boolean>,
+    exercise: CustomExercise,
+    movement: Movement,
+    onStartNextMovementClick: () -> Unit,
+    onSkipMovementClick: () -> Unit,
 ) {
-    val movement = exercise.movements[step.value]
     val context = LocalContext.current
     val workoutSetting = WorkoutSettingPrefs.getWorkoutOption(context)
     val openBottomSheet = rememberSaveable { mutableStateOf(false) }
@@ -119,7 +124,8 @@ fun NextMovement(
                     if (workoutSetting.workoutSettingOption == WorkoutSettingOption.TIME_BASED) {
                         ContinousExerciseCheckbox(continousMovement)
                     }
-                    PrimaryButton(onClick = onStartNextMovementClick, textRes = R.string.start_exercise, Modifier.padding(bottom = 16.dp))
+                    PrimaryButton(onClick = onStartNextMovementClick, textRes = R.string.start_exercise)
+                    SecondaryButton(onClick = onSkipMovementClick, textRes = R.string.skip)
                 }
             }
         }

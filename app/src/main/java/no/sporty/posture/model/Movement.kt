@@ -36,7 +36,7 @@ enum class Movement(@StringRes val title: Int, @DrawableRes val illustration: In
     LOTUS_POSE(R.string.lotus_pose, R.drawable.launcher_icon, R.raw.test, null),
     SHOULDER_STRETCH(R.string.shoulder_stretch, R.drawable.launcher_icon, R.raw.test, null),
     DYNAMIC_CAMEL(R.string.dynamic_camel, R.drawable.launcher_icon, R.raw.test, null),
-    YWTS(R.string.y_w_t_s, R.drawable.launcher_icon, R.raw.test,  MovementInfo(R.drawable.launcher_icon, R.string.wall_slide_desc)),
+    YWTS(R.string.y_w_t_s, R.drawable.launcher_icon, R.raw.test, null),
 
 
     //Gym

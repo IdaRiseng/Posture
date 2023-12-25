@@ -38,6 +38,7 @@
     
     <!-- Exercise flow -->
     <string name="start_exercise">Start exercise</string>
+    <string name="skip">Skip</string>
     <string name="how_long_exercise">How long do you want to exercise?</string>
     <string name="how_many_movements">How many movements you want to take?</string>
     <string name="repetitions_left">Repetitions left</string>
