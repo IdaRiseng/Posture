@@ -10,9 +10,9 @@ object PostureVibrator {
     fun vibrate(context: Context) {
         val v = context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator?
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            v?.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
+            v?.vibrate(VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE))
         } else {
-            v?.vibrate(200)
+            v?.vibrate(100)
         }
     }
 }
