@@ -96,7 +96,6 @@ private fun CountDownView(
         modifier = Modifier
             .background(MaterialTheme.colorScheme.background)
             .fillMaxSize()
-            .verticalScroll(rememberScrollState())
     ) {
         Box {
             VideoPlayer(res = movement.video)

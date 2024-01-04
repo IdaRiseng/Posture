@@ -14,7 +14,7 @@ enum class Movement(@StringRes val title: Int, @DrawableRes val illustration: In
     DOOR_FRAME_STRETCH(R.string.door_frame_stretch, R.drawable.launcher_icon, R.raw.test, null),
 
     //Sitting
-    CHEST_OPENER(R.string.chest_opener, R.drawable.launcher_icon, R.raw.test, null),
+    CHEST_OPENER(R.string.chest_opener, R.drawable.chest_opener, R.raw.chest_opener, MovementInfo(illustration = R.drawable.chest_opener_info_ill, R.string.chest_opener_desc)),
     NECK_STRETCH(R.string.neck_stretch, R.drawable.launcher_icon, R.raw.test, null),
     HEART_OPENER(R.string.heart_opener, R.drawable.launcher_icon, R.raw.test, null),
     LOWER_BACK_STRETCH(R.string.lower_back_stretch, R.drawable.launcher_icon, R.raw.test, null),
@@ -24,7 +24,7 @@ enum class Movement(@StringRes val title: Int, @DrawableRes val illustration: In
     SHOULDER_CIRCLES(R.string.shoulder_circles, R.drawable.launcher_icon, R.raw.test, null),
 
     //Laying
-    TABLE_TOP_LIFT(R.string.table_top_lift, R.drawable.launcher_icon, R.raw.test, null),
+    TABLE_TOP_LIFT(R.string.table_top_lift, R.drawable.table_top_lift, R.raw.table_top_lift, null),
     GLUTE_BRIDGE(R.string.glute_bridge, R.drawable.launcher_icon, R.raw.test, null),
     AB_STRETCH(R.string.ab_stretch, R.drawable.launcher_icon, R.raw.test, null),
     DOWN_DOG_TWIST(R.string.down_dog_twist, R.drawable.launcher_icon, R.raw.test, null),

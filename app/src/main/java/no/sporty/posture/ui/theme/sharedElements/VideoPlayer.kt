@@ -45,7 +45,7 @@ fun VideoPlayer(@RawRes res: Int) {
     }
 
     DisposableEffect(
-        Box(Modifier.height(400.dp).background(MaterialTheme.colorScheme.secondary).fillMaxWidth(), contentAlignment = Alignment.Center) {
+        Box(Modifier.background(MaterialTheme.colorScheme.secondary).fillMaxWidth(), contentAlignment = Alignment.Center) {
             AndroidView(factory = {
                 StyledPlayerView(context).apply {
                     player = exoPlayer

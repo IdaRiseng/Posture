@@ -133,15 +133,17 @@ private fun InfoBottomSheet(movement: Movement, openBottomSheet: MutableState<Bo
     if (openBottomSheet.value && movement.info != null) {
         ModalBottomSheet(sheetState = bottomSheetState, onDismissRequest = { openBottomSheet.value = false }) {
             Column(Modifier.padding(top = 16.dp, start = 16.dp, end = 16.dp, bottom = 58.dp)) {
-                Image(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(200.dp),
-                    painter = painterResource(id = movement.info.illustration),
-                    contentDescription = "illustration",
-                    contentScale = ContentScale.FillWidth
-                )
-                Spacer(modifier = Modifier.height(16.dp))
+                movement.info.illustration?.let {
+                    Image(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(200.dp),
+                        painter = painterResource(id = it),
+                        contentDescription = "illustration",
+                        contentScale = ContentScale.FillWidth
+                    )
+                    Spacer(modifier = Modifier.height(16.dp))
+                }
                 TitleBlackText(textRes = R.string.info)
                 BodyBlackText(textRes = movement.info.desc)
             }
