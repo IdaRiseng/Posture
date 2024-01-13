@@ -151,4 +151,7 @@
     <string name="scarecrow">Scarecrow</string>
     <string name="shoulder_dislocations">Shoulder dislocations</string>
 
+    <string name="you_did_this_exercise">You did this exercise %s: </string>
+    <string name="you_did_this_custom_exercise">You did this custom exercise %s: </string>
+
 </resources>

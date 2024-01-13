@@ -4,6 +4,11 @@ import android.content.Context
 import com.google.gson.reflect.TypeToken
 import java.time.LocalDate
 
+data class SavedExerciseInfo(
+    val name: String? = null,
+    val date: LocalDate
+)
+
 object StreakPrefs {
     //List of dates
     //if date already exist in list, don't save the date.
@@ -12,7 +17,7 @@ object StreakPrefs {
     private const val EXERCISE_DATE_LIST = "exercise_date_list"
     private const val EXERCISE_STREAK = "exercise_streak"
 
-    fun saveDate(context: Context, date: LocalDate) {
+    fun saveDate(context: Context, date: SavedExerciseInfo) {
         //save date
         val oldDates = getDateList(context)
         val newDates = oldDates.toMutableList().apply { add(date) }
@@ -26,9 +31,9 @@ object StreakPrefs {
         }
     }
 
-    fun getDateList(context: Context): List<LocalDate> {
+    fun getDateList(context: Context): List<SavedExerciseInfo> {
         val json = getSharedPreferences(context).getString(EXERCISE_DATE_LIST, null)
-        return GSON.fromJson(json, object : TypeToken<List<LocalDate>?>() {}.type) ?: emptyList()
+        return GSON.fromJson(json, object : TypeToken<List<SavedExerciseInfo>?>() {}.type) ?: emptyList()
     }
 
     fun getStreak(context: Context): Int = getSharedPreferences(context).getInt(EXERCISE_STREAK, 0)
@@ -41,7 +46,7 @@ object StreakPrefs {
 
     fun checkStreakLogin(context: Context) {
         val previousDate = getDateList(context).lastOrNull() ?: return
-        if (LocalDate.now().isAfter(previousDate.plusDays(1))) {
+        if (LocalDate.now().isAfter(previousDate.date.plusDays(1))) {
             saveStreak(0, context)
         }
     }

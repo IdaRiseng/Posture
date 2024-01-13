@@ -21,11 +21,15 @@ import no.sporty.posture.model.CustomExercise
 import no.sporty.posture.model.Exercise
 import no.sporty.posture.model.TopBarInfo
 import no.sporty.posture.sharedPreferences.CustomExercisePrefs
+import no.sporty.posture.sharedPreferences.SavedExerciseInfo
 import no.sporty.posture.sharedPreferences.StreakPrefs
 import no.sporty.posture.sharedPreferences.ThemePrefs
 import java.time.LocalDate
 
 class MainActivity : ComponentActivity() {
+    companion object {
+        const val EXERCISE_NAME = "exercise_name"
+    }
 
     private val topBarInfo: MutableState<TopBarInfo> = mutableStateOf(TopBarInfo())
     private val customExercises: MutableState<List<CustomExercise>> = mutableStateOf(emptyList())
@@ -78,7 +82,8 @@ class MainActivity : ComponentActivity() {
 
     private var startExerciseResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         if (it.resultCode == RESULT_OK) {
-            StreakPrefs.saveDate(this, LocalDate.now())
+            val exerciseName = it.data?.getStringExtra(EXERCISE_NAME)
+            StreakPrefs.saveDate(this, SavedExerciseInfo(exerciseName, LocalDate.now()))
             updateTopBar()
             mInterstitialAd?.show(this)
         }

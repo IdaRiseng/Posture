@@ -1,9 +1,9 @@
 package no.sporty.posture.model
 
-import java.time.LocalDate
+import no.sporty.posture.sharedPreferences.SavedExerciseInfo
 
 data class TopBarInfo(
     val streak: Int = 0,
     val total: Int = 0,
-    val datesExercised: List<LocalDate> = emptyList()
+    val datesExercised: List<SavedExerciseInfo> = emptyList()
 )

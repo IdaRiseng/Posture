@@ -37,3 +37,8 @@ fun TitleAlwaysWhiteText(@StringRes textRes: Int, padding: PaddingValues = Paddi
 fun TitleBlackText(@StringRes textRes: Int, padding: PaddingValues = PaddingValues()) {
     TitleText(text = stringResource(id = textRes), padding = padding, color = MaterialTheme.colorScheme.onBackground)
 }
+
+@Composable
+fun TitleBlackText(text: String, padding: PaddingValues = PaddingValues()) {
+    TitleText(text = text, padding = padding, color = MaterialTheme.colorScheme.onBackground)
+}

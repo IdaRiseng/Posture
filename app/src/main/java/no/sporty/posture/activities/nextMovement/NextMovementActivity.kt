@@ -13,6 +13,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import no.sporty.posture.activities.mainView.MainActivity.Companion.EXERCISE_NAME
 import no.sporty.posture.activities.movementRepCountdown.MovementRepCountdownActivity
 import no.sporty.posture.activities.movementTimeCountdown.MovementTimeCountdownActivity
 import no.sporty.posture.model.CustomExercise
@@ -42,7 +43,7 @@ class NextMovementActivity : ComponentActivity() {
 
         exercise = intent.getParcelableExtra(CustomExercise.TAG) ?: throw IllegalStateException("Should contain CustomExercise")
         exerciseLength = intent.getIntExtra(EXERCISE_LENGTH, 0)
-        movement = mutableStateOf( exercise.movements[movementStep.value])
+        movement = mutableStateOf(exercise.movements[movementStep.value])
 
         setContent {
             NextMovement(
@@ -72,7 +73,7 @@ class NextMovementActivity : ComponentActivity() {
     private var startMovementResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         when {
             result.resultCode == RESULT_CANCELED -> {
-                setResult(RESULT_CANCELED)
+                setResult(RESULT_CANCELED, intent)
                 finish()
             }
 
@@ -85,7 +86,10 @@ class NextMovementActivity : ComponentActivity() {
             }
 
             movementStep.value == exerciseLength - 1 -> {
-                setResult(RESULT_OK)
+                val intent = Intent().apply {
+                    putExtra(EXERCISE_NAME, exercise.title)
+                }
+                setResult(RESULT_OK, intent)
                 finish()
             }
         }

@@ -1,14 +1,15 @@
 package no.sporty.posture.activities.mainView.elements
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -18,39 +19,61 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.filled.KeyboardArrowRight
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.material3.SheetState
 import androidx.compose.material3.Text
+import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringArrayResource
-import androidx.compose.ui.text.capitalize
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.launch
 import no.sporty.posture.R
+import no.sporty.posture.model.Exercise
+import no.sporty.posture.sharedPreferences.CustomExercisePrefs
+import no.sporty.posture.sharedPreferences.SavedExerciseInfo
 import no.sporty.posture.ui.theme.sharedElements.isDarkmode
+import no.sporty.posture.ui.theme.text.BodyBlackText
 import no.sporty.posture.ui.theme.text.HeadlineAlwaysWhiteText
+import no.sporty.posture.ui.theme.text.HeadlineBlackText
 import no.sporty.posture.ui.theme.text.TitleAlwaysWhiteText
+import no.sporty.posture.ui.theme.text.TitleBlackText
 import java.time.LocalDate
 import java.time.YearMonth
 import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 import java.time.temporal.ChronoUnit
 import java.util.Locale
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CustomCalendar(
-    datesExercised: List<LocalDate>
+    datesExercised: List<SavedExerciseInfo>
 ) {
-    var selectedDate by remember { mutableStateOf<LocalDate>(LocalDate.now()) }
-    var displayedMonth by remember { mutableStateOf(LocalDate.of(selectedDate.year, selectedDate.month, 1)) }
+    var selectedDate by remember { mutableStateOf(SavedExerciseInfo(null, LocalDate.now())) }
+    var displayedMonth by remember { mutableStateOf(LocalDate.of(selectedDate.date.year, selectedDate.date.month, 1)) }
+    val openBottomSheet = rememberSaveable { mutableStateOf(false) }
+    val bottomSheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
+    val coroutine = rememberCoroutineScope()
 
     Row(
         verticalAlignment = Alignment.CenterVertically
@@ -70,7 +93,11 @@ fun CustomCalendar(
             selectedDate = selectedDate,
             datesExercised = datesExercised,
             onDateSelected = { newDate ->
-                selectedDate = newDate
+                selectedDate = datesExercised.find { it.date == newDate } ?: SavedExerciseInfo(null, newDate)
+                coroutine.launch {
+                    openBottomSheet.value = true
+                    bottomSheetState.expand()
+                }
             }
         )
 
@@ -83,6 +110,45 @@ fun CustomCalendar(
             Icon(imageVector = Icons.Default.KeyboardArrowRight, tint = Color.White, contentDescription = null)
         }
     }
+    CalendarBottomSheet(selectedDate, openBottomSheet, bottomSheetState)
+}
+
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun CalendarBottomSheet(savedExerciseInfo: SavedExerciseInfo, openBottomSheet: MutableState<Boolean>, bottomSheetState: SheetState) {
+    if (openBottomSheet.value && savedExerciseInfo.name != null) {
+        val context = LocalContext.current
+
+        ModalBottomSheet(sheetState = bottomSheetState, onDismissRequest = { openBottomSheet.value = false }) {
+            val pattern = DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG)
+
+            Column(Modifier.padding(top = 16.dp, start = 16.dp, end = 16.dp, bottom = 58.dp)) {
+                CustomExercisePrefs.getCustomExerciseList(context).find { it.title == savedExerciseInfo.name }?.let {
+                    BodyBlackText(text = stringResource(R.string.you_did_this_exercise, savedExerciseInfo.date.format(pattern)))
+                    HeadlineBlackText(text = it.title)
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Image(
+                        painter = painterResource(id = it.illustration),
+                        contentDescription = null,
+                        modifier = Modifier.fillMaxWidth(),
+                        contentScale = ContentScale.FillWidth
+                    )
+                }
+                Exercise.values().find { stringResource(it.title) == savedExerciseInfo.name }?.let {
+                    BodyBlackText(text = stringResource(R.string.you_did_this_custom_exercise, savedExerciseInfo.date.format(pattern)))
+                    HeadlineBlackText(text = stringResource(it.title))
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Image(
+                        painter = painterResource(id = it.illustration),
+                        contentDescription = null,
+                        modifier = Modifier.fillMaxWidth(),
+                        contentScale = ContentScale.FillWidth
+                    )
+                }
+            }
+        }
+    }
 }
 
 
@@ -90,8 +156,8 @@ fun CustomCalendar(
 fun CalendarGrid(
     modifier: Modifier,
     displayedMonth: LocalDate,
-    selectedDate: LocalDate,
-    datesExercised: List<LocalDate>,
+    selectedDate: SavedExerciseInfo,
+    datesExercised: List<SavedExerciseInfo>,
     onDateSelected: (LocalDate) -> Unit,
 ) {
     val dateFormatter = DateTimeFormatter.ofPattern("MMMM", Locale.getDefault())
@@ -120,8 +186,9 @@ fun CalendarGrid(
                 }
 
                 for (day in getDaysInCurrentMonth(displayedMonth)) {
-                    val isSelected = selectedDate == day
-                    val hasDoneExercise = datesExercised.contains(day)
+                    val isSelected = selectedDate.date == day
+                    val exerciseDates = datesExercised.map { it.date }
+                    val hasDoneExercise = exerciseDates.contains(day)
 
                     item {
                         CalendarDay(
@@ -178,7 +245,7 @@ fun CalendarDay(
         Text(
             text = DateTimeFormatter.ofPattern("d", Locale.getDefault()).format(day),
             textAlign = TextAlign.Center,
-            color = when{
+            color = when {
                 isSelected -> MaterialTheme.colorScheme.primary
                 isDarkmode() && hasDoneExercise -> Color.Black
                 else -> Color.White

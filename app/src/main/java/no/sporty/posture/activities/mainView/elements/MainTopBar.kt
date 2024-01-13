@@ -38,6 +38,7 @@ import com.google.accompanist.pager.rememberPagerState
 import no.sporty.posture.R
 import no.sporty.posture.ui.theme.sharedElements.PostureWave
 import no.sporty.posture.model.TopBarInfo
+import no.sporty.posture.sharedPreferences.SavedExerciseInfo
 import no.sporty.posture.ui.theme.text.BodyAlwaysWhiteText
 import no.sporty.posture.ui.theme.text.HeadlineAlwaysWhiteText
 import java.time.LocalDate
@@ -102,7 +103,7 @@ private fun Total(total: Int) {
 }
 
 @Composable
-private fun Calendar(datesExercised: List<LocalDate>) {
+private fun Calendar(datesExercised: List<SavedExerciseInfo>) {
     PagerView {
         CustomCalendar(datesExercised)
     }

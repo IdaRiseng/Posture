@@ -8,6 +8,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.ui.res.stringResource
+import no.sporty.posture.activities.mainView.MainActivity
 import no.sporty.posture.activities.nextMovement.NextMovementActivity
 import no.sporty.posture.model.CustomExercise
 import no.sporty.posture.model.Exercise
@@ -67,7 +68,10 @@ class SetMovementCountActivity : ComponentActivity() {
             }
 
             RESULT_OK -> {
-                setResult(RESULT_OK)
+                val intent = Intent().apply {
+                    putExtra(MainActivity.EXERCISE_NAME, exercise.title)
+                }
+                setResult(RESULT_OK, intent)
                 finish()
             }
         }
