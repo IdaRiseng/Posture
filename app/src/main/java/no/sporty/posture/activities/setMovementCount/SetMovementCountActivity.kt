@@ -69,7 +69,7 @@ class SetMovementCountActivity : ComponentActivity() {
 
             RESULT_OK -> {
                 val intent = Intent().apply {
-                    putExtra(MainActivity.EXERCISE_NAME, exercise.title)
+                    putExtra(MainActivity.EXERCISE_NAME, getString(exercise.title))
                 }
                 setResult(RESULT_OK, intent)
                 finish()
