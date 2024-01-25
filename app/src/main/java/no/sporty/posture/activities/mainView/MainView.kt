@@ -58,7 +58,8 @@ fun MainView(
     onSettingsClicked: () -> Unit,
     onExerciseClicked: (Exercise) -> Unit,
     onCreateCustomExerciseClicked: () -> Unit,
-    onCustomExerciseClicked: (CustomExercise) -> Unit
+    onCustomExerciseClicked: (CustomExercise) -> Unit,
+    affirmation: String?
 ) {
     val scrollState = rememberScrollState()
     val shakeController = rememberShakeController()
@@ -76,7 +77,7 @@ fun MainView(
                     })
                 }
         ) {
-            MainTopBar(topBarInfo, onSettingsClicked)
+            MainTopBar(topBarInfo, onSettingsClicked, affirmation)
             Column(Modifier.padding(16.dp)) {
                 Info(onCreateCustomExerciseClicked)
                 CustomExercises(

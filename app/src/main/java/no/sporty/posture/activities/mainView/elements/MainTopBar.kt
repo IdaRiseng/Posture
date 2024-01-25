@@ -46,7 +46,7 @@ import java.time.LocalDate
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
-fun MainTopBar(topBarInfo: TopBarInfo, onSettingsClicked: () -> Unit) {
+fun MainTopBar(topBarInfo: TopBarInfo, onSettingsClicked: () -> Unit, affirmation: String?) {
     Box(Modifier.background(MaterialTheme.colorScheme.primary)) {
         Column(
             modifier = Modifier
@@ -58,8 +58,8 @@ fun MainTopBar(topBarInfo: TopBarInfo, onSettingsClicked: () -> Unit) {
             val pagerState = rememberPagerState()
             HorizontalPager(state = pagerState, count = 3, modifier = Modifier.padding(bottom = 16.dp)) { page ->
                 when (page) {
-                    0 -> Streak(topBarInfo.streak)
-                    1 -> Total(topBarInfo.total)
+                    0 -> Streak(topBarInfo.streak, affirmation)
+                    1 -> Total(topBarInfo.total, affirmation)
                     2 -> Calendar(topBarInfo.datesExercised)
                 }
             }
@@ -89,16 +89,16 @@ fun MainTopBar(topBarInfo: TopBarInfo, onSettingsClicked: () -> Unit) {
 
 
 @Composable
-private fun Streak(streak: Int) {
+private fun Streak(streak: Int, affirmation: String?) {
     PagerView {
-        CountView(title = R.string.streak, count = streak)
+        CountView(title = R.string.streak, count = streak, affirmation)
     }
 }
 
 @Composable
-private fun Total(total: Int) {
+private fun Total(total: Int, affirmation: String?) {
     PagerView {
-        CountView(title = R.string.total, count = total)
+        CountView(title = R.string.total, count = total, affirmation)
     }
 }
 
@@ -121,9 +121,9 @@ private fun PagerView(content: @Composable ColumnScope.() -> Unit) {
 }
 
 @Composable
-private fun CountView(@StringRes title: Int, count: Int) {
+private fun CountView(@StringRes title: Int, count: Int, affirmation: String?) {
     val context = LocalContext.current
-    val affirmation by rememberSaveable { mutableStateOf(context.resources.getStringArray(R.array.simple_affirmations).random()) }
+   // val affirmation by rememberSaveable { mutableStateOf(context.resources.getStringArray(R.array.simple_affirmations).random()) }
 
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Spacer(modifier = Modifier.height(50.dp))
@@ -133,6 +133,6 @@ private fun CountView(@StringRes title: Int, count: Int) {
         Spacer(modifier = Modifier.height(16.dp))
         BodyAlwaysWhiteText(text = pluralStringResource(id = R.plurals.day, count))
         Spacer(modifier = Modifier.height(50.dp))
-        SmallDisabledWhiteText(affirmation)
+        affirmation?.let { SmallDisabledWhiteText(it) }
     }
 }
