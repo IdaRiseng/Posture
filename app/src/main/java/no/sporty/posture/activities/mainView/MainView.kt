@@ -127,7 +127,7 @@ private fun Info(onButtonClicked: () -> Unit) {
             title = R.string.info_custom_exercise_title,
             desc = R.string.info_custom_exercise_desc,
             buttonInfo = ButtonInfo(onButtonClicked, R.string.create),
-            image = R.drawable.launcher_icon,
+            image = R.drawable.angel_wings,
             onDismiss = {
                 InfoCardPrefs.customExerciseCardDismissed(context)
                 customExerciseCardVisible = false
