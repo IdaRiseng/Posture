@@ -35,7 +35,6 @@ import no.sporty.posture.model.ShakeController
 import no.sporty.posture.ui.theme.text.BodyBlackText
 import no.sporty.posture.ui.theme.text.HeadlineBlackText
 import no.sporty.posture.ui.theme.text.TitleBlackText
-import kotlin.random.Random
 
 @Composable
 fun ExerciseCard(exercise: Exercise, onClick: (Exercise) -> Unit) {

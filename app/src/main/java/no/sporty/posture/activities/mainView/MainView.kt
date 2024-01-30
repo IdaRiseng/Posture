@@ -40,7 +40,6 @@ import no.sporty.posture.model.ShakeConfig
 import no.sporty.posture.model.ShakeController
 import no.sporty.posture.model.TopBarInfo
 import no.sporty.posture.model.rememberShakeController
-import no.sporty.posture.sharedPreferences.CustomExercisePrefs
 import no.sporty.posture.sharedPreferences.InfoCardPrefs
 import no.sporty.posture.ui.theme.PostureTheme
 import no.sporty.posture.ui.theme.cards.ButtonInfo
@@ -128,7 +127,7 @@ private fun Info(onButtonClicked: () -> Unit) {
             title = R.string.info_custom_exercise_title,
             desc = R.string.info_custom_exercise_desc,
             buttonInfo = ButtonInfo(onButtonClicked, R.string.create),
-            image = R.drawable.angel_wings,
+            image = R.drawable.heart_opener,
             onDismiss = {
                 InfoCardPrefs.customExerciseCardDismissed(context)
                 customExerciseCardVisible = false

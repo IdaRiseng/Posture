@@ -53,7 +53,7 @@ enum class Exercise(
     BED_EXERCISE(
         title = R.string.bed_exercise,
         shortDesc = R.string.bed_exercise_desc,
-        illustration = R.drawable.extended_puppypose,
+        illustration = R.drawable.glute_bridge,
         movements = listOf(
             Movement.YWTS,
             Movement.CAT_COW,
