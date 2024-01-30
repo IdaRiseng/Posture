@@ -30,6 +30,7 @@ fun Settings(
     onCustomExerciseClicked: () -> Unit,
     onThemeSelected: (Int) -> Unit,
     onSendEmail: (Boolean) -> Unit,
+    onAffirmationClicked: () -> Unit
 ) {
     var isDarkmodeDialogVisible by remember { mutableStateOf(false) }
 
@@ -46,7 +47,8 @@ fun Settings(
                 SettingsGeneral(
                     onDarkModeClicked = { isDarkmodeDialogVisible = true },
                     onIdeasClicked = { onSendEmail(false) },
-                    onTroubleClicked = { onSendEmail(true) }
+                    onTroubleClicked = { onSendEmail(true) },
+                    onAffirmationClicked = onAffirmationClicked
                 )
             } else {
                 SettingsWorkout(

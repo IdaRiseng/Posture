@@ -3,6 +3,10 @@ package no.sporty.posture.activities.mainView.elements
 import BigHeadlineAlwaysWhiteText
 import SmallDisabledWhiteText
 import androidx.annotation.StringRes
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -30,6 +34,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
@@ -122,17 +127,17 @@ private fun PagerView(content: @Composable ColumnScope.() -> Unit) {
 
 @Composable
 private fun CountView(@StringRes title: Int, count: Int, affirmation: String?) {
-    val context = LocalContext.current
-   // val affirmation by rememberSaveable { mutableStateOf(context.resources.getStringArray(R.array.simple_affirmations).random()) }
-
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.padding(horizontal = 16.dp)) {
         Spacer(modifier = Modifier.height(50.dp))
         HeadlineAlwaysWhiteText(text = stringResource(id = title))
         Spacer(modifier = Modifier.height(16.dp))
         BigHeadlineAlwaysWhiteText(text = count.toString())
         Spacer(modifier = Modifier.height(16.dp))
         BodyAlwaysWhiteText(text = pluralStringResource(id = R.plurals.day, count))
-        Spacer(modifier = Modifier.height(50.dp))
-        affirmation?.let { SmallDisabledWhiteText(it) }
+        Spacer(modifier = Modifier.height(40.dp))
+
+        AnimatedVisibility(visible = affirmation != null, enter = fadeIn(animationSpec = tween(2_000))) {
+            SmallDisabledWhiteText(affirmation ?: "", textAlign = TextAlign.Center)
+        }
     }
 }

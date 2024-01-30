@@ -26,6 +26,7 @@ import no.sporty.posture.model.TopBarInfo
 import no.sporty.posture.model.data.AffirmationApiService
 import no.sporty.posture.model.data.AffirmationResponse
 import no.sporty.posture.model.manager.AffirmationManager
+import no.sporty.posture.sharedPreferences.AffirmationPref
 import no.sporty.posture.sharedPreferences.CustomExercisePrefs
 import no.sporty.posture.sharedPreferences.SavedExerciseInfo
 import no.sporty.posture.sharedPreferences.StreakPrefs
@@ -40,7 +41,7 @@ class MainActivity : ComponentActivity() {
     private val topBarInfo: MutableState<TopBarInfo> = mutableStateOf(TopBarInfo())
     private val customExercises: MutableState<List<CustomExercise>> = mutableStateOf(emptyList())
     private var mInterstitialAd: InterstitialAd? = null
-    private var affirmations : MutableState<String?> = mutableStateOf(null)
+    private var affirmations: MutableState<String?> = mutableStateOf(null)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,7 +66,7 @@ class MainActivity : ComponentActivity() {
                     CustomExercisePrefs.removeCustomExercise(this, it)
                     customExercises.value = CustomExercisePrefs.getCustomExerciseList(this)
                 },
-                affirmation = affirmations.value ,
+                affirmation = affirmations.value,
                 onCustomExerciseClicked = { startExerciseResult.launch(NextMovementActivity.newIntent(this, it, it.movements.size)) }
             )
             LaunchedEffect(this) {
@@ -126,11 +127,13 @@ class MainActivity : ComponentActivity() {
         })
 
     }
-    private suspend fun getAffirmation() {
-        AffirmationManager.getAffirmations {
-            affirmations.value = it
-        }
 
+    private suspend fun getAffirmation() {
+        if (AffirmationPref.getAffirmationEnabled(this)) {
+            AffirmationManager.getAffirmations {
+                affirmations.value = it
+            }
+        }
     }
 }
 
