@@ -6,13 +6,16 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.rememberCoroutineScope
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
+import kotlinx.coroutines.launch
 import no.sporty.posture.activities.customExercise.CreateCustomExerciseActivity
 import no.sporty.posture.activities.nextMovement.NextMovementActivity
 import no.sporty.posture.activities.setMovementCount.SetMovementCountActivity
@@ -20,6 +23,10 @@ import no.sporty.posture.activities.settings.SettingsActivity
 import no.sporty.posture.model.CustomExercise
 import no.sporty.posture.model.Exercise
 import no.sporty.posture.model.TopBarInfo
+import no.sporty.posture.model.data.AffirmationApiService
+import no.sporty.posture.model.data.AffirmationResponse
+import no.sporty.posture.model.manager.AffirmationManager
+import no.sporty.posture.sharedPreferences.AffirmationPref
 import no.sporty.posture.sharedPreferences.CustomExercisePrefs
 import no.sporty.posture.sharedPreferences.SavedExerciseInfo
 import no.sporty.posture.sharedPreferences.StreakPrefs
@@ -34,6 +41,7 @@ class MainActivity : ComponentActivity() {
     private val topBarInfo: MutableState<TopBarInfo> = mutableStateOf(TopBarInfo())
     private val customExercises: MutableState<List<CustomExercise>> = mutableStateOf(emptyList())
     private var mInterstitialAd: InterstitialAd? = null
+    private var affirmations: MutableState<String?> = mutableStateOf(null)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +54,7 @@ class MainActivity : ComponentActivity() {
         StreakPrefs.checkStreakLogin(this)
         loadAd()
         setContent {
+            val coroutine = rememberCoroutineScope()
             MainView(
                 topBarInfo = topBarInfo.value,
                 exercises = exercises,
@@ -57,8 +66,14 @@ class MainActivity : ComponentActivity() {
                     CustomExercisePrefs.removeCustomExercise(this, it)
                     customExercises.value = CustomExercisePrefs.getCustomExerciseList(this)
                 },
+                affirmation = affirmations.value,
                 onCustomExerciseClicked = { startExerciseResult.launch(NextMovementActivity.newIntent(this, it, it.movements.size)) }
             )
+            LaunchedEffect(this) {
+                coroutine.launch {
+                    getAffirmation()
+                }
+            }
         }
     }
 
@@ -110,7 +125,15 @@ class MainActivity : ComponentActivity() {
                 mInterstitialAd = interstitialAd
             }
         })
+
+    }
+
+    private suspend fun getAffirmation() {
+        if (AffirmationPref.getAffirmationEnabled(this)) {
+            AffirmationManager.getAffirmations {
+                affirmations.value = it
+            }
+        }
     }
 }
-
 

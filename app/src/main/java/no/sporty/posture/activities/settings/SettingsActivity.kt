@@ -21,27 +21,34 @@ class SettingsActivity : ComponentActivity() {
         fun newIntent(context: Context) = Intent(context, SettingsActivity::class.java)
     }
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContent {
-            var isLanguageChanged by rememberSaveable { mutableStateOf(false) }
+            var needsToRecreateView by rememberSaveable { mutableStateOf(false) }
             Settings(
-                onBackPressed = { onBackpressed(isLanguageChanged) },
+                onBackPressed = { onBackPressed(needsToRecreateView) },
                 onCustomExerciseClicked = { startActivity(AddOrRemoveCustomExerciseActivity.newIntent(this)) },
                 onThemeSelected = {
                     ThemePrefs.writeSelectedTheme(this, it)
                     AppCompatDelegate.setDefaultNightMode(it)
+                    needsToRecreateView = true
                     recreate()
-                    isLanguageChanged = true
                 },
-                onSendEmail = { sendEmail(it) }
+                onSendEmail = { sendEmail(it) },
+                onAffirmationClicked = { needsToRecreateView = true }
             )
         }
     }
 
-    private fun onBackpressed(isLanguageChanged: Boolean) {
-        if (isLanguageChanged) {
+    override fun onBackPressed() {
+        onBackPressed(true)
+        super.onBackPressed()
+    }
+
+    fun onBackPressed(needsToRecreateView: Boolean) {
+        if (needsToRecreateView) {
             setResult(RESULT_OK)
         }
         finish()

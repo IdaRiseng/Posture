@@ -22,7 +22,8 @@ import no.sporty.posture.ui.theme.inputField.InputField
 fun SettingsGeneral(
     onDarkModeClicked: () -> Unit,
     onIdeasClicked: () -> Unit,
-    onTroubleClicked: () -> Unit
+    onTroubleClicked: () -> Unit,
+    onAffirmationClicked: () -> Unit,
 ) {
     Column(
         Modifier
@@ -32,6 +33,7 @@ fun SettingsGeneral(
         Spacer(modifier = Modifier.height(16.dp))
         SmallDisabledBlackText(textRes = R.string.general)
         ExpandableTextButton(textRes = R.string.darkmode, iconId = R.drawable.ic_darkmode, onClick = onDarkModeClicked)
+        ExpandableTextButton(textRes = R.string.affirmation, iconId = R.drawable.ic_hand_heart, showSwitch = true, onClick = onAffirmationClicked )
 
         Spacer(modifier = Modifier.height(32.dp))
         SmallDisabledBlackText(text = "Feedback")

@@ -3,6 +3,10 @@ package no.sporty.posture.activities.mainView.elements
 import BigHeadlineAlwaysWhiteText
 import SmallDisabledWhiteText
 import androidx.annotation.StringRes
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -30,6 +34,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
@@ -46,7 +51,7 @@ import java.time.LocalDate
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
-fun MainTopBar(topBarInfo: TopBarInfo, onSettingsClicked: () -> Unit) {
+fun MainTopBar(topBarInfo: TopBarInfo, onSettingsClicked: () -> Unit, affirmation: String?) {
     Box(Modifier.background(MaterialTheme.colorScheme.primary)) {
         Column(
             modifier = Modifier
@@ -58,8 +63,8 @@ fun MainTopBar(topBarInfo: TopBarInfo, onSettingsClicked: () -> Unit) {
             val pagerState = rememberPagerState()
             HorizontalPager(state = pagerState, count = 3, modifier = Modifier.padding(bottom = 16.dp)) { page ->
                 when (page) {
-                    0 -> Streak(topBarInfo.streak)
-                    1 -> Total(topBarInfo.total)
+                    0 -> Streak(topBarInfo.streak, affirmation)
+                    1 -> Total(topBarInfo.total, affirmation)
                     2 -> Calendar(topBarInfo.datesExercised)
                 }
             }
@@ -89,16 +94,16 @@ fun MainTopBar(topBarInfo: TopBarInfo, onSettingsClicked: () -> Unit) {
 
 
 @Composable
-private fun Streak(streak: Int) {
+private fun Streak(streak: Int, affirmation: String?) {
     PagerView {
-        CountView(title = R.string.streak, count = streak)
+        CountView(title = R.string.streak, count = streak, affirmation)
     }
 }
 
 @Composable
-private fun Total(total: Int) {
+private fun Total(total: Int, affirmation: String?) {
     PagerView {
-        CountView(title = R.string.total, count = total)
+        CountView(title = R.string.total, count = total, affirmation)
     }
 }
 
@@ -121,18 +126,18 @@ private fun PagerView(content: @Composable ColumnScope.() -> Unit) {
 }
 
 @Composable
-private fun CountView(@StringRes title: Int, count: Int) {
-    val context = LocalContext.current
-    val affirmation by rememberSaveable { mutableStateOf(context.resources.getStringArray(R.array.simple_affirmations).random()) }
-
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+private fun CountView(@StringRes title: Int, count: Int, affirmation: String?) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.padding(horizontal = 16.dp)) {
         Spacer(modifier = Modifier.height(50.dp))
         HeadlineAlwaysWhiteText(text = stringResource(id = title))
         Spacer(modifier = Modifier.height(16.dp))
         BigHeadlineAlwaysWhiteText(text = count.toString())
         Spacer(modifier = Modifier.height(16.dp))
         BodyAlwaysWhiteText(text = pluralStringResource(id = R.plurals.day, count))
-        Spacer(modifier = Modifier.height(50.dp))
-        SmallDisabledWhiteText(affirmation)
+        Spacer(modifier = Modifier.height(40.dp))
+
+        AnimatedVisibility(visible = affirmation != null, enter = fadeIn(animationSpec = tween(2_000))) {
+            SmallDisabledWhiteText(affirmation ?: "", textAlign = TextAlign.Center)
+        }
     }
 }
