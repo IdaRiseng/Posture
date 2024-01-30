@@ -13,21 +13,17 @@ enum class Exercise(
     BUILD_AND_STRETCH(
         title = R.string.build_and_stretch,
         shortDesc = R.string.build_and_stretch_desc,
-        illustration = R.drawable.launcher_icon,
+        illustration = R.drawable.wall_slide,
         movements = listOf(
             Movement.YWTS,
-            Movement.PRAYER_STRETCH,
-            Movement.SCARECROW,
             Movement.SHOULDER_DISLOCATIONS,
             Movement.WALL_SLIDE,
-            Movement.QUADRUPED_REACH,
-            Movement.DOOR_FRAME_STRETCH
         )
     ),
     SIMPLE_OFFICE_EXERCISE(
         title = R.string.simple_office_exercise,
         shortDesc = R.string.simple_office_exercise_desc,
-        illustration = R.drawable.launcher_icon,
+        illustration = R.drawable.lower_back_stretch,
         movements = listOf(
             Movement.CHEST_OPENER,
             Movement.NECK_STRETCH,
@@ -42,7 +38,7 @@ enum class Exercise(
     MINDFUL_STRETCHING(
         title = R.string.mindful_stretching,
         shortDesc = R.string.mindful_stretching_desc,
-        illustration = R.drawable.launcher_icon,
+        illustration = R.drawable.shoulder_circles,
         movements = listOf(
             Movement.ANGEL_WINGS,
             Movement.SHOULDER_CIRCLES,
@@ -51,25 +47,24 @@ enum class Exercise(
             Movement.THORACIC_ROTATION,
             Movement.EXTENDED_PUPPYPOSE,
             Movement.LOTUS_POSE,
-            Movement.SHOULDER_STRETCH,
-            Movement.DYNAMIC_CAMEL,
             Movement.TABLE_TOP_LIFT
         )
     ),
     BED_EXERCISE(
         title = R.string.bed_exercise,
         shortDesc = R.string.bed_exercise_desc,
-        illustration = R.drawable.launcher_icon,
+        illustration = R.drawable.extended_puppypose,
         movements = listOf(
             Movement.YWTS,
-            Movement.AB_STRETCH,
+            Movement.CAT_COW,
+            Movement.GLUTE_BRIDGE,
             Movement.BACK_SQUEEZE_PULSE,
             Movement.BACK_SWIM,
             Movement.LOTUS_POSE,
-            Movement.SHOULDER_STRETCH
+            Movement.EXTENDED_PUPPYPOSE
         )
     ),
-    AT_THE_GYM(
+    /*AT_THE_GYM(
         title = R.string.at_the_gym,
         shortDesc = R.string.at_the_gym_desc,
         illustration = R.drawable.launcher_icon,
@@ -85,5 +80,5 @@ enum class Exercise(
             Movement.SCARECROW,
             Movement.SHOULDER_DISLOCATIONS,
         )
-    )
+    )*/
 }

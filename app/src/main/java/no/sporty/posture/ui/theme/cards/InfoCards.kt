@@ -126,8 +126,8 @@ fun InfoCard(
                     modifier = Modifier
                         .height(columnHeightDp)
                         .fillMaxWidth()
-                        .weight(1.5f), // TODO gotta do something about this
-                    contentScale = ContentScale.FillBounds
+                        .weight(1.5f),
+                    contentScale = ContentScale.FillHeight
                 )
             }
         }
