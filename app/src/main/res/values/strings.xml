@@ -111,15 +111,17 @@
     <!-- Movements -->
     <!-- wall -->
     <string name="wall_slide">Wall slide</string>
-    <string name="wall_slide_desc">Make sure to keep all parts of your back against the wall. \nSlide your arms up and down and always make sure they are touching the wall.</string>
+    <string name="wall_slide_desc">Make sure to keep all parts of your back against the wall. \nSlide your arms up and down and always make sure they are always touching the wall.</string>
     <string name="wall_touch">Wall touch</string>
     <string name="door_frame_stretch">Door frame stretch</string>
-    <string name="chest_opener_desc">Open your elbows to the side and back and squeeze the shoulder blades together</string>
 
     <!-- Sitting -->
     <string name="chest_opener">Chest opener</string>
+    <string name="chest_opener_desc">Open your elbows to the side and back and squeeze the shoulder blades together</string>
     <string name="neck_stretch">Neck stretch</string>
+    <string name="neck_stretch_desc">Rest your hand on your head. Gently pull your head to the side to stretch your neck</string>
     <string name="heart_opener">Heart opener</string>
+    <string name="heart_opener_desc">Put your arms behind your back and pull your</string>
     <string name="lower_back_stretch">Lower back stretch</string>
     <string name="back_stretch">Back stretch</string>
     <string name="turtle_neck">Turtle neck</string>
@@ -127,11 +129,16 @@
     <string name="shoulder_circles">Shoulder circles</string>
 
     <!-- Laying -->
+    <string name="all_four_twist">All four twist</string>
+    <string name="all_four_twist_desc">Twist your torso to reach one arm up to the sky. Look up and twist to open up your chest even more.</string>
     <string name="table_top_lift">Table top lift</string>
+    <string name="table_top_lift_desc">Push your palms against the floor, face up. Push your body upward till its horizontal, hold, and go slowly back down. Squeeze your shoulder blades together</string>
     <string name="glute_bridge">Glute bridge</string>
+    <string name="glute_bridge_desc">Hips as high up as possible. Lace your fingers together while squeezing your back and shoulder blades together</string>
     <string name="ab_stretch">Ab stretch</string>
-    <string name="down_dog_twist">Down dog twist</string>
+    <string name="ab_stretch_desc">Lay face down on the ground. Push your body up in a seal position to stretch your lower back and abs</string>
     <string name="back_squeeze_pulse">Back squeeze pulse</string>
+    <string name="back_squeeze_pulse_desc">Lay face down on the ground. Pull your elbows back and lift your torso lightly. Squeeze your shoulder blades together. Push up and down for 3 reps and then repeat. </string>
     <string name="back_swim">Back swim</string>
     <string name="cat_cow">Cat cow</string>
     <string name="thoracic_rotation">Thoracic rotation</string>
