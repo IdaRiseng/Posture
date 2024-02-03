@@ -123,9 +123,13 @@
     <string name="heart_opener">Heart opener</string>
     <string name="heart_opener_desc">Put your arms behind your back and pull your</string>
     <string name="lower_back_stretch">Lower back stretch</string>
+    <string name="lower_back_stretch_desc">On a chair, move your left arm to the chairs top rail and drag your upper torso towards your arm.</string>
     <string name="back_stretch">Back stretch</string>
+    <string name="back_stretch_desc">Hug your legs and press your back as high as you can. </string>
     <string name="turtle_neck">Turtle neck</string>
+    <string name="turtle_neck_desc">Hold your chin and push your head back. Make sure to keep your head straight. </string>
     <string name="angel_wings">Angel wings</string>
+    <string name="angel_wings_desc">Lay your hands against an invisible wall, hands up and elbows down. When pushing down, make sure to focus on your back muscles. </string>
     <string name="shoulder_circles">Shoulder circles</string>
 
     <!-- Laying -->
@@ -140,24 +144,19 @@
     <string name="back_squeeze_pulse">Back squeeze pulse</string>
     <string name="back_squeeze_pulse_desc">Lay face down on the ground. Pull your elbows back and lift your torso lightly. Squeeze your shoulder blades together. Push up and down for 3 reps and then repeat. </string>
     <string name="back_swim">Back swim</string>
+    <string name="back_swim_desc">Lay on your stomach while keeping your head straight in front of you. Move them up and back while keeping them straight.</string>
     <string name="cat_cow">Cat cow</string>
+    <string name="cat_cow_desc">On all four, push your spine towards the sky and keep your head down. Then push your spine towards the ground and your head up</string>
     <string name="thoracic_rotation">Thoracic rotation</string>
+    <string name="thoracic_rotation_desc">On all four, take one arm behind your head and rotate your body first towards the sky, then the ground. </string>
     <string name="extended_puppy_pose">Extended puppy pose</string>
+    <string name="extended_puppy_pose_desc">On all four, press your body backwards to you stretch your arms. Head towards the ground. </string>
     <string name="lotus_pose">Lotus pose</string>
-    <string name="shoulder_stretch">Shoulder stretch</string>
-    <string name="dynamic_camel">Dynamic camel</string>
+    <string name="lotus_pose_desc">While laying on your stomach, put your hands behind your back and push your torso and legs towards the sky. </string>
     <string name="y_w_t_s">YWTs</string>
-
-    <!-- Gym -->
-    <string name="idk">Idk</string>
-    <string name="idk_two">idk two</string>
-    <string name="idk_three">idk three</string>
-    <string name="shoulder_dislocation_foam_roller">Shoulder dislocation (Foam roller)</string>
-    <string name="quadruped_reach">Quadruped reach</string>
-    <string name="pull_aparts">Pull aparts</string>
-    <string name="prayer_stretch">Prayer stretch</string>
-    <string name="scarecrow">Scarecrow</string>
+    <string name="y_w_t_s_desc">Lay on your stomach creating a Y with your arms, then W, then T. </string>
     <string name="shoulder_dislocations">Shoulder dislocations</string>
+    <string name="shoulder_dislocations_desc">Use a band, scarf or blanket. Hold each ends and try to rotate the band from the front to the back. </string>
 
     <string name="you_did_this_exercise">You did this exercise %s: </string>
     <string name="you_did_this_custom_exercise">You did this custom exercise %s: </string>

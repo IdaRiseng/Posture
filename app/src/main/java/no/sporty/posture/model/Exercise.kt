@@ -17,7 +17,10 @@ enum class Exercise(
         movements = listOf(
             Movement.YWTS,
             Movement.SHOULDER_DISLOCATIONS,
-            Movement.WALL_SLIDE,
+            Movement.ANGEL_WINGS,
+            Movement.HEART_OPENER,
+            Movement.TURTLE_NECK,
+            Movement.BACK_SQUEEZE_PULSE
         )
     ),
     SIMPLE_OFFICE_EXERCISE(
@@ -32,7 +35,7 @@ enum class Exercise(
             Movement.BACK_STRETCH,
             Movement.TURTLE_NECK,
             Movement.ANGEL_WINGS,
-            Movement.SHOULDER_CIRCLES
+            Movement.SHOULDER_CIRCLES,
         )
     ),
     MINDFUL_STRETCHING(
@@ -57,28 +60,14 @@ enum class Exercise(
         movements = listOf(
             Movement.YWTS,
             Movement.CAT_COW,
+            Movement.ALL_FOUR_TWIST,
             Movement.GLUTE_BRIDGE,
+            Movement.THORACIC_ROTATION,
             Movement.BACK_SQUEEZE_PULSE,
             Movement.BACK_SWIM,
             Movement.LOTUS_POSE,
+            Movement.TABLE_TOP_LIFT,
             Movement.EXTENDED_PUPPYPOSE
         )
-    ),
-    /*AT_THE_GYM(
-        title = R.string.at_the_gym,
-        shortDesc = R.string.at_the_gym_desc,
-        illustration = R.drawable.launcher_icon,
-        movements = listOf(
-            Movement.IDK,
-            Movement.IDK_TWO,
-            Movement.IDK_THREE,
-            Movement.SHOULDER_DISLOCATIONS_FOAM_ROLLER,
-            Movement.QUADRUPED_REACH,
-            Movement.SHOULDER_STRETCH,
-            Movement.PULL_APARTS,
-            Movement.PRAYER_STRETCH,
-            Movement.SCARECROW,
-            Movement.SHOULDER_DISLOCATIONS,
-        )
-    )*/
+    )
 }
