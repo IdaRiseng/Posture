@@ -115,8 +115,8 @@ class MainActivity : ComponentActivity() {
     private fun loadAd() {
         val adRequest = AdRequest.Builder().build()
         //real prod version is this: ca-app-pub-2580430564049859/5931067653
-        //DO NOT USE THIS OTHER THAN IN PROD
-        InterstitialAd.load(this, "ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
+        //test is: ca-app-pub-3940256099942544/1033173712
+        InterstitialAd.load(this, "ca-app-pub-2580430564049859/5931067653", adRequest, object : InterstitialAdLoadCallback() {
             override fun onAdFailedToLoad(adError: LoadAdError) {
                 mInterstitialAd = null
             }
