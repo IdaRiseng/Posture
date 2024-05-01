@@ -16,7 +16,7 @@ enum class Movement(@StringRes val title: Int, @DrawableRes val illustration: In
     NECK_STRETCH(R.string.neck_stretch, R.drawable.neck_stretch, R.raw.neck_stretch, MovementInfo(illustration = null, R.string.neck_stretch_desc)),
     HEART_OPENER(R.string.heart_opener, R.drawable.heart_opener, R.raw.heart_opener, MovementInfo(illustration = null, R.string.heart_opener_desc)),
     LOWER_BACK_STRETCH(R.string.lower_back_stretch, R.drawable.lower_back_stretch, R.raw.lower_back_stretch, MovementInfo(illustration = null, R.string.lower_back_stretch_desc)),
-    BACK_STRETCH(R.string.back_stretch, R.drawable.back_stretch, R.raw.back_strech, MovementInfo(illustration = null, R.string.back_stretch_desc)),
+    BACK_STRETCH(R.string.back_stretch, R.drawable.back_stretch, R.raw.back_stretch, MovementInfo(illustration = null, R.string.back_stretch_desc)),
     TURTLE_NECK(R.string.turtle_neck, R.drawable.turtle_neck, R.raw.turtle_neck, MovementInfo(illustration = null, R.string.turtle_neck_desc)),
     ANGEL_WINGS(R.string.angel_wings, R.drawable.angel_wings, R.raw.angel_wings, MovementInfo(illustration = null, R.string.angel_wings_desc)),
     SHOULDER_CIRCLES(R.string.shoulder_circles, R.drawable.shoulder_circles, R.raw.shoulder_circles, null),

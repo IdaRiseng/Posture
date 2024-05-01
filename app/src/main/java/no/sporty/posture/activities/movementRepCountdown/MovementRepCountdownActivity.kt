@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.MutableState
@@ -27,6 +28,8 @@ class MovementRepCountdownActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         val movement = intent.getSerializableExtra(MOVEMENT_TAG) as Movement
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+
         setContent {
             MovementRepCountdown(
                 movement = movement,

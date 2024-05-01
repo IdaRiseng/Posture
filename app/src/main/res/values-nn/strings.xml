@@ -1,0 +1,164 @@
+<resources>
+    <string name="app_name">Posture</string>
+    <string name="streak">Streak</string>
+    <string name="total">Total</string>
+    <plurals name="day">
+        <item quantity="one">Dag</item>
+        <item quantity="other">Dager</item>
+    </plurals>
+    <string name="create">Lag</string>
+    <string name="_continue">Fortsett</string>
+
+
+    <!-- Exercises -->
+    <string name="exercises">Øvelser</string>
+    <string name="build_and_stretch">Bygg og strekk</string>
+    <string name="build_and_stretch_desc">Styrk ryggmusklene, strekk fremre muskler</string>
+    <string name="simple_office_exercise">Enkel kontorøvelse</string>
+    <string name="simple_office_exercise_desc">Trening mens du sitter på en stol</string>
+    <string name="mindful_stretching">Bemerksom tøying</string>
+    <string name="mindful_stretching_desc">Sakk ned og slapp av enhver spenning, husk pusten din</string>
+    <string name="bed_exercise">Sengeøvelser</string>
+    <string name="bed_exercise_desc">Gjør øvelser mens du ligger i sengen</string>
+    <string name="at_the_gym">På treningsstudioet</string>
+    <string name="at_the_gym_desc">Bruk verktøyene på treningsstudioet ditt for en bedre treningsøkt</string>
+
+    <!-- Info cards -->
+    <string name="info">Info</string>
+    <!-- Thank you -->
+    <string name="info_thank_you_title">Tusen takk!</string>
+    <string name="info_thank_you_desc">Hvis du har problemer eller ideer, vennligst send meg en e-post (i innstillingene)</string>
+
+    <!-- custom exercise -->
+    <string name="info_custom_exercise_title">Egendefinert øvelse</string>
+    <string name="info_custom_exercise_desc">Lag en tilpasset øvelse som passer bedre for deg</string>
+    <string name="do_you_want_to_delete">Vil du slette denne øvelsen?</string>
+    <string name="delete">Slett</string>
+
+
+    <!-- Exercise flow -->
+    <string name="start_exercise">Start trening</string>
+    <string name="skip">Hopp over</string>
+    <string name="how_long_exercise">Hvor lenge vil du trene?</string>
+    <string name="how_many_movements">Hvor mange bevegelser vil du ta?</string>
+    <string name="repetitions_left">Repetisjoner igjen</string>
+    <string name="continuous_exercise">Kontinuerlig trening</string>
+    <array name="positive_words">
+        <item>Godt gjort!</item>
+        <item>Utrolig</item>
+        <item>Flott</item>
+        <item>Fantastisk!</item>
+    </array>
+    <string name="done">Ferdig</string>
+
+    <!-- Settings -->
+
+    <string name="settings">Innstillinger</string>
+    <string name="options">Alternativer</string>
+    <string name="save">Lagre</string>
+    <string name="time_based">Tidsbasert</string>
+    <string name="how_long_movement">Hvor lang tid bør hver bevegelse ta?</string>
+    <string name="set_rep_based">Sett- / rep-basert</string>
+    <string name="now_many_repetitions">Hvor mange repetisjoner vil du ta for hver bevegelse?</string>
+
+    <string name="dark_theme_title">Mørk modus</string>
+    <string name="device_theme">Samme som enhetstema</string>
+    <string name="light_theme">Alltid i lysmodus</string>
+    <string name="dark_theme">Alltid i mørkmodus</string>
+
+    <string name="workout">Trening</string>
+    <string name="general">Generelt</string>
+    <string name="darkmode">Mørkmodus</string>
+    <string name="affirmation">Positivt tankesett</string>
+    <string name="_minutes">%s minutter</string>
+
+    <string name="got_ideas">Har du noen gode ideer?</string>
+    <string name="trouble_with_app">Har du problemer med appen?</string>
+    <string name="send">Send</string>
+    <plurals name="minute">
+        <item quantity="one">minutt</item>
+        <item quantity="other">minutter</item>
+    </plurals>
+    <plurals name="rep">
+        <item quantity="one">rep</item>
+        <item quantity="other">reps</item>
+    </plurals>
+
+    <array name="weekdays">
+        <item>Mo</item>
+        <item>Ti</item>
+        <item>On</item>
+        <item>To</item>
+        <item>Fr</item>
+        <item>Lø</item>
+        <item>Sø</item>
+    </array>
+
+    <!-- https://www.affirmations.dev -->
+    <array name="simple_affirmations">
+        <item>Du er god nok</item>
+        <item>Du er verdifull</item>
+    </array>
+
+    <string name="custom_exercise">Egendefinert øvelse</string>
+    <string name="add_movements">Legg til minst én bevegelse for å lage en øvelse</string>
+    <string name="add">Legg til</string>
+
+    <string name="app_trouble">Jeg har problemer med Posture-appen</string>
+    <string name="app_idea">Jeg har en idé til Posture-appen</string>
+
+
+    <!-- Movements -->
+    <!-- wall -->
+    <string name="wall_slide">Vegg-skli</string>
+    <string name="wall_slide_desc">Sørg for å holde alle deler av ryggen mot veggen. \nSkyv armene opp og ned og sørg alltid for at de alltid berører veggen.</string>
+    <string name="wall_touch">Veggberøring</string>
+    <string name="door_frame_stretch">Dørrammestrekk</string>
+
+    <!-- Sitting -->
+    <string name="chest_opener">Bryst åpner</string>
+    <string name="chest_opener_desc">Åpne albuene til siden og bakover og klem skulderbladene sammen</string>
+    <string name="neck_stretch">Nakke strekk</string>
+    <string name="neck_stretch_desc">Hvil hånden på hodet. Trekk hodet forsiktig til siden for å strekke nakken</string>
+    <string name="heart_opener">Hjerte åpnener</string>
+    <string name="heart_opener_desc">Legg armene bak ryggen og trekk armene oppover</string>
+    <string name="lower_back_stretch">Strekk nedre rygg</string>
+    <string name="lower_back_stretch_desc">På en stol, flytt venstre arm til stolens øvre skinne og dra overkroppen mot armen.</string>
+    <string name="back_stretch">Rygg strekk</string>
+    <string name="back_stretch_desc">Klem bena og press ryggen så høyt du kan</string>
+    <string name="turtle_neck">Skilpadde nakke</string>
+    <string name="turtle_neck_desc">Hold haken og skyv hodet bakover. Sørg for å holde hodet rett</string>
+    <string name="angel_wings">Englevinger</string>
+    <string name="angel_wings_desc">Legg hendene mot en usynlig vegg, hendene opp og albuene ned. Når du presser ned, sørg for å fokusere på ryggmusklene.</string>
+    <string name="shoulder_circles">Skuldersirkler</string>
+
+    <!-- Laying -->
+    <string name="all_four_twist">Vri på alle fire</string>
+    <string name="all_four_twist_desc">Vri overkroppen for å nå en arm opp mot himmelen. Se opp og vri for å åpne brystet enda mer.</string>
+    <string name="table_top_lift">Bordløfter</string>
+    <string name="table_top_lift_desc">Skyv håndflatene mot gulvet, med forsiden opp. Skyv kroppen din oppover til den er vannrett, hold og gå sakte ned igjen. Klem skulderbladene sammen</string>
+    <string name="glute_bridge">Glutebro</string>
+    <string name="glute_bridge_desc">Hofter så høyt opp som mulig. Knip fingrene sammen mens du klemmer ryggen og skulderbladene sammen</string>
+    <string name="ab_stretch">Ab strekning</string>
+    <string name="ab_stretch_desc">Legg deg med ansiktet ned på bakken. Skyv kroppen opp i en forseglet stilling for å strekke nedre rygg og mage</string>
+    <string name="back_squeeze_pulse">Ryggklempuls</string>
+    <string name="back_squeeze_pulse_desc">Legg deg med ansiktet ned på bakken. Trekk albuene bakover og løft torso lett. Klem skulderbladene sammen. Skyv opp og ned i 3 reps og gjenta deretter </string>
+    <string name="back_swim">Ryggsvømming</string>
+    <string name="back_swim_desc">Legg deg på magen mens du holder hodet rett foran deg. Flytt dem opp og tilbake mens du holder dem rett.</string>
+    <string name="cat_cow">Katt ku</string>
+    <string name="cat_cow_desc">På alle fire skyver du ryggraden mot himmelen og holder hodet nede. Skyv deretter ryggraden mot bakken og hodet opp</string>
+    <string name="thoracic_rotation">Thorax rotasjon</string>
+    <string name="thoracic_rotation_desc">På alle fire, ta en arm bak hodet og roter kroppen først mot himmelen, deretter bakken. </string>
+    <string name="extended_puppy_pose">Utvidet valpestilling</string>
+    <string name="extended_puppy_pose_desc">På alle fire, press kroppen bakover for å strekke armene. Gå mot bakken. </string>
+    <string name="lotus_pose">Lotus positur</string>
+    <string name="lotus_pose_desc">Mens du legger deg på magen, legg hendene bak ryggen og skyv overkroppen og bena mot himmelen. </string>
+    <string name="y_w_t_s">YWTs</string>
+    <string name="y_w_t_s_desc">Legg deg på magen og lag en Y med armene, deretter W, deretter T.</string>
+    <string name="shoulder_dislocations">Skulderluksasjoner</string>
+    <string name="shoulder_dislocations_desc">Bruk et bånd, skjerf eller teppe. Hold hver ende og prøv å rotere båndet fra forsiden til baksiden. </string>
+
+    <string name="you_did_this_exercise">Du gjorde denne øvelsen %s:</string>
+    <string name="you_did_this_custom_exercise">Du gjorde denne egendefinerte øvelsen %s: </string>
+
+</resources>

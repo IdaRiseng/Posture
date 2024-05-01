@@ -125,7 +125,7 @@ private fun CalendarBottomSheet(savedExerciseInfo: SavedExerciseInfo, openBottom
 
             Column(Modifier.padding(top = 16.dp, start = 16.dp, end = 16.dp, bottom = 58.dp)) {
                 CustomExercisePrefs.getCustomExerciseList(context).find { it.title == savedExerciseInfo.name }?.let {
-                    BodyBlackText(text = stringResource(R.string.you_did_this_exercise, savedExerciseInfo.date.format(pattern)))
+                    BodyBlackText(text = stringResource(R.string.you_did_this_custom_exercise, savedExerciseInfo.date.format(pattern)))
                     HeadlineBlackText(text = it.title)
                     Spacer(modifier = Modifier.height(16.dp))
                     Image(
@@ -136,7 +136,7 @@ private fun CalendarBottomSheet(savedExerciseInfo: SavedExerciseInfo, openBottom
                     )
                 }
                 Exercise.values().find { stringResource(it.title) == savedExerciseInfo.name }?.let {
-                    BodyBlackText(text = stringResource(R.string.you_did_this_custom_exercise, savedExerciseInfo.date.format(pattern)))
+                    BodyBlackText(text = stringResource(R.string.you_did_this_exercise, savedExerciseInfo.date.format(pattern)))
                     HeadlineBlackText(text = stringResource(it.title))
                     Spacer(modifier = Modifier.height(16.dp))
                     Image(

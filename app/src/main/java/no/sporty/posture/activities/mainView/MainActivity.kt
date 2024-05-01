@@ -10,6 +10,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.rememberCoroutineScope
+import com.google.android.exoplayer2.BuildConfig
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
@@ -116,7 +117,8 @@ class MainActivity : ComponentActivity() {
         val adRequest = AdRequest.Builder().build()
         //real prod version is this: ca-app-pub-2580430564049859/5931067653
         //test is: ca-app-pub-3940256099942544/1033173712
-        InterstitialAd.load(this, "ca-app-pub-2580430564049859/5931067653", adRequest, object : InterstitialAdLoadCallback() {
+        val id = if (BuildConfig.DEBUG) "ca-app-pub-3940256099942544/1033173712" else "ca-app-pub-2580430564049859/5931067653"
+        InterstitialAd.load(this, id, adRequest, object : InterstitialAdLoadCallback() {
             override fun onAdFailedToLoad(adError: LoadAdError) {
                 mInterstitialAd = null
             }
