@@ -115,6 +115,7 @@ class MainActivity : ComponentActivity() {
 
     private fun loadAd() {
         val adRequest = AdRequest.Builder().build()
+        //admob
         //real prod version is this: ca-app-pub-2580430564049859/5931067653
         //test is: ca-app-pub-3940256099942544/1033173712
         val id = if (BuildConfig.DEBUG) "ca-app-pub-3940256099942544/1033173712" else "ca-app-pub-2580430564049859/5931067653"
