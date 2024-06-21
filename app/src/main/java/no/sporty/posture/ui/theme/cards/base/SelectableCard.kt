@@ -23,6 +23,6 @@ fun SelectableCard(isSelected: Boolean, onSelected: () -> Unit, content: @Compos
             .fillMaxWidth(),
         content = content,
         colors = CardDefaults.cardColors(
-            containerColor = if (isSelected) MaterialTheme.colorScheme.tertiary else MaterialTheme.colorScheme.primaryContainer
+            containerColor = if (isSelected) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.tertiary
         )
     )

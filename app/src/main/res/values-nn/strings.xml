@@ -161,4 +161,7 @@
     <string name="you_did_this_exercise">Du gjorde denne øvelsen %s:</string>
     <string name="you_did_this_custom_exercise">Du gjorde denne egendefinerte øvelsen %s: </string>
 
+    <string name="remember_quote">Husk å lytte til kroppen og stopp hvis du trenger det</string>
+
+
 </resources>

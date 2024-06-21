@@ -13,7 +13,7 @@ enum class Exercise(
     BUILD_AND_STRETCH(
         title = R.string.build_and_stretch,
         shortDesc = R.string.build_and_stretch_desc,
-        illustration = R.drawable.build_and_stretch,
+        illustration = R.drawable.front_image_build_and_stretch,
         movements = listOf(
             Movement.YWTS,
             Movement.SHOULDER_DISLOCATIONS,
@@ -26,7 +26,7 @@ enum class Exercise(
     SIMPLE_OFFICE_EXERCISE(
         title = R.string.simple_office_exercise,
         shortDesc = R.string.simple_office_exercise_desc,
-        illustration = R.drawable.simple_office_exercise,
+        illustration = R.drawable.front_image_office_workout,
         movements = listOf(
             Movement.CHEST_OPENER,
             Movement.NECK_STRETCH,
@@ -41,7 +41,7 @@ enum class Exercise(
     MINDFUL_STRETCHING(
         title = R.string.mindful_stretching,
         shortDesc = R.string.mindful_stretching_desc,
-        illustration = R.drawable.mindful_exercise,
+        illustration = R.drawable.front_image_stretch,
         movements = listOf(
             Movement.ANGEL_WINGS,
             Movement.SHOULDER_CIRCLES,
@@ -56,7 +56,7 @@ enum class Exercise(
     BED_EXERCISE(
         title = R.string.bed_exercise,
         shortDesc = R.string.bed_exercise_desc,
-        illustration = R.drawable.bed_exercise,
+        illustration = R.drawable.front_image_bed,
         movements = listOf(
             Movement.YWTS,
             Movement.CAT_COW,

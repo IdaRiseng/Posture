@@ -20,13 +20,13 @@ object PostureColor {
     fun getLightTheme() = lightColorScheme(
         primary = signature,
         onPrimary = white,
-        primaryContainer = grey,
+        primaryContainer = lightSignature, //selectable selected card
         secondary = darkSignature,
-        tertiary = lighterSignature,
+        tertiary = white, // normal cards
         onTertiary = black,
-        background = white,
+        background = lighterSignature,
         onBackground = black,
-        surface = white,
+        surface = lighterSignature, //topbar color
 
         //For dialog
         secondaryContainer = lighterSignature, // dialog flat button

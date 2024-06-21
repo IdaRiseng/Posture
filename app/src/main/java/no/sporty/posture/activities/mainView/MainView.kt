@@ -93,7 +93,7 @@ fun MainView(
                         .fillMaxWidth(),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    SmallDisabledBlackText(text = "Remember to listen to your body and stop if you need to") //TODO
+                    SmallDisabledBlackText(text = stringResource(id = R.string.remember_quote))
                 }
             }
         }
@@ -127,7 +127,7 @@ private fun Info(onButtonClicked: () -> Unit) {
             title = R.string.info_custom_exercise_title,
             desc = R.string.info_custom_exercise_desc,
             buttonInfo = ButtonInfo(onButtonClicked, R.string.create),
-            image = R.drawable.heart_opener,
+            image = R.drawable.front_image_idk,
             onDismiss = {
                 InfoCardPrefs.customExerciseCardDismissed(context)
                 customExerciseCardVisible = false

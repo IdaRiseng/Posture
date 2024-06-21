@@ -161,4 +161,7 @@
     <string name="you_did_this_exercise">You did this exercise %s: </string>
     <string name="you_did_this_custom_exercise">You did this custom exercise %s: </string>
 
+    <string name="remember_quote">Remember to listen to your body and stop if you need to</string>
+
+
 </resources>
