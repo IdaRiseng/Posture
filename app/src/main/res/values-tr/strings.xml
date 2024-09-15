@@ -1,0 +1,167 @@
+<resources>
+    <string name="app_name">Duruş</string>
+    <string name="streak">Seri</string>
+    <string name="total">Toplam</string>
+    <plurals name="day">
+        <item quantity="one">Gün</item>
+        <item quantity="other">Günler</item>
+    </plurals>
+    <string name="create">Oluştur</string>
+    <string name="_continue">Devam et</string>
+
+
+    <!-- Egzersizler -->
+    <string name="exercises">Egzersizler</string>
+    <string name="build_and_stretch">Güçlendirme ve esneme</string>
+    <string name="build_and_stretch_desc">Sırt kaslarınızı güçlendirin, ön kaslarınızı esnetin</string>
+    <string name="simple_office_exercise">Basit ofis egzersizi</string>
+    <string name="simple_office_exercise_desc">Sandalyede otururken yapılan egzersizler</string>
+    <string name="mindful_stretching">Dikkatli esneme</string>
+    <string name="mindful_stretching_desc">Gevşemek için yavaşlayın, nefes almayı unutmayın</string>
+    <string name="bed_exercise">Yatakta egzersizler</string>
+    <string name="bed_exercise_desc">Yatakta yatarken egzersiz yapın</string>
+    <string name="at_the_gym">Spor salonunda</string>
+    <string name="at_the_gym_desc">Daha iyi bir antrenman için spor salonunuzdaki araçları kullanın</string>
+
+    <!-- Bilgi kartları -->
+    <string name="info">Bilgi</string>
+    <!-- Teşekkürler -->
+    <string name="info_thank_you_title">Teşekkürler!</string>
+    <string name="info_thank_you_desc">Herhangi bir sorun veya fikriniz varsa, lütfen bana bir e-posta gönderin (ayarlar bölümünde)</string>
+
+    <!-- Özel egzersiz -->
+    <string name="info_custom_exercise_title">Özel egzersiz</string>
+    <string name="info_custom_exercise_desc">Size daha uygun bir özel egzersiz oluşturun</string>
+    <string name="do_you_want_to_delete">Bu egzersizi silmek istiyor musunuz?</string>
+    <string name="delete">Sil</string>
+
+
+    <!-- Egzersiz akışı -->
+    <string name="start_exercise">Egzersize başla</string>
+    <string name="skip">Atla</string>
+    <string name="how_long_exercise">Ne kadar süre egzersiz yapmak istiyorsunuz?</string>
+    <string name="how_many_movements">Kaç hareket yapmak istiyorsunuz?</string>
+    <string name="repetitions_left">Kalan tekrarlar</string>
+    <string name="continuous_exercise">Sürekli egzersiz</string>
+    <array name="positive_words">
+        <item>Aferin!</item>
+        <item>Harika</item>
+        <item>Fevkalade</item>
+        <item>Muazzam!</item>
+    </array>
+    <string name="done">Bitti</string>
+
+    <!-- Ayarlar -->
+
+    <string name="settings">Ayarlar</string>
+    <string name="options">Seçenekler</string>
+    <string name="save">Kaydet</string>
+    <string name="time_based">Zamana dayalı</string>
+    <string name="how_long_movement">Her hareket ne kadar sürmeli?</string>
+    <string name="set_rep_based">Set / Tekrar tabanlı</string>
+    <string name="now_many_repetitions">Her hareket için kaç tekrar yapmak istersiniz?</string>
+
+    <string name="dark_theme_title">Karanlık mod</string>
+    <string name="device_theme">Cihaza göre tema</string>
+    <string name="light_theme">Her zaman açık mod</string>
+    <string name="dark_theme">Her zaman karanlık mod</string>
+
+    <string name="workout">Antrenman</string>
+    <string name="general">Genel</string>
+    <string name="darkmode">Karanlık mod</string>
+    <string name="affirmation">Onay</string>
+    <string name="_minutes">%s dakika</string>
+
+    <string name="got_ideas">Güzel fikirleriniz var mı?</string>
+    <string name="trouble_with_app">Uygulamayla ilgili sorun mu yaşıyorsunuz?</string>
+    <string name="send">Gönder</string>
+    <plurals name="minute">
+        <item quantity="one">dakika</item>
+        <item quantity="other">dakikalar</item>
+    </plurals>
+    <plurals name="rep">
+        <item quantity="one">tekrar</item>
+        <item quantity="other">tekrarlar</item>
+    </plurals>
+
+    <array name="weekdays">
+        <item>Pa</item>
+        <item>Pt</item>
+        <item>Sa</item>
+        <item>Ça</item>
+        <item>Pe</item>
+        <item>Cu</item>
+        <item>Ct</item>
+    </array>
+
+    <!-- https://www.affirmations.dev -->
+    <array name="simple_affirmations">
+        <item>Yeterince iyisin</item>
+        <item>Değerlisin</item>
+    </array>
+
+    <string name="custom_exercise">Özel egzersiz</string>
+    <string name="add_movements">Bir egzersiz oluşturmak için en az bir hareket ekleyin</string>
+    <string name="add">Ekle</string>
+
+    <string name="app_trouble">Posture uygulamasıyla sorun yaşıyorum</string>
+    <string name="app_idea">Posture uygulaması için bir fikrim var</string>
+
+
+    <!-- Hareketler -->
+    <!-- Duvar -->
+    <string name="wall_slide">Duvar kaydırma</string>
+    <string name="wall_slide_desc">Sırtınızın tüm kısımlarını duvara yapışık tutmaya özen gösterin. Kollarınızı yukarı ve aşağı kaydırın ve her zaman duvara temas ettiklerinden emin olun.</string>
+    <string name="wall_touch">Duvar teması</string>
+    <string name="door_frame_stretch">Kapı çerçevesi esnemesi</string>
+
+    <!-- Otururken -->
+    <string name="chest_opener">Göğüs açıcı</string>
+    <string name="chest_opener_desc">Dirseklerinizi yana ve arkaya açın ve omuz bıçaklarınızı birbirine doğru sıkıştırın</string>
+    <string name="neck_stretch">Boyun esnemesi</string>
+    <string name="neck_stretch_desc">Elinizi başınıza koyun. Boynunuzu esnetmek için başınızı hafifçe yana çekin</string>
+    <string name="heart_opener">Kalp açıcı</string>
+    <string name="heart_opener_desc">Kollarınızı sırtınızın arkasına koyun ve kollarınızı yukarı doğru çekin</string>
+    <string name="lower_back_stretch">Alt sırt esnemesi</string>
+    <string name="lower_back_stretch_desc">Bir sandalyede, sol kolunuzu sandalyenin üst rayına yerleştirin ve üst gövdenizi kolunuza doğru çekin.</string>
+    <string name="back_stretch">Sırt esnemesi</string>
+    <string name="back_stretch_desc">Bacaklarınızı sarın ve sırtınızı olabildiğince yukarı doğru itin.</string>
+    <string name="turtle_neck">Kaplumbağa boynu</string>
+    <string name="turtle_neck_desc">Çenenizi tutun ve başınızı geriye doğru itin. Başınızı dik tuttuğunuzdan emin olun.</string>
+    <string name="angel_wings">Melek kanatları</string>
+    <string name="angel_wings_desc">Ellerinizi görünmez bir duvara yaslayın, eller yukarıda ve dirsekler aşağıda. Aşağı iterken sırt kaslarınıza odaklandığınızdan emin olun.</string>
+    <string name="shoulder_circles">Omuz daireleri</string>
+
+    <!-- Yatarken -->
+    <string name="all_four_twist">Dört ayak burgu</string>
+    <string name="all_four_twist_desc">Göğsünüzü daha fazla açmak için bir kolunuzu gökyüzüne doğru kaldırın. Yukarı bakın ve daha da fazla açılmak için dönün.</string>
+    <string name="table_top_lift">Masa üstü kaldırma</string>
+    <string name="table_top_lift_desc">Avuçlarınızı yere bastırın, yüz yukarı bakıyor. Vücudunuzu yatay hale gelene kadar yukarı itin, bekleyin ve yavaşça geri inin. Omuz bıçaklarınızı birbirine doğru sıkıştırın.</string>
+    <string name="glute_bridge">Kalça köprüsü</string>
+    <string name="glute_bridge_desc">Kalçalarınızı olabildiğince yukarı kaldırın. Parmaklarınızı birleştirin ve sırtınızı ve omuz bıçaklarınızı sıkıştırın.</string>
+    <string name="ab_stretch">Karın esnemesi</string>
+    <string name="ab_stretch_desc">Yüz üstü yere uzanın. Vücudunuzu bir deniz aslanı pozisyonunda yukarı itin ve belinizi ve karın kaslarınızı esnetin.</string>
+    <string name="back_squeeze_pulse">Sırt sıkma darbesi</string>
+    <string name="back_squeeze_pulse_desc">Yüz üstü yere uzanın. Dirseklerinizi geri çekin ve gövdenizi hafifçe kaldırın. Omuz bıçaklarınızı sıkıştırın. 3 tekrar yukarı aşağı yapın ve ardından tekrarlayın.</string>
+    <string name="back_swim">Sırt yüzme</string>
+    <string name="back_swim_desc">Midenizin üzerinde düz yatın ve başınızı düz ileriye doğru tutun. Kollarınızı yukarı ve geriye doğru hareket ettirin, kollarınızı düz tutun.</string>
+    <string name="cat_cow">Kedi inek</string>
+    <string name="cat_cow_desc">Dört ayak üzerinde durarak omurganızı yukarı doğru itin ve başınızı aşağıda tutun. Ardından omurganızı yere doğru itin ve başınızı yukarı kaldırın.</string>
+    <string name="thoracic_rotation">Torakal rotasyon</string>
+    <string name="thoracic_rotation_desc">Dört ayak üzerinde durarak bir kolunuzu başınızın arkasına koyun ve vücudunuzu önce gökyüzüne, ardından yere doğru döndürün.</string>
+    <string name="extended_puppy_pose">Uzun köpek pozisyonu</string>
+    <string name="extended_puppy_pose_desc">Dört ayak üzerinde durarak vücudunuzu geriye doğru itin ve kollarınızı esnetin. Başınızı yere doğru indirin.</string>
+    <string name="lotus_pose">Lotus pozisyonu</string>
+    <string name="lotus_pose_desc">Midenizin üzerinde yatarken ellerinizi sırtınızın arkasına koyun ve gövdenizi ve bacaklarınızı yukarı doğru itin.</string>
+    <string name="y_w_t_s">YWT\'ler</string>
+    <string name="y_w_t_s_desc">Midenizin üzerinde yatın, kollarınızla Y oluşturun, ardından W, sonra T yapın.</string>
+    <string name="shoulder_dislocations">Omuz yer değiştirmeleri</string>
+    <string name="shoulder_dislocations_desc">Bir bant, atkı veya battaniye kullanın. Her iki ucunu tutun ve bandı önden arkaya doğru döndürmeye çalışın.</string>
+
+    <string name="you_did_this_exercise">Bu egzersizi %s yaptınız:</string>
+    <string name="you_did_this_custom_exercise">Bu özel egzersizi %s yaptınız:</string>
+
+    <string name="remember_quote">Vücudunuzu dinlemeyi ve gerektiğinde durmayı unutmayın</string>
+
+</resources>
+

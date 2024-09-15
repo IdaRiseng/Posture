@@ -1,0 +1,161 @@
+<resources>
+    <string name="app_name">पोस्टर</string>
+    <string name="streak">धारावाहिकता</string>
+    <string name="total">कुल</string>
+    <plurals name="day">
+        <item quantity="one">दिन %d</item>
+        <item quantity="other">दिन</item>
+    </plurals>
+    <string name="create">सृजन करें</string>
+    <string name="_continue">जारी रखें</string>
+
+    <!-- Exercises -->
+    <string name="exercises">व्यायाम</string>
+    <string name="build_and_stretch">सशक्त और खींचना</string>
+    <string name="build_and_stretch_desc">अपनी पीठ की मांसपेशियों को मजबूत करें, अपने आगे की मांसपेशियों को खींचें</string>
+    <string name="simple_office_exercise">साधारण कार्यालय व्यायाम</string>
+    <string name="simple_office_exercise_desc">कुर्सी पर बैठकर किए जाने वाले व्यायाम</string>
+    <string name="mindful_stretching">ध्यानपूर्वक खींचना</string>
+    <string name="mindful_stretching_desc">धीरे-धीरे करें और किसी भी तनाव को आराम दें, अपनी सांसों को याद रखें</string>
+    <string name="bed_exercise">बिस्तर पर व्यायाम</string>
+    <string name="bed_exercise_desc">बिस्तर पर लेटकर व्यायाम करें</string>
+    <string name="at_the_gym">जिम में</string>
+    <string name="at_the_gym_desc">बेहतर वर्कआउट के लिए जिम के उपकरणों का उपयोग करें</string>
+
+    <!-- Info cards -->
+    <string name="info">सूचना</string>
+    <!-- Thank you -->
+    <string name="info_thank_you_title">धन्यवाद!</string>
+    <string name="info_thank_you_desc">यदि आपके पास कोई समस्या या सुझाव है, तो कृपया मुझे एक ईमेल भेजें (सेटिंग्स में)</string>
+
+    <!-- custom exercise -->
+    <string name="info_custom_exercise_title">कस्टम व्यायाम</string>
+    <string name="info_custom_exercise_desc">एक ऐसा कस्टम व्यायाम बनाएं जो आपके लिए अधिक उपयुक्त हो</string>
+    <string name="do_you_want_to_delete">क्या आप इस व्यायाम को हटाना चाहते हैं?</string>
+    <string name="delete">हटाएँ</string>
+
+    <!-- Exercise flow -->
+    <string name="start_exercise">व्यायाम शुरू करें</string>
+    <string name="skip">छोड़ें</string>
+    <string name="how_long_exercise">आप कितनी देर तक व्यायाम करना चाहते हैं?</string>
+    <string name="how_many_movements">आप कितने मूवमेंट्स करना चाहते हैं?</string>
+    <string name="repetitions_left">बाकी की पुनरावृत्तियाँ</string>
+    <string name="continuous_exercise">लगातार व्यायाम</string>
+    <array name="positive_words">
+        <item>अच्छा किया!</item>
+        <item>शानदार</item>
+        <item>उत्कृष्ट</item>
+        <item>अद्भुत!</item>
+    </array>
+    <string name="done">हो गया</string>
+
+    <!-- Settings -->
+    <string name="settings">सेटिंग्स</string>
+    <string name="options">विकल्प</string>
+    <string name="save">सहेजें</string>
+    <string name="time_based">समय आधारित</string>
+    <string name="how_long_movement">प्रत्येक मूवमेंट को कितना समय लगना चाहिए?</string>
+    <string name="set_rep_based">सेट / रिपिटिशन आधारित</string>
+    <string name="now_many_repetitions">प्रत्येक मूवमेंट के लिए आप कितनी बार दोहराना चाहते हैं?</string>
+
+    <string name="dark_theme_title">डार्क मोड</string>
+    <string name="device_theme">उपकरण के थीम के समान</string>
+    <string name="light_theme">सदैव हल्के मोड में</string>
+    <string name="dark_theme">सदैव अंधेरे मोड में</string>
+
+    <string name="workout">वर्कआउट</string>
+    <string name="general">सामान्य</string>
+    <string name="darkmode">डार्क मोड</string>
+    <string name="affirmation">सकारात्मकता</string>
+    <string name="_minutes">%s मिनट</string>
+
+    <string name="got_ideas">कुछ अच्छे विचार हैं?</string>
+    <string name="trouble_with_app">ऐप के साथ कोई समस्या?</string>
+    <string name="send">भेजें</string>
+    <plurals name="minute">
+        <item quantity="one">मिनट %d</item>
+        <item quantity="other">मिनट</item>
+    </plurals>
+    <plurals name="rep">
+        <item quantity="one">रिप %d</item>
+        <item quantity="other">रिप्स</item>
+    </plurals>
+
+    <array name="weekdays">
+        <item>सोम</item>
+        <item>मंगल</item>
+        <item>बुध</item>
+        <item>गुरु</item>
+        <item>शुक्र</item>
+        <item>शनि</item>
+        <item>रवि</item>
+    </array>
+
+    <!-- https://www.affirmations.dev -->
+    <array name="simple_affirmations">
+        <item>आप काफी अच्छे हैं</item>
+        <item>आप मूल्यवान हैं</item>
+    </array>
+
+    <string name="custom_exercise">कस्टम व्यायाम</string>
+    <string name="add_movements">एक व्यायाम बनाने के लिए कम से कम एक मूवमेंट जोड़ें</string>
+    <string name="add">जोड़ें</string>
+
+    <string name="app_trouble">मुझे पोस्टर ऐप के साथ समस्या हो रही है</string>
+    <string name="app_idea">मुझे पोस्टर ऐप के लिए एक विचार है</string>
+
+    <!-- Movements -->
+    <!-- wall -->
+    <string name="wall_slide">दीवार पर स्लाइड</string>
+    <string name="wall_slide_desc">सुनिश्चित करें कि आपकी पीठ की सभी हिस्से दीवार के खिलाफ हैं। अपने हाथों को ऊपर और नीचे स्लाइड करें और सुनिश्चित करें कि वे हमेशा दीवार को छू रहे हैं।</string>
+    <string name="wall_touch">दीवार को छूना</string>
+    <string name="door_frame_stretch">दरवाजे के फ्रेम पर खींचना</string>
+
+    <!-- Sitting -->
+    <string name="chest_opener">छाती खोलना</string>
+    <string name="chest_opener_desc">अपने कोहनी को साइड और पीछे की ओर खोलें और अपने कंधे की हड्डियों को एक साथ दबाएं</string>
+    <string name="neck_stretch">गर्दन खींचना</string>
+    <string name="neck_stretch_desc">अपने हाथ को सिर पर रखें। धीरे-धीरे सिर को एक तरफ खींचें ताकि आपकी गर्दन खिंच जाए</string>
+    <string name="heart_opener">दिल खोलना</string>
+    <string name="heart_opener_desc">अपने हाथों को अपनी पीठ के पीछे रखें और अपने हाथों को ऊपर की ओर खींचें</string>
+    <string name="lower_back_stretch">नीचे की पीठ खींचना</string>
+    <string name="lower_back_stretch_desc">कुर्सी पर बैठकर, अपनी बाईं हाथ को कुर्सी के ऊपरी रेल पर रखें और अपने ऊपरी शरीर को अपनी हाथ की दिशा में खींचें।</string>
+    <string name="back_stretch">पीठ खींचना</string>
+    <string name="back_stretch_desc">अपने पैरों को गले लगाएं और अपनी पीठ को जितना ऊँचा उठा सकते हैं, उतना ऊपर उठाएं।</string>
+    <string name="turtle_neck">कछुए की गर्दन</string>
+    <string name="turtle_neck_desc">अपनी ठुड्डी को पकड़ें और अपने सिर को पीछे की ओर धकेलें। सुनिश्चित करें कि आपका सिर सीधा रहे।</string>
+    <string name="angel_wings">एंजेल विंग्स</string>
+    <string name="angel_wings_desc">अपने हाथों को एक अदृश्य दीवार के खिलाफ रखें, हाथ ऊपर और कोहनी नीचे। नीचे की ओर धकेलते समय, अपनी पीठ की मांसपेशियों पर ध्यान केंद्रित करें।</string>
+    <string name="shoulder_circles">कंधे के गोल</string>
+
+    <!-- Laying -->
+    <string name="all_four_twist">चारों पैरों पर मोड़</string>
+    <string name="all_four_twist_desc">अपनी पीठ को मोड़ें और एक हाथ को आकाश की ओर उठाएं। ऊपर देखें और मोड़ें ताकि आपकी छाती और अधिक खुल सके।</string>
+    <string name="table_top_lift">टेबल टॉप लिफ्ट</string>
+    <string name="table_top_lift_desc">अपनी हथेलियों को फर्श पर दबाएं, ऊपर की ओर मुंह करके। अपने शरीर को ऊपर की ओर धकेलें जब तक यह क्षैतिज न हो जाए, फिर इसे धीरे-धीरे नीचे लाएं। अपने कंधे की हड्डियों को एक साथ दबाएं।</string>
+    <string name="glute_bridge">ग्लूट ब्रिज</string>
+    <string name="glute_bridge_desc">कूल्हों को जितना ऊँचा उठा सकते हैं, उठाएं। अपनी उंगलियों को आपस में जोड़ें और अपनी पीठ और कंधे की हड्डियों को एक साथ दबाएं।</string>
+    <string name="ab_stretch">एब्स खींचना</string>
+    <string name="ab_stretch_desc">मुँह के बल जमीन पर लेट जाएं। अपने शरीर को सील की स्थिति में ऊपर की ओर धकेलें ताकि आपकी निचली पीठ और एब्स खिंच सकें।</string>
+    <string name="back_squeeze_pulse">पीठ की सघनता पल्स</string>
+    <string name="back_squeeze_pulse_desc">मुँह के बल जमीन पर लेट जाएं। अपने कोहनी को पीछे की ओर खींचें और हल्के से अपने शरीर को ऊपर उठाएं। अपने कंधे की हड्डियों को एक साथ दबाएं। ऊपर और नीचे 3 बार धकेलें और फिर दोहराएं।</string>
+    <string name="back_swim">पीठ तैराकी</string>
+    <string name="back_swim_desc">अपने पेट के बल लेट जाएं, अपने सिर को सामने की ओर सीधा रखें। अपनी बाहों को सीधा रखते हुए ऊपर और पीछे की ओर हिलाएं।</string>
+    <string name="cat_cow">बिल्ली गाय</string>
+    <string name="cat_cow_desc">चारों पैरों पर, अपनी पीठ को आकाश की ओर उठाएं और सिर को नीचे करें। फिर अपनी पीठ को नीचे की ओर दबाएं और सिर को ऊपर की ओर उठाएं।</string>
+    <string name="thoracic_rotation">छाती की घुमाव</string>
+    <string name="thoracic_rotation_desc">चारों पैरों पर, एक हाथ को अपने सिर के पीछे रखें और पहले आकाश की ओर और फिर जमीन की ओर शरीर को घुमाएं।</string>
+    <string name="extended_puppy_pose">विस्तारित पिल्ला मुद्रा</string>
+    <string name="extended_puppy_pose_desc">चारों पैरों पर, अपने शरीर को पीछे की ओर धकेलें ताकि आपकी बाहें खिंच सकें। सिर को जमीन की ओर रखें।</string>
+    <string name="lotus_pose">कमल मुद्रा</string>
+    <string name="lotus_pose_desc">पेट के बल लेट जाएं, अपने हाथों को अपनी पीठ के पीछे रखें और अपने शरीर और पैरों को आकाश की ओर धकेलें।</string>
+    <string name="y_w_t_s">YWTs</string>
+    <string name="y_w_t_s_desc">पेट के बल लेट जाएं और अपने हाथों को पहले Y, फिर W, फिर T आकार में बनाएं।</string>
+    <string name="shoulder_dislocations">कंधे की डिस्लोकेशन</string>
+    <string name="shoulder_dislocations_desc">एक बैंड, स्कार्फ या चादर का उपयोग करें। दोनों छोर को पकड़ें और बैंड को सामने से पीछे की ओर घुमाने की कोशिश करें।</string>
+
+    <string name="you_did_this_exercise">आपने यह व्यायाम %s किया:</string>
+    <string name="you_did_this_custom_exercise">आपने यह कस्टम व्यायाम %s किया:</string>
+
+    <string name="remember_quote">याद रखें कि अपने शरीर को सुनें और यदि आवश्यक हो तो रोकें।</string>
+</resources>

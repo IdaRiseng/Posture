@@ -28,11 +28,12 @@ fun GreyCard(
 ) =
     Card(
         elevation = CardDefaults.cardElevation(0.dp),
+        shape = RoundedCornerShape(16.dp),
         modifier = Modifier
             .clip(RoundedCornerShape(16.dp))
             .padding(padding)
-            .conditional(onClick != null) { clickable { onClick?.let { it() } } }
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .conditional(onClick != null) { clickable { onClick?.let { it() } } },
         content = {
             Box {
                 content()

@@ -1,0 +1,161 @@
+<resources>
+    <string name="app_name">Postura</string>
+    <string name="streak">Racha</string>
+    <string name="total">Total</string>
+    <plurals name="day">
+        <item quantity="one">Día</item>
+        <item quantity="other">Días</item>
+    </plurals>
+    <string name="create">Crear</string>
+    <string name="_continue">Continuar</string>
+
+    <!-- Exercises -->
+    <string name="exercises">Ejercicios</string>
+    <string name="build_and_stretch">Fortalecer y estirar</string>
+    <string name="build_and_stretch_desc">Fortalece tus músculos de la espalda, estira tus músculos del frente</string>
+    <string name="simple_office_exercise">Ejercicio simple en la oficina</string>
+    <string name="simple_office_exercise_desc">Ejercicios mientras estás sentado en una silla</string>
+    <string name="mindful_stretching">Estiramiento consciente</string>
+    <string name="mindful_stretching_desc">Relájate y alivia cualquier tensión, recuerda tu respiración</string>
+    <string name="bed_exercise">Ejercicios en la cama</string>
+    <string name="bed_exercise_desc">Haz ejercicios mientras estás acostado en la cama</string>
+    <string name="at_the_gym">En el gimnasio</string>
+    <string name="at_the_gym_desc">Usa las herramientas de tu gimnasio para un mejor entrenamiento</string>
+
+    <!-- Info cards -->
+    <string name="info">Información</string>
+    <!-- Thank you -->
+    <string name="info_thank_you_title">¡Gracias!</string>
+    <string name="info_thank_you_desc">Si tienes algún problema o idea, por favor envíame un correo electrónico (en ajustes)</string>
+
+    <!-- custom exercise -->
+    <string name="info_custom_exercise_title">Ejercicio personalizado</string>
+    <string name="info_custom_exercise_desc">Crea un ejercicio personalizado más adaptado a ti</string>
+    <string name="do_you_want_to_delete">¿Quieres eliminar este ejercicio?</string>
+    <string name="delete">Eliminar</string>
+
+    <!-- Exercise flow -->
+    <string name="start_exercise">Comenzar ejercicio</string>
+    <string name="skip">Saltar</string>
+    <string name="how_long_exercise">¿Cuánto tiempo quieres hacer ejercicio?</string>
+    <string name="how_many_movements">¿Cuántos movimientos quieres realizar?</string>
+    <string name="repetitions_left">Repeticiones restantes</string>
+    <string name="continuous_exercise">Ejercicio continuo</string>
+    <array name="positive_words">
+        <item>¡Bien hecho!</item>
+        <item>Asombroso</item>
+        <item>Excelente</item>
+        <item>¡Increíble!</item>
+    </array>
+    <string name="done">Terminado</string>
+
+    <!-- Settings -->
+    <string name="settings">Ajustes</string>
+    <string name="options">Opciones</string>
+    <string name="save">Guardar</string>
+    <string name="time_based">Basado en tiempo</string>
+    <string name="how_long_movement">¿Cuánto tiempo debe durar cada movimiento?</string>
+    <string name="set_rep_based">Basado en series/repeticiones</string>
+    <string name="now_many_repetitions">¿Cuántas repeticiones quieres hacer por cada movimiento?</string>
+
+    <string name="dark_theme_title">Modo oscuro</string>
+    <string name="device_theme">Igual que el tema del dispositivo</string>
+    <string name="light_theme">Siempre en modo claro</string>
+    <string name="dark_theme">Siempre en modo oscuro</string>
+
+    <string name="workout">Entrenamiento</string>
+    <string name="general">General</string>
+    <string name="darkmode">Modo oscuro</string>
+    <string name="affirmation">Afirmación</string>
+    <string name="_minutes">%s minutos</string>
+
+    <string name="got_ideas">¿Tienes buenas ideas?</string>
+    <string name="trouble_with_app">¿Problemas con la app?</string>
+    <string name="send">Enviar</string>
+    <plurals name="minute">
+        <item quantity="one">minuto</item>
+        <item quantity="other">minutos</item>
+    </plurals>
+    <plurals name="rep">
+        <item quantity="one">repetición</item>
+        <item quantity="other">repeticiones</item>
+    </plurals>
+
+    <array name="weekdays">
+        <item>Lu</item>
+        <item>Ma</item>
+        <item>Mi</item>
+        <item>Ju</item>
+        <item>Vi</item>
+        <item>Sá</item>
+        <item>Do</item>
+    </array>
+
+    <!-- https://www.affirmations.dev -->
+    <array name="simple_affirmations">
+        <item>Eres lo suficientemente bueno</item>
+        <item>Eres valioso</item>
+    </array>
+
+    <string name="custom_exercise">Ejercicio personalizado</string>
+    <string name="add_movements">Agrega al menos un movimiento para crear un ejercicio</string>
+    <string name="add">Agregar</string>
+
+    <string name="app_trouble">Tengo problemas con la app Postura</string>
+    <string name="app_idea">Tengo una idea para la app Postura</string>
+
+    <!-- Movements -->
+    <!-- wall -->
+    <string name="wall_slide">Deslizamiento en la pared</string>
+    <string name="wall_slide_desc">Asegúrate de mantener todas las partes de tu espalda contra la pared. \nDesliza tus brazos hacia arriba y hacia abajo asegurándote de que siempre toquen la pared.</string>
+    <string name="wall_touch">Toque en la pared</string>
+    <string name="door_frame_stretch">Estiramiento en el marco de la puerta</string>
+
+    <!-- Sitting -->
+    <string name="chest_opener">Apertura de pecho</string>
+    <string name="chest_opener_desc">Abre los codos hacia los lados y hacia atrás, apretando los omóplatos</string>
+    <string name="neck_stretch">Estiramiento de cuello</string>
+    <string name="neck_stretch_desc">Apoya tu mano en tu cabeza. Jala suavemente tu cabeza hacia un lado para estirar tu cuello</string>
+    <string name="heart_opener">Apertura de corazón</string>
+    <string name="heart_opener_desc">Pon tus brazos detrás de tu espalda y tira hacia arriba</string>
+    <string name="lower_back_stretch">Estiramiento de la parte baja de la espalda</string>
+    <string name="lower_back_stretch_desc">En una silla, mueve tu brazo izquierdo hacia el respaldo y gira tu torso hacia tu brazo.</string>
+    <string name="back_stretch">Estiramiento de espalda</string>
+    <string name="back_stretch_desc">Abraza tus piernas y empuja tu espalda lo más alto que puedas.</string>
+    <string name="turtle_neck">Cuello de tortuga</string>
+    <string name="turtle_neck_desc">Sujeta tu barbilla y empuja tu cabeza hacia atrás. Asegúrate de mantener la cabeza recta.</string>
+    <string name="angel_wings">Alas de ángel</string>
+    <string name="angel_wings_desc">Apoya tus manos contra una pared invisible, con las manos hacia arriba y los codos hacia abajo. Al empujar hacia abajo, concéntrate en los músculos de tu espalda.</string>
+    <string name="shoulder_circles">Círculos de hombros</string>
+
+    <!-- Laying -->
+    <string name="all_four_twist">Giro de cuatro patas</string>
+    <string name="all_four_twist_desc">Gira tu torso para alcanzar un brazo hacia el cielo. Mira hacia arriba y gira para abrir tu pecho aún más.</string>
+    <string name="table_top_lift">Elevación de mesa</string>
+    <string name="table_top_lift_desc">Empuja tus palmas contra el suelo, mirando hacia arriba. Levanta tu cuerpo hasta que esté horizontal, sostén y luego baja lentamente. Junta los omóplatos.</string>
+    <string name="glute_bridge">Puente de glúteos</string>
+    <string name="glute_bridge_desc">Levanta tus caderas lo más alto posible. Entrelaza tus dedos mientras aprietas tu espalda y tus omóplatos.</string>
+    <string name="ab_stretch">Estiramiento de abdomen</string>
+    <string name="ab_stretch_desc">Acuéstate boca abajo en el suelo. Empuja tu cuerpo hacia arriba en posición de foca para estirar tu espalda baja y abdomen.</string>
+    <string name="back_squeeze_pulse">Pulso de apretón de espalda</string>
+    <string name="back_squeeze_pulse_desc">Acuéstate boca abajo en el suelo. Jala tus codos hacia atrás y levanta ligeramente tu torso. Junta los omóplatos. Empuja hacia arriba y hacia abajo durante 3 repeticiones y luego repite.</string>
+    <string name="back_swim">Nado de espalda</string>
+    <string name="back_swim_desc">Acuéstate boca abajo mientras mantienes la cabeza recta hacia adelante. Mueve los brazos hacia arriba y hacia atrás manteniéndolos rectos.</string>
+    <string name="cat_cow">Postura del gato y la vaca</string>
+    <string name="cat_cow_desc">A cuatro patas, empuja tu columna hacia el cielo mientras mantienes la cabeza hacia abajo. Luego, empuja la columna hacia el suelo y la cabeza hacia arriba.</string>
+    <string name="thoracic_rotation">Rotación torácica</string>
+    <string name="thoracic_rotation_desc">A cuatro patas, lleva un brazo detrás de tu cabeza y rota tu cuerpo primero hacia el cielo y luego hacia el suelo.</string>
+    <string name="extended_puppy_pose">Postura del cachorro extendido</string>
+    <string name="extended_puppy_pose_desc">A cuatro patas, empuja tu cuerpo hacia atrás para estirar los brazos. Cabeza hacia el suelo.</string>
+    <string name="lotus_pose">Postura del loto</string>
+    <string name="lotus_pose_desc">Mientras estás acostado boca abajo, pon tus manos detrás de tu espalda y empuja tu torso y piernas hacia el cielo.</string>
+    <string name="y_w_t_s">YWTs</string>
+    <string name="y_w_t_s_desc">Acuéstate boca abajo creando una Y con tus brazos, luego W, luego T.</string>
+    <string name="shoulder_dislocations">Desplazamientos de hombros</string>
+    <string name="shoulder_dislocations_desc">Usa una banda, bufanda o manta. Sostén cada extremo e intenta rotar la banda desde el frente hacia atrás.</string>
+
+    <string name="you_did_this_exercise">Hiciste este ejercicio %s:</string>
+    <string name="you_did_this_custom_exercise">Hiciste este ejercicio personalizado %s:</string>
+
+    <string name="remember_quote">Recuerda escuchar a tu cuerpo y detenerte si lo necesitas</string>
+</resources>

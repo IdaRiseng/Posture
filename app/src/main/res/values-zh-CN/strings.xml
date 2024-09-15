@@ -1,0 +1,161 @@
+<resources>
+    <string name="app_name">姿势</string>
+    <string name="streak">连续天数</string>
+    <string name="total">总计</string>
+    <plurals name="day">
+        <item quantity="one">天</item>
+        <item quantity="other">天</item>
+    </plurals>
+    <string name="create">创建</string>
+    <string name="_continue">继续</string>
+
+    <!-- Exercises -->
+    <string name="exercises">锻炼</string>
+    <string name="build_and_stretch">增强与拉伸</string>
+    <string name="build_and_stretch_desc">加强背部肌肉，拉伸前侧肌肉</string>
+    <string name="simple_office_exercise">简单的办公室锻炼</string>
+    <string name="simple_office_exercise_desc">坐在椅子上进行锻炼</string>
+    <string name="mindful_stretching">正念拉伸</string>
+    <string name="mindful_stretching_desc">放慢速度，放松紧张情绪，记住呼吸</string>
+    <string name="bed_exercise">床上锻炼</string>
+    <string name="bed_exercise_desc">躺在床上进行锻炼</string>
+    <string name="at_the_gym">健身房锻炼</string>
+    <string name="at_the_gym_desc">利用健身房的器材进行更好的锻炼</string>
+
+    <!-- Info cards -->
+    <string name="info">信息</string>
+    <!-- Thank you -->
+    <string name="info_thank_you_title">谢谢！</string>
+    <string name="info_thank_you_desc">如果你有任何问题或想法，请发邮件给我（在设置中）</string>
+
+    <!-- custom exercise -->
+    <string name="info_custom_exercise_title">自定义锻炼</string>
+    <string name="info_custom_exercise_desc">创建一个更适合自己的锻炼</string>
+    <string name="do_you_want_to_delete">你要删除此锻炼吗？</string>
+    <string name="delete">删除</string>
+
+    <!-- Exercise flow -->
+    <string name="start_exercise">开始锻炼</string>
+    <string name="skip">跳过</string>
+    <string name="how_long_exercise">你想锻炼多久？</string>
+    <string name="how_many_movements">你想做多少次动作？</string>
+    <string name="repetitions_left">剩余重复次数</string>
+    <string name="continuous_exercise">连续锻炼</string>
+    <array name="positive_words">
+        <item>做得好！</item>
+        <item>真棒</item>
+        <item>极好</item>
+        <item>太棒了！</item>
+    </array>
+    <string name="done">完成</string>
+
+    <!-- Settings -->
+    <string name="settings">设置</string>
+    <string name="options">选项</string>
+    <string name="save">保存</string>
+    <string name="time_based">基于时间</string>
+    <string name="how_long_movement">每个动作应持续多久？</string>
+    <string name="set_rep_based">基于组/重复次数</string>
+    <string name="now_many_repetitions">每个动作你想做多少次？</string>
+
+    <string name="dark_theme_title">黑暗模式</string>
+    <string name="device_theme">与设备主题相同</string>
+    <string name="light_theme">始终使用浅色模式</string>
+    <string name="dark_theme">始终使用黑暗模式</string>
+
+    <string name="workout">锻炼</string>
+    <string name="general">常规</string>
+    <string name="darkmode">黑暗模式</string>
+    <string name="affirmation">肯定句</string>
+    <string name="_minutes">%s 分钟</string>
+
+    <string name="got_ideas">有好点子吗？</string>
+    <string name="trouble_with_app">应用程序有问题吗？</string>
+    <string name="send">发送</string>
+    <plurals name="minute">
+        <item quantity="one">分钟</item>
+        <item quantity="other">分钟</item>
+    </plurals>
+    <plurals name="rep">
+        <item quantity="one">次</item>
+        <item quantity="other">次</item>
+    </plurals>
+
+    <array name="weekdays">
+        <item>周一</item>
+        <item>周二</item>
+        <item>周三</item>
+        <item>周四</item>
+        <item>周五</item>
+        <item>周六</item>
+        <item>周日</item>
+    </array>
+
+    <!-- https://www.affirmations.dev -->
+    <array name="simple_affirmations">
+        <item>你足够优秀</item>
+        <item>你很有价值</item>
+    </array>
+
+    <string name="custom_exercise">自定义锻炼</string>
+    <string name="add_movements">添加至少一个动作以创建锻炼</string>
+    <string name="add">添加</string>
+
+    <string name="app_trouble">我在使用姿势应用程序时遇到了问题</string>
+    <string name="app_idea">我有一个关于姿势应用程序的想法</string>
+
+    <!-- Movements -->
+    <!-- wall -->
+    <string name="wall_slide">靠墙滑动</string>
+    <string name="wall_slide_desc">确保背部的所有部位都紧贴墙壁。上下滑动手臂，确保手臂始终接触墙壁。</string>
+    <string name="wall_touch">靠墙触摸</string>
+    <string name="door_frame_stretch">门框拉伸</string>
+
+    <!-- Sitting -->
+    <string name="chest_opener">胸部扩展</string>
+    <string name="chest_opener_desc">将肘部向侧面和背部打开，肩胛骨挤压在一起</string>
+    <string name="neck_stretch">颈部拉伸</string>
+    <string name="neck_stretch_desc">把手放在头上。轻轻拉动头部向一侧，以拉伸颈部。</string>
+    <string name="heart_opener">心脏扩展</string>
+    <string name="heart_opener_desc">把手放在背后，向上拉手臂</string>
+    <string name="lower_back_stretch">下背部拉伸</string>
+    <string name="lower_back_stretch_desc">坐在椅子上，左手抓住椅子靠背，将上半身向手臂方向拉动。</string>
+    <string name="back_stretch">背部拉伸</string>
+    <string name="back_stretch_desc">抱住双腿，尽量将背部抬高。</string>
+    <string name="turtle_neck">乌龟脖子</string>
+    <string name="turtle_neck_desc">用手托住下巴，将头部向后推，确保保持头部正直。</string>
+    <string name="angel_wings">天使翅膀</string>
+    <string name="angel_wings_desc">双手靠在一堵看不见的墙上，手臂向上，肘部向下。向下推时，注意集中力量于背部肌肉。</string>
+    <string name="shoulder_circles">肩膀绕圈</string>
+
+    <!-- Laying -->
+    <string name="all_four_twist">四肢扭转</string>
+    <string name="all_four_twist_desc">扭转上半身，将一只手臂向天空举起。向上看，进一步扭转以打开胸部。</string>
+    <string name="table_top_lift">桌面提升</string>
+    <string name="table_top_lift_desc">掌心朝下推地板，身体向上推至水平，保持一会儿，然后慢慢放下。肩胛骨挤压在一起。</string>
+    <string name="glute_bridge">臀桥</string>
+    <string name="glute_bridge_desc">臀部尽量抬高，双手指交叉，同时挤压背部和肩胛骨。</string>
+    <string name="ab_stretch">腹部拉伸</string>
+    <string name="ab_stretch_desc">脸朝下躺在地上。将身体推成海豹姿势，拉伸下背部和腹部。</string>
+    <string name="back_squeeze_pulse">背部挤压脉冲</string>
+    <string name="back_squeeze_pulse_desc">脸朝下躺在地上。将肘部向后拉，轻轻抬起上半身。肩胛骨挤压在一起。向上推3次，然后重复。</string>
+    <string name="back_swim">背泳</string>
+    <string name="back_swim_desc">趴在地上，保持头向前看。手臂保持伸直，向上和向后移动。</string>
+    <string name="cat_cow">猫牛式</string>
+    <string name="cat_cow_desc">四肢着地，将脊椎向上拱起，头部向下。然后将脊椎向下弯曲，头部向上。</string>
+    <string name="thoracic_rotation">胸椎旋转</string>
+    <string name="thoracic_rotation_desc">四肢着地，用一只手臂放在头后，旋转身体，先向上然后向下。</string>
+    <string name="extended_puppy_pose">延展幼犬式</string>
+    <string name="extended_puppy_pose_desc">四肢着地，向后推身体，伸展手臂，头部朝向地面。</string>
+    <string name="lotus_pose">莲花式</string>
+    <string name="lotus_pose_desc">趴在地上，双手放在背后，同时抬起上半身和双腿。</string>
+    <string name="y_w_t_s">YWTs</string>
+    <string name="y_w_t_s_desc">趴在地上，用手臂分别做出“Y”、“W”、“T”形状。</string>
+    <string name="shoulder_dislocations">肩部移位</string>
+    <string name="shoulder_dislocations_desc">使用带子、围巾或毯子。握住两端，试着将带子从前向后旋转。</string>
+
+    <string name="you_did_this_exercise">你完成了这个锻炼 %s:</string>
+    <string name="you_did_this_custom_exercise">你完成了这个自定义锻炼 %s:</string>
+
+    <string name="remember_quote">记住倾听你的身体，如果需要，停止锻炼。</string>
+</resources>

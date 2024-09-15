@@ -1,0 +1,161 @@
+<resources>
+    <string name="app_name">Haltung</string>
+    <string name="streak">Serie</string>
+    <string name="total">Gesamt</string>
+    <plurals name="day">
+        <item quantity="one">Tag</item>
+        <item quantity="other">Tage</item>
+    </plurals>
+    <string name="create">Erstellen</string>
+    <string name="_continue">Fortsetzen</string>
+
+    <!-- Exercises -->
+    <string name="exercises">Übungen</string>
+    <string name="build_and_stretch">Aufbauen und dehnen</string>
+    <string name="build_and_stretch_desc">Stärken Sie Ihre Rückenmuskulatur, dehnen Sie Ihre vorderen Muskeln</string>
+    <string name="simple_office_exercise">Einfache Büroübungen</string>
+    <string name="simple_office_exercise_desc">Übungen im Sitzen auf einem Stuhl</string>
+    <string name="mindful_stretching">Achtsames Dehnen</string>
+    <string name="mindful_stretching_desc">Entspannen Sie langsam die Anspannung, achten Sie auf Ihre Atmung</string>
+    <string name="bed_exercise">Bettübungen</string>
+    <string name="bed_exercise_desc">Übungen im Liegen im Bett</string>
+    <string name="at_the_gym">Im Fitnessstudio</string>
+    <string name="at_the_gym_desc">Nutzen Sie die Geräte im Fitnessstudio für ein besseres Training</string>
+
+    <!-- Info cards -->
+    <string name="info">Info</string>
+    <!-- Thank you -->
+    <string name="info_thank_you_title">Danke!</string>
+    <string name="info_thank_you_desc">Wenn Sie Probleme oder Ideen haben, senden Sie mir bitte eine E-Mail (in den Einstellungen)</string>
+
+    <!-- custom exercise -->
+    <string name="info_custom_exercise_title">Eigene Übung</string>
+    <string name="info_custom_exercise_desc">Erstellen Sie eine Übung, die speziell auf Sie zugeschnitten ist</string>
+    <string name="do_you_want_to_delete">Möchten Sie diese Übung löschen?</string>
+    <string name="delete">Löschen</string>
+
+    <!-- Exercise flow -->
+    <string name="start_exercise">Übung starten</string>
+    <string name="skip">Überspringen</string>
+    <string name="how_long_exercise">Wie lange möchten Sie trainieren?</string>
+    <string name="how_many_movements">Wie viele Bewegungen möchten Sie ausführen?</string>
+    <string name="repetitions_left">Verbleibende Wiederholungen</string>
+    <string name="continuous_exercise">Kontinuierliche Übung</string>
+    <array name="positive_words">
+        <item>Gut gemacht!</item>
+        <item>Erstaunlich</item>
+        <item>Hervorragend</item>
+        <item>Großartig!</item>
+    </array>
+    <string name="done">Fertig</string>
+
+    <!-- Settings -->
+    <string name="settings">Einstellungen</string>
+    <string name="options">Optionen</string>
+    <string name="save">Speichern</string>
+    <string name="time_based">Zeitbasiert</string>
+    <string name="how_long_movement">Wie lange soll jede Bewegung dauern?</string>
+    <string name="set_rep_based">Satz-/Wiederholungsbasiert</string>
+    <string name="now_many_repetitions">Wie viele Wiederholungen möchten Sie für jede Bewegung durchführen?</string>
+
+    <string name="dark_theme_title">Dunkler Modus</string>
+    <string name="device_theme">Gleich wie Gerätemodus</string>
+    <string name="light_theme">Immer im hellen Modus</string>
+    <string name="dark_theme">Immer im dunklen Modus</string>
+
+    <string name="workout">Training</string>
+    <string name="general">Allgemein</string>
+    <string name="darkmode">Dunkelmodus</string>
+    <string name="affirmation">Bestätigung</string>
+    <string name="_minutes">%s Minuten</string>
+
+    <string name="got_ideas">Haben Sie gute Ideen?</string>
+    <string name="trouble_with_app">Probleme mit der App?</string>
+    <string name="send">Senden</string>
+    <plurals name="minute">
+        <item quantity="one">Minute</item>
+        <item quantity="other">Minuten</item>
+    </plurals>
+    <plurals name="rep">
+        <item quantity="one">Wiederholung</item>
+        <item quantity="other">Wiederholungen</item>
+    </plurals>
+
+    <array name="weekdays">
+        <item>Mo</item>
+        <item>Di</item>
+        <item>Mi</item>
+        <item>Do</item>
+        <item>Fr</item>
+        <item>Sa</item>
+        <item>So</item>
+    </array>
+
+    <!-- https://www.affirmations.dev -->
+    <array name="simple_affirmations">
+        <item>Du bist gut genug</item>
+        <item>Du bist wertvoll</item>
+    </array>
+
+    <string name="custom_exercise">Eigene Übung</string>
+    <string name="add_movements">Fügen Sie mindestens eine Bewegung hinzu, um eine Übung zu erstellen</string>
+    <string name="add">Hinzufügen</string>
+
+    <string name="app_trouble">Ich habe Probleme mit der Haltung-App</string>
+    <string name="app_idea">Ich habe eine Idee für die Haltung-App</string>
+
+    <!-- Movements -->
+    <!-- wall -->
+    <string name="wall_slide">Wandschiebung</string>
+    <string name="wall_slide_desc">Achten Sie darauf, dass alle Teile Ihres Rückens die Wand berühren. \nSchieben Sie Ihre Arme auf und ab und achten Sie darauf, dass sie immer die Wand berühren.</string>
+    <string name="wall_touch">Wandberührung</string>
+    <string name="door_frame_stretch">Türrahmen-Dehnung</string>
+
+    <!-- Sitting -->
+    <string name="chest_opener">Brustöffner</string>
+    <string name="chest_opener_desc">Öffnen Sie Ihre Ellbogen zur Seite und nach hinten und drücken Sie die Schulterblätter zusammen.</string>
+    <string name="neck_stretch">Nacken-Dehnung</string>
+    <string name="neck_stretch_desc">Legen Sie Ihre Hand auf Ihren Kopf. Ziehen Sie sanft den Kopf zur Seite, um den Nacken zu dehnen.</string>
+    <string name="heart_opener">Herzöffner</string>
+    <string name="heart_opener_desc">Legen Sie Ihre Arme hinter Ihren Rücken und ziehen Sie die Arme nach oben.</string>
+    <string name="lower_back_stretch">Lendenwirbel-Dehnung</string>
+    <string name="lower_back_stretch_desc">Auf einem Stuhl, greifen Sie mit Ihrem linken Arm zur oberen Stuhllehne und ziehen Sie Ihren Oberkörper zu Ihrem Arm hin.</string>
+    <string name="back_stretch">Rückendehnung</string>
+    <string name="back_stretch_desc">Umfassen Sie Ihre Beine und drücken Sie Ihren Rücken so hoch wie möglich.</string>
+    <string name="turtle_neck">Schildkrötenhals</string>
+    <string name="turtle_neck_desc">Halten Sie Ihr Kinn fest und drücken Sie den Kopf nach hinten. Achten Sie darauf, den Kopf gerade zu halten.</string>
+    <string name="angel_wings">Engelsflügel</string>
+    <string name="angel_wings_desc">Legen Sie Ihre Hände gegen eine unsichtbare Wand, Hände nach oben und Ellbogen nach unten. Beim Herunterdrücken konzentrieren Sie sich auf Ihre Rückenmuskulatur.</string>
+    <string name="shoulder_circles">Schulterkreise</string>
+
+    <!-- Laying -->
+    <string name="all_four_twist">Vierfüßler-Drehung</string>
+    <string name="all_four_twist_desc">Drehen Sie Ihren Oberkörper, um einen Arm in den Himmel zu strecken. Blicken Sie nach oben und drehen Sie sich weiter, um Ihre Brust noch mehr zu öffnen.</string>
+    <string name="table_top_lift">Tischplatte-Hebung</string>
+    <string name="table_top_lift_desc">Drücken Sie Ihre Handflächen auf den Boden, Gesicht nach oben. Drücken Sie Ihren Körper nach oben, bis er waagerecht ist, halten Sie ihn und gehen Sie langsam wieder nach unten. Drücken Sie die Schulterblätter zusammen.</string>
+    <string name="glute_bridge">Gluteus-Brücke</string>
+    <string name="glute_bridge_desc">Hüften so hoch wie möglich. Verschränken Sie die Finger, während Sie Ihren Rücken und die Schulterblätter zusammendrücken.</string>
+    <string name="ab_stretch">Bauchdehnung</string>
+    <string name="ab_stretch_desc">Legen Sie sich mit dem Gesicht nach unten auf den Boden. Drücken Sie Ihren Körper in eine Robben-Position, um Ihren unteren Rücken und Ihre Bauchmuskeln zu dehnen.</string>
+    <string name="back_squeeze_pulse">Rückendrücken-Puls</string>
+    <string name="back_squeeze_pulse_desc">Legen Sie sich mit dem Gesicht nach unten auf den Boden. Ziehen Sie die Ellbogen zurück und heben Sie leicht den Oberkörper an. Drücken Sie die Schulterblätter zusammen. Heben und senken Sie den Oberkörper für 3 Wiederholungen und wiederholen Sie.</string>
+    <string name="back_swim">Rückenschwimmen</string>
+    <string name="back_swim_desc">Legen Sie sich auf den Bauch, während Sie den Kopf geradeaus halten. Bewegen Sie Ihre Arme nach oben und hinten, während Sie sie gerade halten.</string>
+    <string name="cat_cow">Katzen-Kuh</string>
+    <string name="cat_cow_desc">Gehen Sie in den Vierfüßlerstand, drücken Sie Ihre Wirbelsäule in Richtung Himmel und halten Sie den Kopf unten. Dann drücken Sie Ihre Wirbelsäule in Richtung Boden und heben den Kopf an.</string>
+    <string name="thoracic_rotation">Thoraxrotation</string>
+    <string name="thoracic_rotation_desc">Gehen Sie in den Vierfüßlerstand, nehmen Sie einen Arm hinter den Kopf und drehen Sie Ihren Körper erst in Richtung Himmel, dann in Richtung Boden.</string>
+    <string name="extended_puppy_pose">Erweiterte Welpenhaltung</string>
+    <string name="extended_puppy_pose_desc">Gehen Sie in den Vierfüßlerstand, drücken Sie Ihren Körper nach hinten, um Ihre Arme zu dehnen. Kopf in Richtung Boden.</string>
+    <string name="lotus_pose">Lotus-Haltung</string>
+    <string name="lotus_pose_desc">Legen Sie sich auf den Bauch, legen Sie Ihre Hände hinter den Rücken und heben Sie Torso und Beine in Richtung Himmel.</string>
+    <string name="y_w_t_s">YWTs</string>
+    <string name="y_w_t_s_desc">Legen Sie sich auf den Bauch und formen Sie ein Y mit Ihren Armen, dann ein W, dann ein T.</string>
+    <string name="shoulder_dislocations">Schulterluxation</string>
+    <string name="shoulder_dislocations_desc">Verwenden Sie ein Band, einen Schal oder eine Decke. Halten Sie beide Enden und versuchen Sie, das Band von vorne nach hinten zu drehen.</string>
+
+    <string name="you_did_this_exercise">Sie haben diese Übung %s gemacht:</string>
+    <string name="you_did_this_custom_exercise">Sie haben diese benutzerdefinierte Übung %s gemacht:</string>
+
+    <string name="remember_quote">Denken Sie daran, auf Ihren Körper zu hören und aufzuhören, wenn es nötig ist.</string>
+</resources>
