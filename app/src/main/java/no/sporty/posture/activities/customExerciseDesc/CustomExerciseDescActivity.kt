@@ -6,13 +6,14 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import no.sporty.posture.activities.BaseActivity
 import no.sporty.posture.model.CustomExercise
 import no.sporty.posture.model.Movement
 import no.sporty.posture.model.SelectedMovements
 import no.sporty.posture.sharedPreferences.CustomExercisePrefs
 import java.lang.IllegalStateException
 
-class CustomExerciseDescActivity : ComponentActivity() {
+class CustomExerciseDescActivity : BaseActivity() {
 
     companion object {
         fun newIntent(context: Context, movements: SelectedMovements, customExercise: CustomExercise?) =

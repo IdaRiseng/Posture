@@ -9,10 +9,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
+import no.sporty.posture.activities.BaseActivity
 import no.sporty.posture.model.Movement
 import no.sporty.posture.model.PostureVibrator
 
-class MovementRepCountdownActivity : ComponentActivity() {
+class MovementRepCountdownActivity : BaseActivity() {
 
     companion object {
         const val MOVEMENT_TAG = "movement_tag"

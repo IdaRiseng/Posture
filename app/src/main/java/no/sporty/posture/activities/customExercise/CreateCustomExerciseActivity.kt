@@ -7,11 +7,12 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
+import no.sporty.posture.activities.BaseActivity
 import no.sporty.posture.activities.customExerciseDesc.CustomExerciseDescActivity
 import no.sporty.posture.model.CustomExercise
 import no.sporty.posture.model.SelectedMovements
 
-class CreateCustomExerciseActivity : ComponentActivity() {
+class CreateCustomExerciseActivity : BaseActivity() {
 
     companion object {
         fun newIntent(context: Context, customExercise: CustomExercise? = null) = Intent(context, CreateCustomExerciseActivity::class.java).apply {

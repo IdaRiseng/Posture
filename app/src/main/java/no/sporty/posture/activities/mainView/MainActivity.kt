@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatDelegate
@@ -19,6 +20,7 @@ import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import kotlinx.coroutines.launch
+import no.sporty.posture.activities.BaseActivity
 import no.sporty.posture.activities.customExercise.CreateCustomExerciseActivity
 import no.sporty.posture.activities.nextMovement.NextMovementActivity
 import no.sporty.posture.activities.setMovementCount.SetMovementCountActivity
@@ -37,7 +39,7 @@ import no.sporty.posture.sharedPreferences.StreakPrefs
 import no.sporty.posture.sharedPreferences.ThemePrefs
 import java.time.LocalDate
 
-class MainActivity : ComponentActivity() {
+class MainActivity : BaseActivity() {
     companion object {
         const val EXERCISE_NAME = "exercise_name"
     }

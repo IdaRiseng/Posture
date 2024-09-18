@@ -8,6 +8,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.ui.res.stringResource
+import no.sporty.posture.activities.BaseActivity
 import no.sporty.posture.activities.mainView.MainActivity
 import no.sporty.posture.activities.nextMovement.NextMovementActivity
 import no.sporty.posture.model.CustomExercise
@@ -16,7 +17,7 @@ import no.sporty.posture.model.WorkoutSettingOption
 import no.sporty.posture.sharedPreferences.WorkoutSettingPrefs
 import no.sporty.posture.sharedPreferences.WorkoutSettingPrefs.getTimeBasedWorkout
 
-class SetMovementCountActivity : ComponentActivity() {
+class SetMovementCountActivity : BaseActivity() {
 
     companion object {
         const val EXERCISE_TAG = "exercise_tag"

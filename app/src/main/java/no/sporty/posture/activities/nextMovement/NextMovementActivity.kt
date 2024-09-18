@@ -13,6 +13,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import no.sporty.posture.activities.BaseActivity
 import no.sporty.posture.activities.mainView.MainActivity.Companion.EXERCISE_NAME
 import no.sporty.posture.activities.movementRepCountdown.MovementRepCountdownActivity
 import no.sporty.posture.activities.movementTimeCountdown.MovementTimeCountdownActivity
@@ -21,7 +22,7 @@ import no.sporty.posture.model.Movement
 import no.sporty.posture.model.WorkoutSettingOption
 import no.sporty.posture.sharedPreferences.WorkoutSettingPrefs
 
-class NextMovementActivity : ComponentActivity() {
+class NextMovementActivity : BaseActivity() {
 
     companion object {
         private const val EXERCISE_LENGTH = "exercise_length"

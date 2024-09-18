@@ -12,10 +12,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import no.sporty.posture.R
+import no.sporty.posture.activities.BaseActivity
 import no.sporty.posture.activities.addOrRemoveCustomExercise.AddOrRemoveCustomExerciseActivity
 import no.sporty.posture.sharedPreferences.ThemePrefs
 
-class SettingsActivity : ComponentActivity() {
+class SettingsActivity : BaseActivity() {
 
     companion object {
         fun newIntent(context: Context) = Intent(context, SettingsActivity::class.java)
