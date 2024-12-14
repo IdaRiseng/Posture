@@ -85,7 +85,7 @@ fun NextMovement(
             }
             Column(
                 Modifier
-                    .padding(16.dp)
+                    .padding(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 32.dp)
                     .weight(1f), verticalArrangement = Arrangement.SpaceBetween
             ) {
                 if (movement.info != null) {

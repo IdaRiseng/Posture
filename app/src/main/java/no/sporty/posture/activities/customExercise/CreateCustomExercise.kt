@@ -80,7 +80,7 @@ fun CreateCustomExercise(
                 Modifier
                     .fillMaxWidth()
                     .background(MaterialTheme.colorScheme.background)
-                    .padding(top = 16.dp)
+                    .padding(top = 16.dp, bottom = 30.dp)
             ) {
                 if (addedMovements.isEmpty()) {
                     BodyBlackText(textRes = R.string.add_movements, textAlign = TextAlign.Center)

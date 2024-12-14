@@ -52,7 +52,7 @@ import java.time.LocalDate
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun MainTopBar(topBarInfo: TopBarInfo, onSettingsClicked: () -> Unit, affirmation: String?) {
-    Box(Modifier.background(MaterialTheme.colorScheme.primary)) {
+    Box(Modifier.background(MaterialTheme.colorScheme.primary).padding(top = 16.dp)) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()

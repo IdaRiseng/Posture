@@ -89,7 +89,7 @@ fun MainView(
 
                 Column(
                     modifier = Modifier
-                        .padding(top = 32.dp, start = 16.dp, end = 16.dp)
+                        .padding(top = 16.dp, start = 16.dp, end = 16.dp, bottom = 40.dp)
                         .fillMaxWidth(),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {

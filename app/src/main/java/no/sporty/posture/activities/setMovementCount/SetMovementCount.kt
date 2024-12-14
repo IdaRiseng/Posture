@@ -82,7 +82,7 @@ private fun SelectTimeLength(exercise: Exercise, onContinueTimeClicked: (Exercis
                 }
             }
         }
-        Column(Modifier.padding()) {
+        Column(Modifier.padding(bottom = 30.dp)) {
             OnPrimaryOutlineButton(onClick = { onContinueTimeClicked(length) }, textRes = R.string._continue)
         }
     }
