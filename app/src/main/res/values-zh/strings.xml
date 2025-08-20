@@ -8,6 +8,8 @@
     </plurals>
     <string name="create">创建</string>
     <string name="_continue">继续</string>
+    <string name="title">标题</string>
+    <string name="description">描述</string>
 
     <!-- Exercises -->
     <string name="exercises">锻炼</string>

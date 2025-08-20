@@ -8,6 +8,8 @@
     </plurals>
     <string name="create">सृजन करें</string>
     <string name="_continue">जारी रखें</string>
+    <string name="title">शीर्षक</string>
+    <string name="description">विवरण</string>
 
     <!-- Exercises -->
     <string name="exercises">व्यायाम</string>

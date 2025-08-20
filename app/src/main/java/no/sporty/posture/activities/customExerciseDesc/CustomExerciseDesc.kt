@@ -88,12 +88,12 @@ fun CustomExerciseDesc(
                 }
 
                 Spacer(modifier = Modifier.height(16.dp))
-                BodyBlackText(text = "Title")
+                BodyBlackText(text = stringResource(R.string.title))
                 Spacer(modifier = Modifier.height(8.dp))
                 InputField(value = title, onValueChange = { title = it })
 
                 Spacer(modifier = Modifier.height(16.dp))
-                BodyBlackText(text = "Description")
+                BodyBlackText(text = stringResource(R.string.description))
                 Spacer(modifier = Modifier.height(8.dp))
                 InputField(value = desc, onValueChange = { desc = it })
 

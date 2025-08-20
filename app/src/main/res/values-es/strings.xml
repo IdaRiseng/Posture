@@ -8,6 +8,8 @@
     </plurals>
     <string name="create">Crear</string>
     <string name="_continue">Continuar</string>
+    <string name="title">Título</string>
+    <string name="description">Descripción</string>
 
     <!-- Exercises -->
     <string name="exercises">Ejercicios</string>

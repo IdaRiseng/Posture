@@ -8,6 +8,8 @@
     </plurals>
     <string name="create">Oluştur</string>
     <string name="_continue">Devam et</string>
+    <string name="title">Başlık</string>
+    <string name="description">Açıklama</string>
 
 
     <!-- Egzersizler -->

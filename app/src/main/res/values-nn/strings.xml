@@ -8,7 +8,8 @@
     </plurals>
     <string name="create">Lag</string>
     <string name="_continue">Fortsett</string>
-
+    <string name="title">Tittel</string>
+    <string name="description">Beskrivelse</string>
 
     <!-- Exercises -->
     <string name="exercises">Øvelser</string>
